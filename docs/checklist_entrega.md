@@ -16,7 +16,7 @@ Marque só o que você verificou. Itens com [ ] ainda dependem de você.
 - [x] `python -m pytest -q` passando na máquina do autor: 315 passed (informado pelo autor, 2026-11-19; commit não anotado). Ambiente de revisão: 313 passando, 1 pulado
 - [x] Nenhuma chave em código ou no histórico do Git: busca por padrões de chave real (`sk-` seguido de 20 ou mais caracteres) em todo o histórico, sem resultado (verificado em 2026-11-19). As ocorrências de `sk-` do `findstr` do autor são placeholders de teste
 - [x] Captura da demo salva em `docs/img/demo.png` e exibida no README do GitHub (verificado em 2026-11-19). O arquivo é Git LFS; em um clone sem `git lfs install` e `git lfs pull` ele aparece como ponteiro de texto
-- [x] Redesign enviado ao GitHub (`origin`) **e** ao Space (`space`): os dois remotos em `7950938` (`git ls-remote`, informado pelo autor, 2026-11-19)
+- [x] Redesign enviado ao GitHub (`origin`) **e** ao Space (`space`): Space em `7950938` (`git ls-remote space HEAD`, informado pelo autor, 2026-11-19); GitHub em `fd9dd5a`, que tem `7950938` como pai e só mudou documentação e o gabarito
 - [x] Teste final no Space em janela anônima (resposta com fonte, cache, limite diário, download e troca de tema): nada falhou, no Space em `a3e8ecf` (informado pelo autor, 2026-11-19)
 - [x] A página do GitHub mostra o README novo, sem a tabela de metadados no topo, e a imagem aparece (verificado em 2026-11-19)
 - [x] A aba "Sobre o projeto" aparece na demo (Space) e os links dela abrem (informado pelo autor, 2026-11-19)
