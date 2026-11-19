@@ -62,7 +62,9 @@ cada um (`src/interface/chat.py`).
 - **Não executado:** nenhuma chamada paga foi feita para esta mudança. A CLI (`--modo`, `--ordem`) não tem teste
   automatizado porque monta os agentes reais.
 - A avaliação publicada em `docs/resultados/avaliacao.md` foi gerada com a regra original (`escalonar`) e continua
-  valendo para esse modo. Nenhuma execução da avaliação completa foi feita no modo `adaptativo`.
+  valendo para esse modo. Em 2026-11-19 os modos `adaptativo` e `consenso` foram executados nas 30 perguntas, duas vezes
+  cada (resultado por execução em `docs/resultados/execucoes.md`, gerado por script): acerto 30/30 em todas as execuções;
+  o `adaptativo` nunca chamou o segundo provedor nessa base e o `consenso` sinalizou divergência em 5 e 6 perguntas.
 - O rótulo do motivo mudou: uma abstenção agora aparece como `nao_encontrado` (antes `sem_citacao_valida`) em
   `logs/roteamento.jsonl`.
 

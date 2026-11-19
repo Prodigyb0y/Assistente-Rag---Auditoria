@@ -27,10 +27,8 @@ Estado verificado em 2026-11-19. `[x]` = verificado; `[ ]` = pendente. Itens "in
 ## Dados e preços
 
 - [x] Preço do `gpt-6.1-terra` conferido na página oficial (aba Standard, contexto Short, captura de 2026-11-19): US$ 1,00 entrada / US$ 5,00 saída por 1M de tokens. Acima de 272 mil tokens: não verificado
-- [x] Gabarito `dados/perguntas_orquestracao.json` (O01–O10) revisado (`revisado: true`, informado pelo autor). Os números dos modos `adaptativo` e `consenso` ficam fora das métricas até a rodada completa
+- [x] Gabarito `dados/perguntas_orquestracao.json` (O01–O10) revisado (`revisado: true`, informado pelo autor)
 - [x] Variável `ORQUESTRACAO_MODO` não existe no Space (informado pelo autor); a demo usa o padrão `adaptativo`
 - [x] Bloco 4 (saída válida: schema e citações entre os trechos recuperados): aprovado com ressalva. Evidência: 30/30 com saída válida e citação válida nos modos só OpenAI e só Anthropic (`docs/resultados/avaliacao.md`). Ressalva: a checagem é estrutural, confirma que a seção citada foi recuperada, não que sustenta a resposta; uma execução por modo
 
-## Pendente
-
-- [ ] Rodada completa dos modos `adaptativo` e `consenso` (30 perguntas, pelo menos duas repetições); sem ela, esses modos não têm métrica no README
+- [x] Rodada completa dos modos `adaptativo` e `consenso` (30 perguntas, 2 execuções cada, 2026-11-19): `docs/resultados/execucoes.md`, gerado por `python -m src.avaliacao.execucoes`

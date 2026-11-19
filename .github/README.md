@@ -66,14 +66,24 @@ errada, vazamento de dados) e o que o sistema **não** faz estão em [`docs/proc
 ## Resultados medidos
 
 Base: 30 perguntas com gabarito escrito **antes** dos testes e revisado pelo autor
-([`dados/perguntas.json`](../dados/perguntas.json)). Execução única por modo, em **2026-11-19**, prompt `agente_resposta_v1`.
-A tabela completa é gerada por script em [`docs/resultados/avaliacao.md`](../docs/resultados/avaliacao.md).
+([`dados/perguntas.json`](../dados/perguntas.json)). Em **2026-11-19**, prompt `agente_resposta_v1`: uma execução por modo nas três primeiras linhas e duas execuções
+completas nos modos `adaptativo` e `consenso`. As tabelas são geradas por script em
+[`docs/resultados/avaliacao.md`](../docs/resultados/avaliacao.md) e
+[`docs/resultados/execucoes.md`](../docs/resultados/execucoes.md) (`python -m src.avaliacao.execucoes`).
 
 | Modo | Acerto | Citação válida | Custo por resposta | Latência média |
 |---|---|---|---|---|
 | Só OpenAI (`gpt-6.1-terra`) | 30/30 | 30/30 | US$ 0,002024 | 6,43 s |
 | Só Anthropic (`claude-haiku-5-5`) | 30/30 | 30/30 | US$ 0,000467 | 3,41 s |
 | Orquestrado (modo `escalonar`, regra original) | 30/30 | 30/30 | US$ 0,000469 | 2,86 s |
+| Orquestrado, modo `adaptativo` (padrão da demo), 2 execuções | 30/30 e 30/30 | 30/30 e 30/30 | US$ 0,000461 e 0,000469 | 4,05 s e 3,24 s |
+| Orquestrado, modo `consenso`, 2 execuções | 30/30 e 30/30 | 30/30 e 30/30 | US$ 0,002493 e 0,002475 | 8,17 s e 7,77 s |
+
+Nas 30 perguntas do gabarito, o `adaptativo` nunca chamou o segundo provedor (a resposta final veio da Anthropic em
+todas), então seu custo é o do modo só Anthropic; o `consenso` chama os dois provedores em todas as perguntas e sinalizou
+divergência de fontes ou números em 5 e 6 perguntas (conjuntos diferentes entre as execuções; todas as respostas finais
+acertaram). A base de 30 perguntas não distingue os modos pela taxa de acerto (todos 30/30); a diferença medida está em
+custo e latência. Os caminhos de escalonamento são exercitados pelas perguntas O01–O10 (`dados/perguntas_orquestracao.json`).
 
 **Recuperação:** recall@3 = **30/30**, medido ao nível da seção (acerto quando a seção do gabarito, documento mais id,
 aparece entre os 3 primeiros trechos).
@@ -103,7 +113,7 @@ aparece entre os 3 primeiros trechos).
   US$ 0,0052 (aprox. 11x o normal) e levou 24,3 s; escalou para os dois provedores e foi exibida como "melhor esforço".
   Com o modo `adaptativo`, as perguntas fora da base executadas em 2026-11-19 terminaram como "não encontrado confirmado"
   (O07, O08, O10) ou "melhor esforço" (O06), sem entrar no cache. São observações de execução, não métricas: o gabarito
-  O gabarito O01–O10 foi revisado pelo autor (`revisado: true`, 2026-11-19), mas não há rodada completa dos modos `adaptativo` e `consenso`. Detalhes em [`docs/orquestracao.md`](../docs/orquestracao.md).
+  O gabarito O01–O10 foi revisado pelo autor (`revisado: true`, 2026-11-19). Detalhes dos modos em [`docs/orquestracao.md`](../docs/orquestracao.md).
 
 ## Análise dos dados
 
