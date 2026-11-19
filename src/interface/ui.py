@@ -120,8 +120,11 @@ html, body { background: var(--app-bg) !important; }
   #app > .tabs > .tabitem { flex: 1 1 0; min-height: 0; overflow-y: auto; }
   #app .tabitem > .column { flex: 1 1 0; min-height: 0; }
   #app .tabitem > .column > .row:first-child { flex: 1 1 0; min-height: 0; flex-wrap: nowrap !important; align-items: stretch !important; }
-  #app .tabitem > .column > .row:first-child > .column { min-height: 0; }
+  #app .tabitem > .column > .row:first-child > .column { min-height: 0; flex-wrap: nowrap !important; }
+  /* a coluna do Gradio quebra em colunas quando falta altura (o contador ficava escondido ao lado das sugestões):
+     aqui os itens ficam sempre empilhados e a lateral rola por dentro */
   #lateral { height: auto !important; min-height: 0 !important; }
+  #lateral > * { flex: 0 0 auto !important; }
   #chat { height: auto !important; flex: 1 1 0 !important; min-height: 260px; }
   #entrada { flex: 0 0 auto; }
 }
