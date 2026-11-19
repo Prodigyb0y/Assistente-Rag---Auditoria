@@ -32,3 +32,4 @@ Estado verificado em 2026-11-19. `[x]` = verificado; `[ ]` = pendente. Itens "in
 - [x] Bloco 4 (saída válida: schema e citações entre os trechos recuperados): aprovado com ressalva. Evidência: 30/30 com saída válida e citação válida nos modos só OpenAI e só Anthropic (`docs/resultados/avaliacao.md`). Ressalva: a checagem é estrutural, confirma que a seção citada foi recuperada, não que sustenta a resposta; uma execução por modo
 
 - [x] Rodada completa dos modos `adaptativo` e `consenso` (30 perguntas, 2 execuções cada, 2026-11-19): `docs/resultados/execucoes.md`, gerado por `python -m src.avaliacao.execucoes`
+- [x] Análise de escalonamento (custo e latência do segundo provedor) em `docs/resultados/escalonamento.md`, gerada por `python -m src.analise.escalonamento` a partir das execuções repetidas

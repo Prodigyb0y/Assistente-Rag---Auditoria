@@ -69,7 +69,8 @@ Base: 30 perguntas com gabarito escrito **antes** dos testes e revisado pelo aut
 ([`dados/perguntas.json`](../dados/perguntas.json)). Em **2026-11-19**, prompt `agente_resposta_v1`: uma execução por modo nas três primeiras linhas e duas execuções
 completas nos modos `adaptativo` e `consenso`. As tabelas são geradas por script em
 [`docs/resultados/avaliacao.md`](../docs/resultados/avaliacao.md) e
-[`docs/resultados/execucoes.md`](../docs/resultados/execucoes.md) (`python -m src.avaliacao.execucoes`).
+[`docs/resultados/execucoes.md`](../docs/resultados/execucoes.md) (`python -m src.avaliacao.execucoes`). O custo e a latência de chamar o segundo provedor estão em
+[`docs/resultados/escalonamento.md`](../docs/resultados/escalonamento.md) (`python -m src.analise.escalonamento`): no `consenso`, 5,3x o custo e 2,2x a latência do `adaptativo` nas mesmas 30 perguntas, média de 2 execuções.
 
 | Modo | Acerto | Citação válida | Custo por resposta | Latência média |
 |---|---|---|---|---|
