@@ -4,6 +4,7 @@ Uso (depois da ingestão, com as chaves no .env):
   python -m src.orquestrador.executar --limite 3
   python -m src.orquestrador.executar --arquivo dados/perguntas_orquestracao.json --modo consenso
   python -m src.orquestrador.executar --ordem openai,anthropic --limite 5   # OpenAI primeiro
+  python -m src.orquestrador.executar --arquivo dados/perguntas_orquestracao.json --ids O06,O09 --limite 2
 
 Mostra, por pergunta: status, rota, motivo de escalonamento, custo, tokens e latência. As decisões
 ficam em logs/roteamento.jsonl. A avaliação completa (acerto, custo e latência nos 3 modos) é o Bloco 6.
@@ -39,6 +40,8 @@ def main(argv: list[str] | None = None) -> int:
                     help="modo de orquestração; padrão: ORQUESTRACAO_MODO do ambiente (adaptativo)")
     ap.add_argument("--ordem", default=None,
                     help="provedores na ordem de chamada, ex.: openai,anthropic; padrão: do mais barato ao mais caro")
+    ap.add_argument("--ids", default=None,
+                    help="roda só estas perguntas do arquivo, ex.: O06,O09 (aplicado antes de --limite)")
     args = ap.parse_args(argv)
     try:
         s = carregar_settings()
@@ -64,7 +67,15 @@ def main(argv: list[str] | None = None) -> int:
     if args.modo:
         pol = replace(pol, modo=args.modo)
     orq = Orquestrador(agentes, ordem, pol, LogRoteamento(s.log_dir / "roteamento.jsonl"))
-    perguntas = json.loads(args.arquivo.read_text(encoding="utf-8"))[: args.limite]
+    perguntas = json.loads(args.arquivo.read_text(encoding="utf-8"))
+    if args.ids:
+        pedidos = [i.strip() for i in args.ids.split(",") if i.strip()]
+        ausentes = [i for i in pedidos if i not in {q["id"] for q in perguntas}]
+        if ausentes:
+            print(f"ERRO: ids ausentes em {args.arquivo.name}: {', '.join(ausentes)}")
+            return 2
+        perguntas = [q for q in perguntas if q["id"] in pedidos]
+    perguntas = perguntas[: args.limite]
 
     print(f"prompt={prompt.versao} | ordem={' > '.join(ordem)} (preço de lista, tabela de {tabela.data_consulta}) | "
           f"modo={pol.modo} | confiança mínima={pol.confianca_minima} | tentativas={pol.max_tentativas}")

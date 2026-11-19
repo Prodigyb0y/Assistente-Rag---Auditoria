@@ -39,8 +39,10 @@ No modo `consenso` o 2º provedor responde sempre, inclusive quando o 1º já pa
 
 ### Como duas respostas são comparadas (`politica.comparar`)
 
-Concordam quando (1) as seções citadas por uma contêm as da outra e (2) as duas respostas trazem os mesmos números.
-Limite conhecido: **não compara o sentido do texto**, só fontes e números. Na dúvida a regra erra para o lado de
+Concordam quando (1) as seções citadas por uma contêm as da outra e (2) as duas respostas trazem os mesmos números,
+**descontados os que já estavam na pergunta** (repetir o número da pergunta não diz nada sobre concordância). A decisão
+do par grava no log as seções citadas, os números e a confiança de cada lado (`fontes_a/b`, `numeros_a/b`,
+`confianca_a/b`), nunca o texto da resposta. Limite conhecido: **não compara o sentido do texto**, só fontes e números. Na dúvida a regra erra para o lado de
 divergir (pede revisão humana), nunca para o de aceitar. Duas respostas com confiança "baixa" não formam consenso.
 
 ### Estados finais
@@ -78,6 +80,9 @@ python -m src.orquestrador.executar --arquivo dados/perguntas_orquestracao.json 
 
 # 3. OpenAI como primeiro provedor: as respostas dela passam a ser aceitas ou recusadas pela regra
 python -m src.orquestrador.executar --arquivo dados/perguntas_escalonamento.json --ordem openai,anthropic --limite 10
+
+# 3b. Só algumas perguntas do arquivo (por id)
+python -m src.orquestrador.executar --arquivo dados/perguntas_orquestracao.json --ids O06,O09 --modo adaptativo
 
 # 4. Regra original, para comparar
 python -m src.orquestrador.executar --arquivo dados/perguntas_orquestracao.json --modo escalonar --limite 10
@@ -151,9 +156,21 @@ isso descreve estas perguntas, não uma média esperada.
 ### O que esta observação não prova
 
 - **Correção das respostas:** não foi checada. O gabarito de `perguntas_orquestracao.json` segue com `revisado: false`.
-- **Por que O06 ficou em melhor esforço e por que O09 divergiu:** a saída resumida não mostra. O detalhe está em
-  `logs/roteamento.jsonl` e não foi analisado.
+- **Por que O06 ficou em melhor esforço e por que O09 divergiu:** ver a próxima seção.
 - **Frequência:** uma execução de 10 perguntas não mede com que frequência cada caminho ocorre. A mesma pergunta O02
   gastou 8867/742 tokens em uma execução anterior no mesmo dia e 8835/667 nesta, o que mostra variação entre execuções.
 - **Valor do consenso:** não foi medido se o consenso ou a divergência acertam mais que a resposta de um provedor só.
 - **Modos `consenso` e `escalonar`, e a ordem `openai,anthropic`:** não executados.
+
+### O que o `logs/roteamento.jsonl` mostra de O06 e O09 (mesma rodada)
+
+- **O06:** a Anthropic se absteve (`nao_encontrado`); a OpenAI trouxe resposta válida, com confiança abaixo de `alta`
+  (`confianca_baixa`). Um se absteve e o outro respondeu sem atingir a confiança mínima: não houve aceitação nem
+  consenso, e o estado ficou `melhor_esforco` com a resposta da OpenAI. Decisão de projeto em aberto: tratar
+  "um se abstém e o outro responde" como `divergencia` em vez de `melhor_esforco`.
+- **O09:** a Anthropic respondeu válida com confiança abaixo de `alta`; a OpenAI respondeu válida e passou na regra
+  (`motivo: null`). A concordância foi `divergem`, e o estado `divergencia` ficou com a resposta da OpenAI.
+- **A causa da divergência de O09 não aparece nesse log**, porque a versão que rodou não gravava as seções citadas nem
+  os números. Uma hipótese, **não verificada**: a comparação exigia números idênticos e uma das respostas pode ter
+  repetido o R$ 500.000,00 da pergunta. Por isso a comparação passou a descontar os números da pergunta e o log passou a
+  gravar a evidência. Só uma nova execução (`--ids O06,O09`) mostra o que de fato diferiu.

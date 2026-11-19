@@ -35,7 +35,7 @@ from ..agentes.contrato import Agente, ResultadoAgente
 from ..custo import OrcamentoExcedido
 from .politica import (ACEITA_APOS_ESCALONAMENTO, ACEITA_NO_PRIMEIRO, ACEITA_POR_CONSENSO, DIVERGENCIA, FALHA,  # noqa: F401
                        MELHOR_ESFORCO, NAO_ENCONTRADO_CONFIRMADO, STATUS_ACEITOS, Falha, Motivo, Politica,
-                       classificar_falha, decidir_par, espera_backoff, melhor, motivo_escalonamento,
+                       classificar_falha, decidir_par, detalhe_comparacao, espera_backoff, melhor, motivo_escalonamento,
                        valida_ordem)
 
 
@@ -239,9 +239,10 @@ class Orquestrador:
         res.final = a if d.escolhido == "a" else b
         res.status, res.caminho = d.status, caminho if b is not None else "segundo_indisponivel"
         res.concordancia = d.concordancia.value if d.concordancia else None
+        detalhe = detalhe_comparacao(a, b) if b is not None else {}
         self.log.gravar("decisao", pergunta_id=pid, provedor=res.final.provedor if res.final else None,
                         acao="decidir_par", motivo=d.motivo, para=None, status=d.status,
-                        concordancia=res.concordancia)
+                        concordancia=res.concordancia, **detalhe)
 
     # -- modo escalonar (regra original) -----------------------------------------------------------
     def _responder_escalonando(self, pergunta: str, pergunta_id: str, res: ResultadoOrquestrado,

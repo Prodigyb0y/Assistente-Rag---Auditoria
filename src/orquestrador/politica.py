@@ -178,14 +178,34 @@ def citados(r: ResultadoAgente) -> frozenset[tuple[str, str]]:
     return frozenset((c.documento, c.secao) for c in r.resposta.citacoes) if r.resposta else frozenset()
 
 
+def _numeros_da_resposta(r: ResultadoAgente) -> frozenset[str]:
+    """Números da resposta, sem os que já estavam na pergunta: repetir o número da pergunta não informa nada
+    sobre se as duas respostas concordam."""
+    if r.resposta is None:
+        return frozenset()
+    return numeros(r.resposta.resposta) - numeros(r.pergunta)
+
+
 def comparar(a: ResultadoAgente, b: ResultadoAgente) -> Concordancia:
     """Concordam quando (1) o conjunto de seções citadas de um contém o do outro e (2) as duas respostas
-    trazem os mesmos números. Limite conhecido: não compara o sentido do texto, só fontes e números;
-    na dúvida, a regra erra para o lado de DIVERGIR (pede revisão humana), nunca para o de aceitar."""
+    trazem os mesmos números (descontados os que a pergunta já continha). Limite conhecido: não compara o
+    sentido do texto, só fontes e números; na dúvida, a regra erra para o lado de DIVERGIR (pede revisão
+    humana), nunca para o de aceitar."""
     ca, cb = citados(a), citados(b)
     mesmas_fontes = bool(ca) and bool(cb) and (ca <= cb or cb <= ca)
-    mesmos_numeros = numeros(a.resposta.resposta) == numeros(b.resposta.resposta) if a.resposta and b.resposta else False
+    mesmos_numeros = a.resposta is not None and b.resposta is not None \
+        and _numeros_da_resposta(a) == _numeros_da_resposta(b)
     return Concordancia.CONCORDAM if mesmas_fontes and mesmos_numeros else Concordancia.DIVERGEM
+
+
+def detalhe_comparacao(a: ResultadoAgente, b: ResultadoAgente) -> dict[str, object]:
+    """Evidência da comparação para o log: só identificadores de seção, números e confiança (nunca o texto)."""
+    def fontes(r: ResultadoAgente) -> list[str]:
+        return sorted(f"{d}/{s}" for d, s in citados(r))
+    return {"fontes_a": fontes(a), "fontes_b": fontes(b),
+            "numeros_a": sorted(_numeros_da_resposta(a)), "numeros_b": sorted(_numeros_da_resposta(b)),
+            "confianca_a": a.resposta.confianca if a.resposta else None,
+            "confianca_b": b.resposta.confianca if b.resposta else None}
 
 
 @dataclass(frozen=True)

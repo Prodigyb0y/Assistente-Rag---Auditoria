@@ -287,3 +287,46 @@ def test_concordancia_tambem_e_registrada_quando_so_o_primeiro_passa_na_regra():
 def test_concordancia_fica_vazia_quando_o_segundo_se_abstem():
     d = decidir_par(ok("anthropic"), abstem("openai"))
     assert d.concordancia is None
+
+
+# --- números da pergunta e evidência no log ------------------------------------------------------
+
+def com_pergunta(r, pergunta):
+    r.pergunta = pergunta
+    return r
+
+
+def test_numero_repetido_da_pergunta_nao_gera_divergencia():
+    q = "Quem aprova pagamentos acima de R$ 500.000,00?"
+    a = com_pergunta(com_texto("anthropic", "Acima de R$ 500.000,00 vale a regra de R$ 100.000,00: dupla aprovação.",
+                               citacoes=(("POL-SFU", "SFU-3"),)), q)
+    b = com_pergunta(com_texto("openai", "Vale a dupla aprovação acima de R$ 100.000,00.",
+                               citacoes=(("POL-SFU", "SFU-3"),)), q)
+    assert comparar(a, b) is Concordancia.CONCORDAM
+
+
+def test_numero_diferente_alem_dos_da_pergunta_ainda_diverge():
+    q = "Quem aprova pagamentos acima de R$ 500.000,00?"
+    a = com_pergunta(com_texto("anthropic", "Dupla aprovação acima de R$ 100.000,00.", citacoes=(("POL-SFU", "SFU-3"),)), q)
+    b = com_pergunta(com_texto("openai", "Dupla aprovação acima de R$ 200.000,00.", citacoes=(("POL-SFU", "SFU-3"),)), q)
+    assert comparar(a, b) is Concordancia.DIVERGEM
+
+
+def test_detalhe_da_comparacao_traz_fontes_numeros_e_confianca_sem_o_texto():
+    from src.orquestrador.politica import detalhe_comparacao
+    a = com_texto("anthropic", "90 dias", confianca="media", citacoes=ACE3)
+    b = com_texto("openai", "60 dias", confianca="alta", citacoes=(("POL-LOG", "LOG-3"),))
+    d = detalhe_comparacao(a, b)
+    assert d == {"fontes_a": ["POL-ACE/ACE-3"], "fontes_b": ["POL-LOG/LOG-3"], "numeros_a": ["90"],
+                 "numeros_b": ["60"], "confianca_a": "media", "confianca_b": "alta"}
+    assert "dias" not in str(d)
+
+
+def test_log_da_decisao_do_par_registra_a_evidencia_da_comparacao(tmp_path):
+    b = AgenteFalso("anthropic", [com_texto("anthropic", "24 horas", confianca="media", citacoes=ACE3)])
+    c = AgenteFalso("openai", [com_texto("openai", "48 horas", confianca="alta", citacoes=ACE3)])
+    orq, _, log = adaptativo(tmp_path, b, c, confianca_minima="alta")
+    orq.responder("p", "Q")
+    ev = [e for e in ler(log) if e.get("acao") == "decidir_par"][0]
+    assert ev["status"] == DIVERGENCIA and ev["numeros_a"] == ["24"] and ev["numeros_b"] == ["48"]
+    assert ev["fontes_a"] == ev["fontes_b"] == ["POL-ACE/ACE-3"]
