@@ -176,8 +176,9 @@ provedor é uma lacuna a ser fechada em projeto futuro. Base: 9 documentos fict�
 
 **Operação da demo.**
 - A identificação de visitante por IP é de melhor esforço; as barreiras reais são o limite global e o teto de custo.
-- O estado da demo (limites, cache) vive em disco efêmero e zera quando o Space reinicia; por isso há limites de gasto
-  configurados nos consoles dos provedores.
+- O estado da demo (limites, cache) vive em disco efêmero e zera quando o Space reinicia; por isso a proteção de custo não depende só do disco: há
+  teto por provedor no código e teto diário da demo (US$ 0,25). Limites de gasto nos consoles dos provedores são uma
+  camada à parte, que este repositório não verifica.
 - O Space roda em Python 3.10 e em hardware ZeroGPU por restrição da conta no Hugging Face; o app não usa GPU e contém uma
   função `@spaces.GPU` de marcação, nunca chamada, só para satisfazer a checagem da plataforma.
 - A aparência da interface foi verificada manualmente, em um navegador, nos temas claro e escuro; o teste automatizado com
