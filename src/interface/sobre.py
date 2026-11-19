@@ -1,7 +1,7 @@
 """Texto da aba "Sobre o projeto" da demo: o que o assistente faz e por que existe. Separado da tela para ser testável."""
 from __future__ import annotations
 
-REPO = "https://github.com/Prodigyb0y/Assistente-Rag---Auditoria"
+REPO = "https://github.com/Prodigyb0y/assistente-rag-auditoria"
 LATENCIA_ORQUESTRADO_S = 2.86   # média medida em 2026-11-19 (tabela de resultados do README)
 PREMISSAS_MIN = (2, 5, 10)      # premissas ilustrativas, NÃO medidas
 

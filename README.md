@@ -26,4 +26,4 @@ Assistente que responde perguntas de apoio a um auditor interno **citando a seç
 - Este Space é só a hospedagem da demo; os modelos continuam sendo OpenAI e Anthropic.
 
 **Documentação completa, arquitetura, resultados medidos e limitações:**
-[github.com/Prodigyb0y/Assistente-Rag---Auditoria](https://github.com/Prodigyb0y/Assistente-Rag---Auditoria)
+[github.com/Prodigyb0y/assistente-rag-auditoria](https://github.com/Prodigyb0y/assistente-rag-auditoria)
