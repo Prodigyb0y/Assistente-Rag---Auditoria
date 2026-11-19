@@ -15,7 +15,7 @@ def tabela_ilustrativa(latencia_s: float = LATENCIA_ORQUESTRADO_S, minutos: tupl
     """Tabela "se a busca manual levasse T minutos": só aritmética sobre premissas rotuladas, sem afirmar fato."""
     linhas = ["| Se a busca manual levasse | Sistema (média medida) | Diferença por pergunta |", "|---|---|---|"]
     for m in minutos:
-        linhas.append(f"| {m} min | {latencia_s:.1f} s | cerca de {_mmss(m * 60 - latencia_s)} |")
+        linhas.append(f"| {m} min | {latencia_s:.1f} s".replace(".", ",") + f" | cerca de {_mmss(m * 60 - latencia_s)} |")
     return "\n".join(linhas)
 
 

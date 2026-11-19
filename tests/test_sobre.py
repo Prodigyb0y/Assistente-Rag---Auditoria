@@ -21,7 +21,7 @@ def test_texto_sobre_descreve_o_cenario_do_portal_como_premissa():
 def test_tabela_ilustrativa_e_rotulada_como_premissa():
     from src.interface.sobre import tabela_ilustrativa
     tab = tabela_ilustrativa(2.86, (2, 5, 10))
-    assert "| 5 min | 2.9 s | cerca de 4 min 57 s |" in tab and "| 2 min | 2.9 s | cerca de 1 min 57 s |" in tab
-    assert "| 10 min | 2.9 s | cerca de 9 min 57 s |" in tab
+    assert "| 5 min | 2,9 s | cerca de 4 min 57 s |" in tab and "| 2 min | 2,9 s | cerca de 1 min 57 s |" in tab
+    assert "| 10 min | 2,9 s | cerca de 9 min 57 s |" in tab
     t = texto_sobre(5)
     assert "premissa, não medida" in t and "não\nfoi medido" in t and tab in t
