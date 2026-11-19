@@ -106,7 +106,28 @@ html, body { background: var(--app-bg) !important; }
 #entrada:focus-within { border-color: var(--acento); box-shadow: 0 0 0 4px var(--halo), 0 10px 30px var(--sombra-suave); }
 #entrada { align-items: flex-end; }
 #entrada > * { min-width: 0 !important; }
-#entrada textarea { font-size: 1rem; background: transparent !important; max-height: 9rem !important; overflow-y: auto !important; overflow-wrap: anywhere; word-break: break-word; resize: none; }
+#entrada textarea { font-size: 1rem; background: transparent !important; max-height: 6rem !important; overflow-y: auto !important; overflow-wrap: anywhere; word-break: break-word; resize: none; }
+
+/* ---------- altura da tela (telas largas) ----------
+   O app ocupa exatamente a janela: quando a caixa de pergunta ganha linhas, o CHAT encolhe e a página NÃO cresce
+   (antes, o chat usava 100vh - 385px, que subestimava cabeçalho/aviso/rodapé; a página já passava da janela e
+   qualquer linha extra virava rolagem, empurrando a barra de entrada para fora da tela).
+   Os seletores usam as classes estáveis do Gradio (.tabs, .tabitem, .column, .row). Abaixo de 900px a página
+   volta ao fluxo normal (empilhada, com rolagem), pois lateral e chat ficam em coluna. */
+@media (min-width: 900px) {
+  #app { height: calc(100dvh - 6.5rem); min-height: 700px; }
+  #app > .tabs { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; }
+  #app > .tabs > .tabitem { flex: 1 1 0; min-height: 0; overflow-y: auto; }
+  #app .tabitem > .column { flex: 1 1 0; min-height: 0; }
+  #app .tabitem > .column > .row:first-child { flex: 1 1 0; min-height: 0; flex-wrap: nowrap !important; align-items: stretch !important; }
+  #app .tabitem > .column > .row:first-child > .column { min-height: 0; }
+  #lateral { height: auto !important; min-height: 0 !important; }
+  #chat { height: auto !important; flex: 1 1 0 !important; min-height: 260px; }
+  #entrada { flex: 0 0 auto; }
+}
+@media (max-width: 899px) {
+  #chat { min-height: 420px; }
+}
 #entrada button { border-radius: 12px; border: none !important;
   background: linear-gradient(135deg, var(--acento), var(--acento-2)) !important; color: #fff !important;
   transition: transform .15s ease, box-shadow .15s ease; }
