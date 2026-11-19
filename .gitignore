@@ -1,0 +1,14 @@
+# Segredos
+.env
+.env.*git status
+git --version.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+logs/
+indice/
+*.zip
