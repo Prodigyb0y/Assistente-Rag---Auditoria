@@ -210,3 +210,18 @@ O que esta segunda rodada mostra e o que não mostra:
   escrito no texto (hipótese; o texto não é gravado). Por isso `numeros` passou a ignorar identificadores de seção, o que
   evita uma divergência falsa quando só um dos lados escreve o identificador.
 - Custo desta rodada: US$ 0,007691 (soma das duas perguntas, conferida pela variação do gasto acumulado).
+
+### Linhas do log que sustentam a tabela acima
+
+`logs/roteamento.jsonl` é local (está no `.gitignore`) e não vem com o repositório. As duas linhas abaixo foram
+copiadas, sem retoques, da saída que o autor colou do terminal (evento `decidir_par`, execução de 16:31). Os campos
+`numeros_*` são números extraídos por expressão regular do texto de cada resposta, sem os que a pergunta já continha;
+o texto da resposta não é gravado.
+
+```
+{"ts": "2026-11-19T16:31:38-0300", "evento": "decisao", "pergunta_id": "O06", "provedor": "openai", "acao": "decidir_par", "motivo": "nao_encontrado", "para": null, "status": "melhor_esforco", "concordancia": null, "fontes_a": [], "fontes_b": ["POL-ACE/ACE-1", "POL-ACE/ACE-3"], "numeros_a": ["12", "90"], "numeros_b": ["12", "90"], "confianca_a": "baixa", "confianca_b": "media"}
+{"ts": "2026-11-19T16:31:50-0300", "evento": "decisao", "pergunta_id": "O09", "provedor": "openai", "acao": "decidir_par", "motivo": "nao_encontrado", "para": null, "status": "aceita_apos_escalonamento", "concordancia": null, "fontes_a": [], "fontes_b": ["POL-SFU/SFU-3"], "numeros_a": ["100000,00", "3"], "numeros_b": ["100000,00", "3"], "confianca_a": "baixa", "confianca_b": "alta"}
+```
+
+Estas duas linhas são a única evidência de que a abstenção da Anthropic trouxe os mesmos números que a resposta da OpenAI
+em O06 e O09. As linhas do log da primeira rodada (sem a evidência de comparação) não foram preservadas aqui.
