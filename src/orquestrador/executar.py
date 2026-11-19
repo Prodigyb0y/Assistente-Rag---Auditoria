@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from pathlib import Path
 
 from ..agentes.anthropic_agente import AgenteAnthropic
 from ..agentes.openai_agente import AgenteOpenAI
@@ -29,6 +30,8 @@ PERGUNTAS = RAIZ / "dados" / "perguntas.json"
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--limite", type=int, default=3, help="roda só as N primeiras perguntas (padrão 3)")
+    ap.add_argument("--arquivo", type=Path, default=PERGUNTAS,
+                    help="JSON com perguntas (id, pergunta); padrão: dados/perguntas.json")
     args = ap.parse_args(argv)
     try:
         s = carregar_settings()
@@ -46,7 +49,7 @@ def main(argv: list[str] | None = None) -> int:
     ordem = ordem_por_preco(tabela, {"openai": s.openai_model, "anthropic": s.anthropic_model})
     pol = Politica.de_settings(s)
     orq = Orquestrador(agentes, ordem, pol, LogRoteamento(s.log_dir / "roteamento.jsonl"))
-    perguntas = json.loads(PERGUNTAS.read_text(encoding="utf-8"))[: args.limite]
+    perguntas = json.loads(args.arquivo.read_text(encoding="utf-8"))[: args.limite]
 
     print(f"prompt={prompt.versao} | ordem={' > '.join(ordem)} (preço de lista, tabela de {tabela.data_consulta}) | "
           f"confiança mínima={pol.confianca_minima} | tentativas={pol.max_tentativas}")

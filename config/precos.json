@@ -11,7 +11,7 @@
       "input_mtok_acima": 2.0,
       "output_mtok_acima": 7.5,
       "verificado_oficial": true,
-      "fonte": "Página oficial de preços da OpenAI, tabela Standard, contexto curto. Conferido pelo autor em 2026-11-19 (captura de tela enviada pelo autor; a captura não é versionada). Valores acima de 272 mil tokens de prompt não verificados."
+      "fonte": "Página oficial de preços da OpenAI (developers.openai.com/api/docs/pricing), aba Standard, contexto curto. Conferido pelo autor em 2026-11-19 por captura de tela da tabela: gpt-6.1-terra, entrada US$ 1,00 e saída US$ 5,00 por 1M de tokens (cache de entrada US$ 0,05). A captura não é versionada. Valores acima de 272 mil tokens de prompt não verificados."
     },
     "text-embedding-3-small": {
       "provedor": "openai",

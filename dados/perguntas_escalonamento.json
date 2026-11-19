@@ -1,0 +1,62 @@
+[
+  {
+    "id": "E01",
+    "pergunta": "Qual é o limite diário de reembolso de refeições em viagens a trabalho?",
+    "tipo": "fora_da_base",
+    "esperado": "resposta honesta de não encontrado, sem citação"
+  },
+  {
+    "id": "E02",
+    "pergunta": "Quantos dias de férias o colaborador tem por ano?",
+    "tipo": "fora_da_base",
+    "esperado": "resposta honesta de não encontrado, sem citação"
+  },
+  {
+    "id": "E03",
+    "pergunta": "Qual é a alíquota de ISS aplicada aos pagamentos a fornecedores?",
+    "tipo": "fora_da_base",
+    "esperado": "resposta honesta de não encontrado, sem citação"
+  },
+  {
+    "id": "E04",
+    "pergunta": "Qual é o procedimento para contagem física de estoque no fim do ano?",
+    "tipo": "fora_da_base",
+    "esperado": "resposta honesta de não encontrado, sem citação"
+  },
+  {
+    "id": "E05",
+    "pergunta": "Qual é a política de uso de celular corporativo fora do expediente?",
+    "tipo": "fora_da_base",
+    "esperado": "resposta honesta de não encontrado, sem citação"
+  },
+  {
+    "id": "E06",
+    "pergunta": "Com que frequência os acessos privilegiados devem ser revisados e por quem?",
+    "tipo": "na_base",
+    "esperado": "A cada 90 dias, pelo Dono do Sistema."
+  },
+  {
+    "id": "E07",
+    "pergunta": "Em quanto tempo os acessos devem ser revogados em caso de desligamento?",
+    "tipo": "na_base",
+    "esperado": "Em até 24 horas após a data de saída registrada pelo RH."
+  },
+  {
+    "id": "E08",
+    "pergunta": "Qual a periodicidade de rotação das senhas das contas de serviço?",
+    "tipo": "na_base",
+    "esperado": "A cada 180 dias."
+  },
+  {
+    "id": "E09",
+    "pergunta": "Por quanto tempo deve ser arquivado o relatório assinado da revisão de acessos?",
+    "tipo": "na_base",
+    "esperado": "Por 5 anos."
+  },
+  {
+    "id": "E10",
+    "pergunta": "Em quanto tempo os acessos da área anterior devem ser revogados quando o colaborador é transferido de área?",
+    "tipo": "na_base",
+    "esperado": "Em até 10 dias úteis."
+  }
+]
