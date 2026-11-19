@@ -31,8 +31,8 @@ segundos, e deixa a decisão de auditoria com a pessoa.
 ## Sumário
 
 [Por que existe](#por-que-este-projeto-existe) · [Resultados](#resultados-medidos) · [Arquitetura](#arquitetura) ·
-[Decisões de engenharia](#decisões-de-engenharia) · [Como rodar](#como-rodar) · [Limitações](#limitações) ·
-[Próximos passos](#próximos-passos) · [Estrutura](#estrutura-do-repositório) · [Referências](#referências-públicas)
+[Decisões de engenharia](#decisões-de-engenharia) · [Como rodar](#como-rodar) ·
+[Escopo e limitações](#escopo-e-limitações-conhecidas) · [Roadmap](#roadmap) · [Estrutura](#estrutura-do-repositório) · [Referências](#referências-públicas)
 
 ## Por que este projeto existe
 
@@ -41,13 +41,25 @@ sustenta uma conclusão, e depois conferir se ele foi lido e citado corretamente
 citação (trecho errado, seção errada) enfraquece a evidência. Exemplo de pergunta: *"com que frequência os acessos
 privilegiados são revisados e por quem?"*.
 
+**O cenário.** Na Gutenberg Systems (fictícia), as políticas ficam em um portal de documentos cuja busca localiza apenas
+pelo **código ou título da norma** (por exemplo, `POL-ACE`), sem busca por significado. Quem não sabe qual norma trata do
+assunto precisa deduzir o código e abrir um documento de cada vez. Esta é a premissa do cenário fictício, não uma medição.
+
+**Ilustração (premissa, não medida).** O tempo de achar a norma em um portal depende do portal e de quem busca, e **não foi
+medido** neste projeto. Para dar a dimensão, a tabela mostra a economia por pergunta *se* a busca levasse T minutos, contra
+a latência média medida do modo orquestrado (2,86 s). Não inclui o tempo de conferir a fonte citada, que continua sendo do
+auditor.
+
+| Se a busca manual levasse | Sistema (média medida) | Diferença por pergunta |
+|---|---|---|
+| 2 min | 2,9 s | cerca de 1 min 57 s |
+| 5 min | 2,9 s | cerca de 4 min 57 s |
+| 10 min | 2,9 s | cerca de 9 min 57 s |
+
 O sistema automatiza a **busca e a citação**, não a conclusão. O processo completo, os riscos (alucinação, citação
 errada, vazamento de dados) e o que o sistema **não** faz estão em [`docs/processo.md`](../docs/processo.md).
 
-**Sobre ganho de tempo, o que foi e o que não foi medido:**
-- **Medido:** o tempo que o sistema leva para responder (latência média de 2,4 a 6,4 s por pergunta, conforme o modo; veja a tabela abaixo).
-- **Não medido:** o tempo de uma busca manual equivalente. Por isso **este projeto não afirma nenhuma economia de tempo**.
-  A medição está nos próximos passos: cronometrar a busca manual das mesmas perguntas na base fictícia, com método descrito.
+**O que o projeto mede:** o tempo que o sistema leva para responder (latência média de 2,4 a 6,4 s por pergunta, conforme o modo; veja a tabela abaixo). Não afirma, por ora, uma economia de tempo frente à busca manual: essa comparação faz parte do roadmap, com método descrito.
 
 ## Resultados medidos
 
@@ -123,7 +135,7 @@ aparece entre os 3 primeiros trechos).
 | **Log de roteamento** | Cada decisão vai para `logs/roteamento.jsonl`, com a classe da exceção e o status HTTP, nunca a mensagem. |
 | **Interface separada da regra** | `servico.py` (limites, cache, chamada ao orquestrador) e `chat.py` (mensagens, trecho da fonte, sugestões) são testados sem Gradio; `ui.py` só liga isso aos componentes. |
 
-A demo roda no Hugging Face Spaces, usado **somente como hospedagem**; os modelos continuam sendo OpenAI e Anthropic.
+A demo tem a aba **Sobre o projeto**, que explica o que o assistente faz e por que existe. Ela roda no Hugging Face Spaces, usado **somente como hospedagem**; os modelos continuam sendo OpenAI e Anthropic.
 Limites ativos: 5 perguntas por visitante por dia, 60 por dia no total, teto de custo diário de US$ 0,25 e pergunta de até
 300 caracteres. Respostas repetidas vêm do cache e não contam. Cada pergunta é independente (sem memória da conversa).
 
@@ -134,7 +146,7 @@ Requer Python 3.11 e chaves próprias.
 ```bash
 pip install -r requirements.txt
 cp .env.example .env          # preencha OPENAI_API_KEY e ANTHROPIC_API_KEY; nunca versione o .env
-python -m pytest -q           # 243 testes unitários, sem chamar API
+python -m pytest -q           # testes unitários, sem chamar API
 python -m src.ingestao.ingerir            # cria o índice (custo de embeddings abaixo de US$ 0,001)
 python -m src.recuperacao.avaliar         # recall@k nas 30 perguntas
 python -m src.avaliacao.executar          # roda os 3 modos e gera docs/resultados/avaliacao.md
@@ -144,32 +156,39 @@ python app.py                             # demo local em http://127.0.0.1:7860
 `python -m src.avaliacao.executar --so-relatorio` regenera a tabela sem chamar a API. Publicação da demo:
 [`docs/deploy_hf_spaces.md`](../docs/deploy_hf_spaces.md).
 
-## Limitações
+## Escopo e limitações conhecidas
 
-- **Provedores:** só OpenAI e Anthropic. **O Gemini não está neste projeto; é uma lacuna a fechar depois.**
-- A base é pequena (9 documentos, 45 seções) e fictícia; os resultados não se generalizam para documentos reais.
+**Escopo.** Provedores: OpenAI e Anthropic. O Gemini não está neste projeto: é uma lacuna declarada, a ser fechada em uma
+evolução futura. Base: 9 documentos fictícios (45 seções) e 30 perguntas de teste com gabarito.
+
+**Como interpretar os resultados.**
+- A base é pequena e fictícia; os números não se generalizam para documentos reais.
 - 30 perguntas e uma execução por modo: sem intervalo de confiança nem repetição.
-- A regra de acerto não detecta afirmações extras erradas; ainda não há conjunto de perguntas sem resposta na base.
-- Perguntas fora do escopo são lentas e caras comparadas às normais (uma observação).
-- Sem memória de conversa: perguntas de acompanhamento que dependem da resposta anterior não funcionam.
-- Identificação de visitante por IP é de melhor esforço; as barreiras reais são o limite global e o teto de custo.
-- O estado da demo (limites, cache) vive em disco efêmero e zera quando o Space reinicia. Por isso há limites de gasto
-  nos consoles dos provedores.
-- O Space roda em Python 3.10 e em hardware ZeroGPU por restrição da conta no Hugging Face; o app não usa GPU e contém
-  uma função `@spaces.GPU` de marcação, nunca chamada, só para satisfazer a checagem da plataforma.
-- A aparência da interface foi verificada manualmente pelo autor, em um navegador, nos temas claro e escuro. Não há teste
-  visual automatizado; o teste com o Gradio real só confere que a tela monta sem erro.
+- A regra de acerto mede a presença dos fatos esperados, não a ausência de afirmações extras erradas.
+- Perguntas fora do escopo são lentas e caras comparadas às normais (uma observação isolada).
+
+**Comportamento do sistema.**
+- Cada pergunta é independente (sem memória de conversa): perguntas de acompanhamento precisam ser completas.
 - O sistema é apoio à busca e pode errar: confira sempre a fonte citada.
 
-## Próximos passos
+**Operação da demo.**
+- A identificação de visitante por IP é de melhor esforço; as barreiras reais são o limite global e o teto de custo.
+- O estado da demo (limites, cache) vive em disco efêmero e zera quando o Space reinicia; por isso há limites de gasto
+  configurados nos consoles dos provedores.
+- O Space roda em Python 3.10 e em hardware ZeroGPU por restrição da conta no Hugging Face; o app não usa GPU e contém uma
+  função `@spaces.GPU` de marcação, nunca chamada, só para satisfazer a checagem da plataforma.
+- A aparência da interface foi verificada manualmente, em um navegador, nos temas claro e escuro; o teste automatizado com
+  o Gradio real confere que a tela monta sem erro.
 
-1. **Medir o ganho de tempo:** cronometrar a busca manual das mesmas perguntas na base fictícia (método e limites
-   descritos) e comparar com a latência do sistema.
-2. Ampliar o gabarito com perguntas difíceis e sem resposta na base, para a regra de roteamento ser exercitada e a escalada medida.
-3. Repetir a avaliação várias vezes e reportar variação.
-4. Detectar afirmações incorretas além da presença de fatos.
-5. Conversa com memória (reformular a pergunta de acompanhamento antes de buscar).
-6. Avaliar um terceiro provedor (Gemini), fora do escopo atual.
+## Roadmap
+
+- **Ganho de tempo:** comparar a busca manual das mesmas perguntas na base fictícia, no cenário do portal acima, com a
+  latência do sistema. Protocolo e ferramenta de cronometragem em [`src/avaliacao/tempo_manual.py`](../src/avaliacao/tempo_manual.py).
+- **Avaliação mais exigente:** perguntas difíceis e sem resposta na base, para exercitar a regra de roteamento, e repetição
+  das execuções para reportar variação.
+- **Qualidade da resposta:** detectar afirmações incorretas além da presença de fatos.
+- **Conversa com memória:** reformular a pergunta de acompanhamento antes de buscar.
+- **Terceiro provedor:** Gemini.
 
 ## Estrutura do repositório
 
@@ -186,7 +205,7 @@ src/
   orquestrador/         regra de roteamento, retry, fallback, log
   avaliacao/            harness dos 3 modos e relatório gerado por script
   interface/            serviço, limites, cache, chat e tela
-tests/                  243 testes unitários
+tests/                  testes unitários (não chamam API)
 ```
 
 ## Referências públicas

@@ -11,6 +11,7 @@ from .chat import (DIR_DOCS, Turno, carregar_perguntas, concluir_turno, iniciar_
 from .config_demo import ConfigDemo
 from .formatar import AVISO
 from .limites import extrair_ip, id_visitante
+from .sobre import texto_sobre
 from .servico import ServicoDemo
 
 N_CHIPS = 6
@@ -62,7 +63,7 @@ html, body { background: var(--app-bg) !important; }
 /* ---------- cartões ---------- */
 #lateral { background: var(--surface); border: 1px solid var(--borda); border-radius: 16px; padding: 1rem; gap: .7rem;
   box-shadow: 0 1px 2px var(--sombra-suave), 0 10px 30px var(--sombra-suave);
-  height: calc(100vh - 330px); min-height: 420px; overflow-y: auto; overflow-x: hidden;
+  height: calc(100vh - 385px); min-height: 420px; overflow-y: auto; overflow-x: hidden;
   scrollbar-width: thin; scrollbar-color: var(--borda) transparent; }
 #lateral h4 { margin: 0; font-size: .72rem; text-transform: uppercase; letter-spacing: .07em; color: var(--texto-suave); }
 #chat { background: var(--surface) !important; border: 1px solid var(--borda) !important; border-radius: 16px !important;
@@ -109,6 +110,13 @@ html, body { background: var(--app-bg) !important; }
   transition: transform .15s ease, box-shadow .15s ease; }
 #entrada button:hover { transform: translateY(-1px); box-shadow: 0 8px 20px var(--halo), 0 4px 12px var(--sombra); }
 #entrada button:active { transform: translateY(0) scale(.97); }
+
+/* ---------- aba Sobre ---------- */
+#sobre { background: var(--surface); border: 1px solid var(--borda); border-radius: 16px; padding: 1.5rem 2rem;
+  box-shadow: 0 1px 2px var(--sombra-suave), 0 10px 30px var(--sombra-suave); max-width: 860px; margin: .5rem auto; line-height: 1.65; }
+#sobre h2 { font-size: 1.1rem; margin: 1.5rem 0 .4rem; color: var(--texto); }
+#sobre h2:first-child { margin-top: 0; }
+#sobre p, #sobre li { color: var(--texto-suave); }
 
 /* ---------- detalhes ---------- */
 button:focus-visible, label:focus-visible { outline: 2px solid var(--acento); outline-offset: 2px; }
@@ -190,35 +198,39 @@ def construir_demo(servico: ServicoDemo, cfg: ConfigDemo) -> gr.Blocks:
                 tema = gr.Radio(["Automático", "Claro", "Escuro"], value="Automático", show_label=False,
                                 container=False, scale=1, min_width=260, elem_id="tema")
             gr.Markdown(AVISO, elem_id="aviso")
-            with gr.Row(equal_height=False):
-                with gr.Column(scale=1, min_width=280, elem_id="lateral"):
-                    gr.Markdown("#### Sugestões")
-                    with gr.Column(elem_id="chips"):
-                        botoes_chips = [gr.Button(value=iniciais[i] if i < len(iniciais) else "", variant="secondary",
-                                                  visible=i < len(iniciais)) for i in range(N_CHIPS)]
-                    arquivos = gr.File(label="Documentos citados (baixar)", visible=False, interactive=False,
-                                       file_count="multiple", height=120)
-                    status = gr.Markdown(elem_id="status")
-                    limpar_btn = gr.Button("Nova conversa", size="sm", variant="secondary")
-                    with gr.Accordion("Base de documentos (fictícios)", open=False):
-                        gr.File(value=[str(p) for p in sorted(DIR_DOCS.glob("POL-*.md"))], interactive=False,
-                                file_count="multiple", show_label=False, height=200)
-                with gr.Column(scale=3, min_width=480):
-                    chatbot = gr.Chatbot(
-                        value=[], height="calc(100vh - 330px)", layout="bubble", show_label=False,
-                        buttons=["copy", "copy_all"], elem_id="chat",
-                        placeholder="### Como posso ajudar?\n\n"
-                                    "Pergunte sobre controle de acesso, conciliação de pagamentos, gestão de mudanças, "
-                                    "incidentes, backup, fornecedores, logs, classificação de dados ou segregação de "
-                                    "funções.\n\nEscolha uma sugestão ao lado ou escreva sua pergunta.")
-                    with gr.Row(elem_id="entrada"):
-                        entrada = gr.Textbox(show_label=False, container=False, lines=1, max_lines=4, scale=8,
-                                             max_length=cfg.max_chars, autofocus=True,
-                                             placeholder="Escreva sua pergunta e tecle Enter")
-                        botao = gr.Button("Enviar", variant="primary", scale=1, min_width=96)
-            gr.Markdown(f"Cada pergunta é independente (sem memória da conversa) · {cfg.por_visitante_dia} perguntas "
-                        "por visitante por dia; respostas repetidas vêm do cache e não contam · "
-                        "Modelos: OpenAI e Anthropic (o mais barato responde primeiro).", elem_id="rodape")
+            with gr.Tabs():
+                with gr.Tab("Conversa"):
+                    with gr.Row(equal_height=False):
+                        with gr.Column(scale=1, min_width=280, elem_id="lateral"):
+                            gr.Markdown("#### Sugestões")
+                            with gr.Column(elem_id="chips"):
+                                botoes_chips = [gr.Button(value=iniciais[i] if i < len(iniciais) else "", variant="secondary",
+                                                          visible=i < len(iniciais)) for i in range(N_CHIPS)]
+                            arquivos = gr.File(label="Documentos citados (baixar)", visible=False, interactive=False,
+                                               file_count="multiple", height=120)
+                            status = gr.Markdown(elem_id="status")
+                            limpar_btn = gr.Button("Nova conversa", size="sm", variant="secondary")
+                            with gr.Accordion("Base de documentos (fictícios)", open=False):
+                                gr.File(value=[str(p) for p in sorted(DIR_DOCS.glob("POL-*.md"))], interactive=False,
+                                        file_count="multiple", show_label=False, height=200)
+                        with gr.Column(scale=3, min_width=480):
+                            chatbot = gr.Chatbot(
+                                value=[], height="calc(100vh - 385px)", layout="bubble", show_label=False,
+                                buttons=["copy", "copy_all"], elem_id="chat",
+                                placeholder="### Como posso ajudar?\n\n"
+                                            "Pergunte sobre controle de acesso, conciliação de pagamentos, gestão de mudanças, "
+                                            "incidentes, backup, fornecedores, logs, classificação de dados ou segregação de "
+                                            "funções.\n\nEscolha uma sugestão ao lado ou escreva sua pergunta.")
+                            with gr.Row(elem_id="entrada"):
+                                entrada = gr.Textbox(show_label=False, container=False, lines=1, max_lines=4, scale=8,
+                                                     max_length=cfg.max_chars, autofocus=True,
+                                                     placeholder="Escreva sua pergunta e tecle Enter")
+                                botao = gr.Button("Enviar", variant="primary", scale=1, min_width=96)
+                    gr.Markdown(f"Cada pergunta é independente (sem memória da conversa) · {cfg.por_visitante_dia} perguntas "
+                                "por visitante por dia; respostas repetidas vêm do cache e não contam · "
+                                "Modelos: OpenAI e Anthropic (o mais barato responde primeiro).", elem_id="rodape")
+                with gr.Tab("Sobre o projeto"):
+                    gr.Markdown(texto_sobre(cfg.por_visitante_dia), elem_id="sobre")
 
         saidas = [chatbot, entrada, *botoes_chips, arquivos, status]
         entrada.submit(enviar, [entrada, chatbot], saidas, concurrency_limit=4)
