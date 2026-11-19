@@ -59,6 +59,10 @@ class ServicoDemo:
         return RespostaDemo(status=status, mensagem=MENSAGENS[status].format(max=self.max_chars),
                             restantes_visitante=restantes)
 
+    def restantes(self, visitante: str) -> int:
+        """Perguntas que o visitante ainda pode fazer hoje (não reserva nada)."""
+        return self.limites.consultar(visitante).restantes_visitante
+
     def perguntar(self, texto: str | None, visitante: str) -> RespostaDemo:
         pergunta = validar_pergunta(texto, self.max_chars)
         if pergunta is None:

@@ -12,7 +12,7 @@ except ImportError:  # local ou fora do Space
 from src.config import carregar_settings
 from src.interface.config_demo import carregar_config_demo
 from src.interface.montagem import montar_servico
-from src.interface.ui import construir_demo
+from src.interface.ui import construir_demo, opcoes_launch
 
 settings = carregar_settings()
 config = carregar_config_demo()
@@ -21,4 +21,4 @@ if config.sal_padrao:
 demo = construir_demo(montar_servico(settings, config), config)
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(**opcoes_launch())

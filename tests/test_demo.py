@@ -276,3 +276,10 @@ def test_garantir_indice_cria_uma_vez_e_depois_nao_chama_api(tmp_path):
     emb = FakeEmbedder()
     assert garantir_indice(tmp_path / "idx", Path("dados/documentos"), emb) == "criado" and emb.chamadas == 1
     assert garantir_indice(tmp_path / "idx", Path("dados/documentos"), emb) == "existente" and emb.chamadas == 1
+
+
+def test_servico_restantes_nao_reserva(tmp_path):
+    s, lim = servico(tmp_path, {"anthropic": AgenteDoGabarito("anthropic")}, ["anthropic"], por_visitante=3)
+    assert s.restantes("v") == 3 and s.restantes("v") == 3
+    s.perguntar(Q1, "v")
+    assert s.restantes("v") == 2
