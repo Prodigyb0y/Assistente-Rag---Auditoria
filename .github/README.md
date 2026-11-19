@@ -30,8 +30,8 @@ segundos, e deixa a decisão de auditoria com a pessoa.
 
 ## Sumário
 
-[Por que existe](#por-que-este-projeto-existe) · [Resultados](#resultados-medidos) · [Arquitetura](#arquitetura) ·
-[Decisões de engenharia](#decisões-de-engenharia) · [Como rodar](#como-rodar) ·
+[Por que existe](#por-que-este-projeto-existe) · [Resultados](#resultados-medidos) · [Análise dos dados](#análise-dos-dados) · [Arquitetura](#arquitetura) ·
+[Decisões de engenharia](#decisões-de-engenharia) · [Engenharia de prompt](#engenharia-de-prompt) · [Como rodar](#como-rodar) ·
 [Escopo e limitações](#escopo-e-limitações-conhecidas) · [Roadmap](#roadmap) · [Estrutura](#estrutura-do-repositório) · [Referências](#referências-públicas)
 
 ## Por que este projeto existe
@@ -100,6 +100,23 @@ aparece entre os 3 primeiros trechos).
 - Observação isolada na demo (não é métrica): uma pergunta fora do escopo custou cerca de US$ 0,0052 (aprox. 11x o normal)
   e levou 24,3 s, com confiança baixa e sem citação; escalou para os dois provedores e foi exibida como "melhor
   esforço", sem entrar no cache.
+
+## Análise dos dados
+
+O projeto mede a qualidade das respostas (acerto, citação, custo e latência). Para ler os próprios logs, há duas análises
+descritivas, **sem IA**, em [`src/analise/`](../src/analise/), com os relatórios em
+[`docs/resultados/`](../docs/resultados/):
+
+- **Roteamento** (`python -m src.analise.roteamento`): conta as perguntas por estado, motivo de escalonamento e caminho, com
+  custo e latência. No log local de 2026-11-19 (28 perguntas finais), as 14 que chamaram um provedor custaram em média
+  US$ 0,000512 e as 14 que chamaram dois, US$ 0,004831. A comparação mistura perguntas diferentes (as de dois provedores são
+  as mais difíceis) e não mede o custo esperado do escalonamento.
+- **Cobertura** (`python -m src.analise.cobertura`): as 30 perguntas do gabarito usam 26 das 45 seções da base como fonte;
+  das 19 sem pergunta, 10 são de conteúdo.
+
+Análises **com IA** (juiz de correção entre provedores, classificação de falhas, agrupamento por embeddings, geração de
+perguntas difíceis com revisão humana) estão **propostas e não implementadas**, com método e critério de validação em
+[`docs/analise_dados.md`](../docs/analise_dados.md). O texto das perguntas dos visitantes da demo não é gravado nos logs nem no cache do projeto (a chave do cache é um hash); ele é enviado aos provedores para gerar a resposta.
 
 ## Arquitetura
 
