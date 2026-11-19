@@ -63,7 +63,7 @@ html, body { background: var(--app-bg) !important; }
 /* ---------- cartões ---------- */
 #lateral { background: var(--surface); border: 1px solid var(--borda); border-radius: 16px; padding: 1rem; gap: .7rem;
   box-shadow: 0 1px 2px var(--sombra-suave), 0 10px 30px var(--sombra-suave);
-  height: calc(100vh - 385px); min-height: 420px; overflow-y: auto; overflow-x: hidden;
+  overflow-y: auto; overflow-x: hidden;
   scrollbar-width: thin; scrollbar-color: var(--borda) transparent; }
 #lateral h4 { margin: 0; font-size: .72rem; text-transform: uppercase; letter-spacing: .07em; color: var(--texto-suave); }
 #chat { background: var(--surface) !important; border: 1px solid var(--borda) !important; border-radius: 16px !important;
@@ -202,7 +202,7 @@ def construir_demo(servico: ServicoDemo, cfg: ConfigDemo) -> gr.Blocks:
             gr.Markdown(AVISO, elem_id="aviso")
             with gr.Tabs():
                 with gr.Tab("Conversa"):
-                    with gr.Row(equal_height=False):
+                    with gr.Row(equal_height=True):
                         with gr.Column(scale=1, min_width=280, elem_id="lateral"):
                             gr.Markdown("#### Sugestões")
                             with gr.Column(elem_id="chips"):
@@ -217,7 +217,7 @@ def construir_demo(servico: ServicoDemo, cfg: ConfigDemo) -> gr.Blocks:
                                         file_count="multiple", show_label=False, height=200)
                         with gr.Column(scale=3, min_width=480):
                             chatbot = gr.Chatbot(
-                                value=[], height="calc(100vh - 385px)", layout="bubble", show_label=False,
+                                value=[], height=500, layout="bubble", show_label=False,
                                 buttons=["copy", "copy_all"], elem_id="chat",
                                 placeholder="### Como posso ajudar?\n\n"
                                             "Pergunte sobre controle de acesso, conciliação de pagamentos, gestão de mudanças, "
