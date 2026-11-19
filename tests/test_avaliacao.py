@@ -193,7 +193,7 @@ def test_relatorio_gerado_traz_numeros_calculados_metodo_e_aviso_de_preco():
     assert "0.002000" in md and "0.000500" in md                      # custo por resposta calculado
     assert "time.perf_counter()" in md and "2026-11-19" in md and "agente_resposta_v1" in md
     assert "NÃO foi confirmado" in md and "gpt-6.1-terra" in md        # preço não oficial é sinalizado
-    assert "Gemini" in md and "fictícios" in md and "Uma única execução" in md
+    assert "OpenAI e Anthropic" in md and "Gemini" not in md and "fictícios" in md and "Uma única execução" in md
     assert "Respostas reprovadas pela regra" in md and "Q01" in md
     j = para_json(resumos, linhas, _meta(precos))
     assert j["resumos"]["openai"]["acertos"] == 29 and len(j["linhas"]["orquestrado"]) == 30

@@ -161,8 +161,8 @@ python app.py                             # demo local em http://127.0.0.1:7860
 
 ## Escopo e limitações conhecidas
 
-**Escopo.** Provedores: OpenAI e Anthropic. O Gemini não está neste projeto: é uma lacuna declarada, a ser fechada em uma
-evolução futura. Base: 9 documentos fictícios (45 seções) e 30 perguntas de teste com gabarito.
+**Escopo.** Provedores: OpenAI e Anthropic. O Gemini está fora do escopo deste projeto: a comparação com um terceiro
+provedor é uma lacuna a ser fechada em projeto futuro. Base: 9 documentos fictícios (45 seções) e 30 perguntas de teste com gabarito.
 
 **Como interpretar os resultados.**
 - A base é pequena e fictícia; os números não se generalizam para documentos reais.
@@ -193,7 +193,6 @@ evolução futura. Base: 9 documentos fictícios (45 seções) e 30 perguntas de
   [`docs/orquestracao.md`](../docs/orquestracao.md).
 - **Qualidade da resposta:** detectar afirmações incorretas além da presença de fatos.
 - **Conversa com memória:** reformular a pergunta de acompanhamento antes de buscar.
-- **Terceiro provedor:** Gemini.
 
 ## Estrutura do repositório
 

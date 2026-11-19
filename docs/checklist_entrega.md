@@ -10,7 +10,7 @@ Marque só o que você verificou. Itens com [ ] ainda dependem de você.
 - [ ] Medida de custo por resposta (data da tabela de preços anotada)
 - [ ] Medida de latência (`time.perf_counter`)
 - [ ] Frase de impacto para um time de auditoria no README
-- [ ] Lacuna do Gemini declarada no README (seção "Escopo e limitações conhecidas")
+- [ ] Escopo declarado (OpenAI e Anthropic) e Gemini registrado como lacuna de projeto futuro, no README (seção "Escopo e limitações conhecidas") e em `docs/processo.md`
 - [x] Preço do `gpt-6.1-terra` conferido na página oficial (aba Standard, contexto Short, captura de 2026-11-19): US$ 1,00 entrada / US$ 5,00 saída por 1M de tokens. Acima de 272 mil tokens: não verificado
 - [ ] Limites de gasto mensais configurados nos consoles OpenAI e Anthropic
 - [ ] `python -m pytest -q` passando na sua máquina após o último commit

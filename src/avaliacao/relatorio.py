@@ -85,7 +85,7 @@ def gerar_markdown(resumos: Mapping[str, Resumo], linhas: Mapping[str, list[Linh
                    "a fonte está em `config/precos.json`.")
     out.append("- Base pequena, fictícia e com vocabulário compartilhado entre as perguntas e os documentos: os números "
                "não se generalizam para documentos reais.")
-    out.append("- Gemini não faz parte deste projeto (restrição de escopo): é uma lacuna a fechar depois.\n")
+    out.append("- Provedores deste projeto: OpenAI e Anthropic.\n")
 
     out.append("## Auditoria do acerto (por pergunta)\n")
     out.append("| Pergunta | " + " | ".join(ROTULO[m] for m in modos) + " |")

@@ -48,7 +48,7 @@ Resposta estruturada (JSON validado por schema) com:
 - Não busca fora da base fornecida; não usa conhecimento geral do modelo como evidência.
 - Não valida se o documento é a versão vigente além do que estiver na base.
 - Não trata documentos reais, sigilosos ou de qualquer organização.
-- Neste projeto usa **apenas OpenAI e Anthropic**. Gemini **não** está incluído; é uma lacuna a fechar depois.
+- Neste projeto usa **apenas OpenAI e Anthropic**. O Gemini está fora do escopo; é uma lacuna a ser fechada em projeto futuro.
 - Os resultados valem para a base fictícia e as 30 perguntas do gabarito; não são extrapolação para bases reais.
 
 ## 7. Riscos e mitigações
