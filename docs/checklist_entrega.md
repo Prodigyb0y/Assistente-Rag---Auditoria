@@ -14,11 +14,11 @@ Estado verificado em 2026-11-19. `[x]` = verificado; `[ ]` = pendente. Itens "in
 - [x] Frase de impacto para um time de auditoria no README
 - [x] Escopo declarado (OpenAI e Anthropic); Gemini registrado como lacuna de projeto futuro no README e em `docs/processo.md`
 - [x] Captura da demo em `docs/img/demo.png` (Git LFS; em um clone sem `git lfs pull` aparece como ponteiro de texto)
-- [x] GitHub (`origin`) e Space (`space`) no mesmo commit, conferido por `git ls-remote`
+- [x] GitHub (`origin`) e Space (`space`) no mesmo commit, `ae4f0ad`, conferido por `git ls-remote` (informado pelo autor, 2026-11-19). Histórico do Space sem nomes de empresas reais (busca em `git log -p`, sem resultado)
 
 ## Qualidade e segurança
 
-- [x] `python -m pytest -q`: 322 passed na máquina do autor, commit `dc65568` (informado pelo autor); 320 passed e 1 pulado no ambiente de desenvolvimento do repositório
+- [x] `python -m pytest -q`: 326 passed na máquina do autor, commit `ae4f0ad` (informado pelo autor, 2026-11-19); no ambiente de desenvolvimento do repositório: 324 passed e 1 pulado
 - [x] Nenhuma chave em código ou no histórico do Git: busca por padrões de chave real (`sk-` seguido de 20 ou mais caracteres) em todo o histórico, sem resultado. As ocorrências de `sk-` são placeholders de teste
 - [x] Nenhum nome de empresa real no repositório nem no histórico (histórico reescrito em 2026-11-19; commits antigos podem continuar acessíveis por hash em forks e clones até o GitHub os expirar)
 - [x] Teto de gasto no código: US$ 4,00 por provedor (`BUDGET_*_USD`), com parada automática antes de ultrapassar; teto diário da demo: US$ 0,25
