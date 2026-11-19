@@ -1,1 +1,1 @@
-"""Agentes de resposta, um por provedor, com o mesmo contrato. (Bloco 4 — ainda não implementado.)"""
+"""Agentes de resposta, um por provedor, com o mesmo contrato (JSON validado + citações + confiança)."""

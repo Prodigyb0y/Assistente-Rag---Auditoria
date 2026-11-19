@@ -34,6 +34,8 @@ class Settings(BaseModel):
 
     timeout_s: float = Field(30.0, gt=0)
     max_output_tokens: int = Field(512, gt=0, le=8192)
+    # Agentes: limite maior, porque modelos com raciocínio gastam tokens de saída pensando.
+    agent_max_output_tokens: int = Field(4096, gt=0, le=32000)
 
     log_dir: Path = RAIZ / "logs"
     precos_path: Path = RAIZ / "config" / "precos.json"
@@ -62,6 +64,7 @@ _ENV_PARA_CAMPO = {
     "BUDGET_ANTHROPIC_USD": "budget_anthropic_usd",
     "TIMEOUT_S": "timeout_s",
     "MAX_OUTPUT_TOKENS": "max_output_tokens",
+    "AGENT_MAX_OUTPUT_TOKENS": "agent_max_output_tokens",
     "LOG_DIR": "log_dir",
 }
 

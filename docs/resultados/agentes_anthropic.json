@@ -1,0 +1,1219 @@
+{
+ "data": "2026-11-19",
+ "provedor": "anthropic",
+ "modelo": "claude-haiku-5-5",
+ "prompt_versao": "agente_resposta_v1",
+ "prompt_sha": "fa2fae0534e7",
+ "limite_de_perguntas": null,
+ "resumo": {
+  "perguntas_executadas": 30,
+  "saidas_validas": 30,
+  "saidas_invalidas": 0,
+  "tokens_in": 107628,
+  "tokens_out": 6255,
+  "custo_total_usd": 0.0138992,
+  "latencia_media_s": 2.8773216633333125
+ },
+ "resultados": [
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q01",
+   "pergunta": "Com que frequência os acessos privilegiados devem ser revisados e por quem?",
+   "resposta": {
+    "resposta": "Segundo a POL-ACE, seção ACE-3, os acessos privilegiados são revisados a cada 90 dias pelo Dono do Sistema, com evidência em relatório assinado arquivado por 5 anos.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-ACE",
+      "secao": "ACE-3"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Segundo a POL-ACE, seção ACE-3, os acessos privilegiados são revisados a cada 90 dias pelo Dono do Sistema, com evidência em relatório assinado arquivado por 5 anos.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-ACE\", \"secao\": \"ACE-3\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "revisão de acessos privilegiados frequência e responsável"
+   ],
+   "trechos_recuperados": [
+    "POL-ACE/ACE-3",
+    "POL-ACE/ACE-5",
+    "POL-LOG/LOG-2"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3578,
+   "tokens_out": 207,
+   "custo_llm_usd": 0.0004613,
+   "tokens_embedding": 14,
+   "custo_busca_usd": 2.8e-07,
+   "custo_total_usd": 0.00046158,
+   "latencia_s": 5.4639
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q02",
+   "pergunta": "Em quanto tempo os acessos devem ser revogados em caso de desligamento?",
+   "resposta": {
+    "resposta": "Segundo a política POL-ACE, em caso de desligamento todos os acessos devem ser revogados em até 24 horas após a data de saída registrada pelo RH.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-ACE",
+      "secao": "ACE-4"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Segundo a política POL-ACE, em caso de desligamento todos os acessos devem ser revogados em até 24 horas após a data de saída registrada pelo RH.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-ACE\", \"secao\": \"ACE-4\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "prazo para revogação de acessos em caso de desligamento de colaborador"
+   ],
+   "trechos_recuperados": [
+    "POL-ACE/ACE-4",
+    "POL-SFU/SFU-5",
+    "POL-ACE/ACE-2"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3606,
+   "tokens_out": 193,
+   "custo_llm_usd": 0.0004571,
+   "tokens_embedding": 18,
+   "custo_busca_usd": 3.6e-07,
+   "custo_total_usd": 0.00045746,
+   "latencia_s": 2.2651
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q03",
+   "pergunta": "Qual a periodicidade de rotação das senhas das contas de serviço?",
+   "resposta": {
+    "resposta": "A política POL-ACE, seção ACE-5, determina que as senhas das contas de serviço devem ser rotacionadas a cada 180 dias. A mesma seção exige que as contas de serviço tenham um responsável nomeado.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-ACE",
+      "secao": "ACE-5"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"A política POL-ACE, seção ACE-5, determina que as senhas das contas de serviço devem ser rotacionadas a cada 180 dias. A mesma seção exige que as contas de serviço tenham um responsável nomeado.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-ACE\", \"secao\": \"ACE-5\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "periodicidade de rotação de senhas das contas de serviço"
+   ],
+   "trechos_recuperados": [
+    "POL-ACE/ACE-5",
+    "POL-ACE/ACE-3",
+    "POL-FOR/FOR-5"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3568,
+   "tokens_out": 211,
+   "custo_llm_usd": 0.0004623,
+   "tokens_embedding": 15,
+   "custo_busca_usd": 3e-07,
+   "custo_total_usd": 0.0004626,
+   "latencia_s": 2.3987
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q04",
+   "pergunta": "Por quanto tempo deve ser arquivado o relatório assinado da revisão de acessos?",
+   "resposta": {
+    "resposta": "Segundo a POL-ACE, seção ACE-3, a revisão de acessos deve ser evidenciada por relatório assinado, arquivado por 5 anos. A POL-CPG (CPG-4) trata de relatórios de conciliação, com prazo de 7 anos, que não se aplica diretamente à revisão de acessos.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-ACE",
+      "secao": "ACE-3"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Segundo a POL-ACE, seção ACE-3, a revisão de acessos deve ser evidenciada por relatório assinado, arquivado por 5 anos. A POL-CPG (CPG-4) trata de relatórios de conciliação, com prazo de 7 anos, que não se aplica diretamente à revisão de acessos.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-ACE\", \"secao\": \"ACE-3\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "prazo de arquivamento do relatório assinado da revisão de acessos"
+   ],
+   "trechos_recuperados": [
+    "POL-ACE/ACE-3",
+    "POL-ACE/ACE-4",
+    "POL-CPG/CPG-4"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3606,
+   "tokens_out": 250,
+   "custo_llm_usd": 0.0004856,
+   "tokens_embedding": 18,
+   "custo_busca_usd": 3.6e-07,
+   "custo_total_usd": 0.00048596,
+   "latencia_s": 4.8771
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q05",
+   "pergunta": "Em quanto tempo os acessos da área anterior devem ser revogados quando o colaborador é transferido de área?",
+   "resposta": {
+    "resposta": "Segundo a política, em caso de transferência de área, os acessos da área anterior devem ser revogados em até 10 dias úteis.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-ACE",
+      "secao": "ACE-4"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Segundo a política, em caso de transferência de área, os acessos da área anterior devem ser revogados em até 10 dias úteis.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-ACE\", \"secao\": \"ACE-4\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "prazo para revogação de acessos quando colaborador é transferido de área"
+   ],
+   "trechos_recuperados": [
+    "POL-ACE/ACE-4",
+    "POL-SFU/SFU-5",
+    "POL-ACE/ACE-1"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3595,
+   "tokens_out": 180,
+   "custo_llm_usd": 0.0004495,
+   "tokens_embedding": 17,
+   "custo_busca_usd": 3.4e-07,
+   "custo_total_usd": 0.00044984,
+   "latencia_s": 2.9548
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q06",
+   "pergunta": "Até que horas a conciliação diária de pagamentos deve ser concluída?",
+   "resposta": {
+    "resposta": "Segundo a política, a conciliação entre o razão de pagamentos e os extratos bancários é feita diariamente, em dias úteis, até as 11h do dia seguinte ao movimento.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-CPG",
+      "secao": "CPG-2"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Segundo a política, a conciliação entre o razão de pagamentos e os extratos bancários é feita diariamente, em dias úteis, até as 11h do dia seguinte ao movimento.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-CPG\", \"secao\": \"CPG-2\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "conciliação diária de pagamentos prazo horário de conclusão"
+   ],
+   "trechos_recuperados": [
+    "POL-CPG/CPG-2",
+    "POL-CPG/CPG-3",
+    "POL-CPG/CPG-1"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3633,
+   "tokens_out": 236,
+   "custo_llm_usd": 0.0004813,
+   "tokens_embedding": 15,
+   "custo_busca_usd": 3e-07,
+   "custo_total_usd": 0.0004816,
+   "latencia_s": 3.3171
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q07",
+   "pergunta": "Quem pode baixar divergências de conciliação de até R$ 50,00 por transação?",
+   "resposta": {
+    "resposta": "Divergências de até R$ 50,00 por transação podem ser baixadas pelo analista de conciliação, com justificativa registrada. Divergências acima de R$ 50,00 exigem aprovação do coordenador financeiro.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-CPG",
+      "secao": "CPG-3"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Divergências de até R$ 50,00 por transação podem ser baixadas pelo analista de conciliação, com justificativa registrada. Divergências acima de R$ 50,00 exigem aprovação do coordenador financeiro.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-CPG\", \"secao\": \"CPG-3\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "baixa de divergências de conciliação até R$ 50,00 por transação alçada de aprovação"
+   ],
+   "trechos_recuperados": [
+    "POL-CPG/CPG-3",
+    "POL-CPG/CPG-2",
+    "POL-CPG/CPG-5"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3617,
+   "tokens_out": 222,
+   "custo_llm_usd": 0.0004727,
+   "tokens_embedding": 27,
+   "custo_busca_usd": 5.4e-07,
+   "custo_total_usd": 0.00047324,
+   "latencia_s": 2.8106
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q08",
+   "pergunta": "Em que prazo divergências de conciliação não resolvidas são escaladas ao gerente de controladoria?",
+   "resposta": {
+    "resposta": "Divergências de conciliação não resolvidas em 5 dias úteis são escaladas ao gerente de controladoria, conforme a POL-CPG, seção CPG-3.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-CPG",
+      "secao": "CPG-3"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Divergências de conciliação não resolvidas em 5 dias úteis são escaladas ao gerente de controladoria, conforme a POL-CPG, seção CPG-3.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-CPG\", \"secao\": \"CPG-3\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "prazo para escalar divergências de conciliação não resolvidas ao gerente de controladoria"
+   ],
+   "trechos_recuperados": [
+    "POL-CPG/CPG-3",
+    "POL-SFU/SFU-5",
+    "POL-CPG/CPG-4"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3611,
+   "tokens_out": 203,
+   "custo_llm_usd": 0.0004626,
+   "tokens_embedding": 24,
+   "custo_busca_usd": 4.8e-07,
+   "custo_total_usd": 0.00046308,
+   "latencia_s": 3.0355
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q09",
+   "pergunta": "Por quanto tempo os relatórios de conciliação são guardados?",
+   "resposta": {
+    "resposta": "De acordo com a política POL-CPG, os relatórios de conciliação são guardados por 7 anos. Cada conciliação gera um relatório com a data, o responsável e o saldo das contas conciliadas.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-CPG",
+      "secao": "CPG-4"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"De acordo com a política POL-CPG, os relatórios de conciliação são guardados por 7 anos. Cada conciliação gera um relatório com a data, o responsável e o saldo das contas conciliadas.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-CPG\", \"secao\": \"CPG-4\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "prazo de retenção dos relatórios de conciliação"
+   ],
+   "trechos_recuperados": [
+    "POL-CPG/CPG-4",
+    "POL-CPG/CPG-5",
+    "POL-CPG/CPG-2"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3562,
+   "tokens_out": 239,
+   "custo_llm_usd": 0.0004757,
+   "tokens_embedding": 14,
+   "custo_busca_usd": 2.8e-07,
+   "custo_total_usd": 0.00047598,
+   "latencia_s": 2.4955
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q10",
+   "pergunta": "Em quais dias o Comitê de Mudanças (CAB) se reúne?",
+   "resposta": {
+    "resposta": "De acordo com a política POL-GMU, o Comitê de Mudanças (CAB) se reúne às terças e quintas.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-GMU",
+      "secao": "GMU-2"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"De acordo com a política POL-GMU, o Comitê de Mudanças (CAB) se reúne às terças e quintas.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-GMU\", \"secao\": \"GMU-2\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "Comitê de Mudanças CAB dias de reunião"
+   ],
+   "trechos_recuperados": [
+    "POL-GMU/GMU-2",
+    "POL-GMU/GMU-4",
+    "POL-GMU/GMU-5"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3644,
+   "tokens_out": 174,
+   "custo_llm_usd": 0.0004514,
+   "tokens_embedding": 13,
+   "custo_busca_usd": 2.6e-07,
+   "custo_total_usd": 0.00045166,
+   "latencia_s": 2.4288
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q11",
+   "pergunta": "O solicitante de uma mudança pode ser também o aprovador dela?",
+   "resposta": {
+    "resposta": "Não. Segundo a política POL-GMU, na seção GMU-3, toda mudança normal deve ter plano de testes, plano de reversão (rollback) e janela de implantação definidos, e o solicitante não pode ser o aprovador nem o implantador da mesma mudança. A política não trata, nos trechos encontrados, da situação específica de mudanças emergenciais.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-GMU",
+      "secao": "GMU-3"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Não. Segundo a política POL-GMU, na seção GMU-3, toda mudança normal deve ter plano de testes, plano de reversão (rollback) e janela de implantação definidos, e o solicitante não pode ser o aprovador nem o implantador da mesma mudança. A política não trata, nos trechos encontrados, da situação específica de mudanças emergenciais.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-GMU\", \"secao\": \"GMU-3\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "solicitante de mudança também aprovador segregação de funções aprovação de mudança"
+   ],
+   "trechos_recuperados": [
+    "POL-GMU/GMU-3",
+    "POL-GMU/GMU-2",
+    "POL-GMU/GMU-4"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3652,
+   "tokens_out": 266,
+   "custo_llm_usd": 0.0004982,
+   "tokens_embedding": 21,
+   "custo_busca_usd": 4.2e-07,
+   "custo_total_usd": 0.00049862,
+   "latencia_s": 3.2166
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q12",
+   "pergunta": "Em quanto tempo deve ser feito o registro formal de uma mudança emergencial após a implantação?",
+   "resposta": {
+    "resposta": "Segundo a POL-GMU, o registro formal de uma mudança emergencial deve ser feito em até 2 dias úteis após a implantação. A mesma seção informa que a revisão pós-implantação ocorre em até 5 dias úteis.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-GMU",
+      "secao": "GMU-4"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Segundo a POL-GMU, o registro formal de uma mudança emergencial deve ser feito em até 2 dias úteis após a implantação. A mesma seção informa que a revisão pós-implantação ocorre em até 5 dias úteis.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-GMU\", \"secao\": \"GMU-4\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "prazo para registro formal de mudança emergencial após a implantação"
+   ],
+   "trechos_recuperados": [
+    "POL-GMU/GMU-4",
+    "POL-GMU/GMU-3",
+    "POL-ACE/ACE-4"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3655,
+   "tokens_out": 217,
+   "custo_llm_usd": 0.000474,
+   "tokens_embedding": 15,
+   "custo_busca_usd": 3e-07,
+   "custo_total_usd": 0.0004743,
+   "latencia_s": 2.4219
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q13",
+   "pergunta": "Existe restrição para implantar mudanças normais às sextas-feiras?",
+   "resposta": {
+    "resposta": "Sim. Segundo a POL-GMU, GMU-5, nenhuma mudança normal é implantada às sextas-feiras após as 16h, exceto com autorização do CAB. A mesma seção exige validação em homologação antes de alterações em produção.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-GMU",
+      "secao": "GMU-5"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Sim. Segundo a POL-GMU, GMU-5, nenhuma mudança normal é implantada às sextas-feiras após as 16h, exceto com autorização do CAB. A mesma seção exige validação em homologação antes de alterações em produção.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-GMU\", \"secao\": \"GMU-5\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "restrição implantação mudanças normais sextas-feiras"
+   ],
+   "trechos_recuperados": [
+    "POL-GMU/GMU-5",
+    "POL-GMU/GMU-2",
+    "POL-GMU/GMU-3"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3646,
+   "tokens_out": 253,
+   "custo_llm_usd": 0.0004911,
+   "tokens_embedding": 15,
+   "custo_busca_usd": 3e-07,
+   "custo_total_usd": 0.0004914,
+   "latencia_s": 2.6671
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q14",
+   "pergunta": "A cada quanto tempo é feito o backup de logs de transação dos bancos de dados críticos?",
+   "resposta": {
+    "resposta": "Segundo a política POL-BKP, bancos de dados críticos têm backup de logs de transação a cada 15 minutos.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-BKP",
+      "secao": "BKP-2"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Segundo a política POL-BKP, bancos de dados críticos têm backup de logs de transação a cada 15 minutos.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-BKP\", \"secao\": \"BKP-2\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "frequência do backup de logs de transação dos bancos de dados críticos"
+   ],
+   "trechos_recuperados": [
+    "POL-BKP/BKP-2",
+    "POL-LOG/LOG-2",
+    "POL-BKP/BKP-3"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3564,
+   "tokens_out": 178,
+   "custo_llm_usd": 0.0004454,
+   "tokens_embedding": 18,
+   "custo_busca_usd": 3.6e-07,
+   "custo_total_usd": 0.00044576,
+   "latencia_s": 2.2149
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q15",
+   "pergunta": "Por quanto tempo os backups semanais são retidos?",
+   "resposta": {
+    "resposta": "Segundo a política POL-BKP, backups semanais são retidos por 12 meses. Os backups diários são retidos por 35 dias e os mensais por 5 anos.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-BKP",
+      "secao": "BKP-3"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Segundo a política POL-BKP, backups semanais são retidos por 12 meses. Os backups diários são retidos por 35 dias e os mensais por 5 anos.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-BKP\", \"secao\": \"BKP-3\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "retenção de backups semanais"
+   ],
+   "trechos_recuperados": [
+    "POL-BKP/BKP-3",
+    "POL-BKP/BKP-2",
+    "POL-LOG/LOG-3"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3529,
+   "tokens_out": 179,
+   "custo_llm_usd": 0.0004424,
+   "tokens_embedding": 7,
+   "custo_busca_usd": 1.4e-07,
+   "custo_total_usd": 0.00044254,
+   "latencia_s": 2.1991
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q16",
+   "pergunta": "Quais são as metas de RPO e RTO para sistemas críticos?",
+   "resposta": {
+    "resposta": "Para sistemas críticos, a política define meta de RPO de 15 minutos e meta de RTO de 4 horas.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-BKP",
+      "secao": "BKP-5"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Para sistemas críticos, a política define meta de RPO de 15 minutos e meta de RTO de 4 horas.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-BKP\", \"secao\": \"BKP-5\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "metas de RPO e RTO para sistemas críticos"
+   ],
+   "trechos_recuperados": [
+    "POL-BKP/BKP-5",
+    "POL-BKP/BKP-4",
+    "POL-FOR/FOR-5"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3551,
+   "tokens_out": 207,
+   "custo_llm_usd": 0.0004586,
+   "tokens_embedding": 13,
+   "custo_busca_usd": 2.6e-07,
+   "custo_total_usd": 0.00045886,
+   "latencia_s": 3.4922
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q17",
+   "pergunta": "O que caracteriza um fornecedor crítico?",
+   "resposta": {
+    "resposta": "Segundo a política, fornecedor crítico é aquele cuja indisponibilidade interrompe um serviço essencial por mais de 4 horas ou que processa dados confidenciais.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-FOR",
+      "secao": "FOR-2"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Segundo a política, fornecedor crítico é aquele cuja indisponibilidade interrompe um serviço essencial por mais de 4 horas ou que processa dados confidenciais.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-FOR\", \"secao\": \"FOR-2\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "definição de fornecedor crítico"
+   ],
+   "trechos_recuperados": [
+    "POL-FOR/FOR-2",
+    "POL-FOR/FOR-3",
+    "POL-FOR/FOR-5"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3564,
+   "tokens_out": 186,
+   "custo_llm_usd": 0.0004494,
+   "tokens_embedding": 9,
+   "custo_busca_usd": 1.8e-07,
+   "custo_total_usd": 0.00044958,
+   "latencia_s": 3.3666
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q18",
+   "pergunta": "Em quanto tempo um fornecedor crítico deve notificar incidentes, conforme o contrato?",
+   "resposta": {
+    "resposta": "Conforme a seção FOR-4, os contratos com fornecedores críticos devem conter cláusula de notificação de incidentes em até 48 horas.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-FOR",
+      "secao": "FOR-4"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Conforme a seção FOR-4, os contratos com fornecedores críticos devem conter cláusula de notificação de incidentes em até 48 horas.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-FOR\", \"secao\": \"FOR-4\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "prazo para fornecedor crítico notificar incidentes de segurança"
+   ],
+   "trechos_recuperados": [
+    "POL-FOR/FOR-4",
+    "POL-FOR/FOR-3",
+    "POL-FOR/FOR-2"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3632,
+   "tokens_out": 187,
+   "custo_llm_usd": 0.0004567,
+   "tokens_embedding": 15,
+   "custo_busca_usd": 3e-07,
+   "custo_total_usd": 0.000457,
+   "latencia_s": 2.9506
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q19",
+   "pergunta": "Com que frequência fornecedores relevantes são reavaliados?",
+   "resposta": {
+    "resposta": "Segundo a POL-FOR, seção FOR-3, fornecedores relevantes são reavaliados a cada 24 meses. A avaliação prévia de fornecedores críticos, anterior à contratação, tem validade de 12 meses.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-FOR",
+      "secao": "FOR-3"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Segundo a POL-FOR, seção FOR-3, fornecedores relevantes são reavaliados a cada 24 meses. A avaliação prévia de fornecedores críticos, anterior à contratação, tem validade de 12 meses.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-FOR\", \"secao\": \"FOR-3\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "frequência de reavaliação de fornecedores relevantes"
+   ],
+   "trechos_recuperados": [
+    "POL-FOR/FOR-3",
+    "POL-FOR/FOR-5",
+    "POL-FOR/FOR-2"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3582,
+   "tokens_out": 213,
+   "custo_llm_usd": 0.0004647,
+   "tokens_embedding": 14,
+   "custo_busca_usd": 2.8e-07,
+   "custo_total_usd": 0.00046498,
+   "latencia_s": 2.633
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q20",
+   "pergunta": "Em quanto tempo um incidente S1 exige o primeiro atendimento?",
+   "resposta": {
+    "resposta": "Segundo a política POL-INC, seção INC-3, um incidente S1 exige primeiro atendimento em 15 minutos, e a comunicação à diretoria deve ocorrer em até 1 hora.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-INC",
+      "secao": "INC-3"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Segundo a política POL-INC, seção INC-3, um incidente S1 exige primeiro atendimento em 15 minutos, e a comunicação à diretoria deve ocorrer em até 1 hora.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-INC\", \"secao\": \"INC-3\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "prazo de primeiro atendimento para incidente S1"
+   ],
+   "trechos_recuperados": [
+    "POL-INC/INC-3",
+    "POL-INC/INC-5",
+    "POL-INC/INC-2"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3564,
+   "tokens_out": 199,
+   "custo_llm_usd": 0.0004559,
+   "tokens_embedding": 11,
+   "custo_busca_usd": 2.2e-07,
+   "custo_total_usd": 0.00045612,
+   "latencia_s": 4.8996
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q21",
+   "pergunta": "Em quanto tempo a diretoria deve ser comunicada de um incidente S1?",
+   "resposta": {
+    "resposta": "Segundo a política POL-INC, incidentes S1 exigem comunicação à diretoria em até 1 hora. O mesmo trecho prevê primeiro atendimento em 15 minutos para S1.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-INC",
+      "secao": "INC-3"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Segundo a política POL-INC, incidentes S1 exigem comunicação à diretoria em até 1 hora. O mesmo trecho prevê primeiro atendimento em 15 minutos para S1.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-INC\", \"secao\": \"INC-3\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "prazo para comunicar a diretoria sobre incidente S1"
+   ],
+   "trechos_recuperados": [
+    "POL-INC/INC-5",
+    "POL-INC/INC-3",
+    "POL-INC/INC-2"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3571,
+   "tokens_out": 201,
+   "custo_llm_usd": 0.0004576,
+   "tokens_embedding": 13,
+   "custo_busca_usd": 2.6e-07,
+   "custo_total_usd": 0.00045786,
+   "latencia_s": 3.2864
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q22",
+   "pergunta": "Em quanto tempo incidentes com dados pessoais devem ser comunicados ao DPO?",
+   "resposta": {
+    "resposta": "Segundo a política, incidentes com dados pessoais devem ser comunicados ao Encarregado de Dados (DPO) em até 24 horas após a confirmação.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-INC",
+      "secao": "INC-4"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Segundo a política, incidentes com dados pessoais devem ser comunicados ao Encarregado de Dados (DPO) em até 24 horas após a confirmação.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-INC\", \"secao\": \"INC-4\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "prazo para comunicar incidente com dados pessoais ao DPO"
+   ],
+   "trechos_recuperados": [
+    "POL-INC/INC-4",
+    "POL-DAD/DAD-4",
+    "POL-DAD/DAD-3"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3610,
+   "tokens_out": 227,
+   "custo_llm_usd": 0.0004745,
+   "tokens_embedding": 14,
+   "custo_busca_usd": 2.8e-07,
+   "custo_total_usd": 0.00047478,
+   "latencia_s": 2.3226
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q23",
+   "pergunta": "Quais incidentes exigem relatório de causa raiz e em que prazo?",
+   "resposta": {
+    "resposta": "Todo incidente de severidade S1 e S2 exige relatório de análise de causa raiz em até 10 dias úteis, com plano de ação e responsáveis.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-INC",
+      "secao": "INC-5"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Todo incidente de severidade S1 e S2 exige relatório de análise de causa raiz em até 10 dias úteis, com plano de ação e responsáveis.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-INC\", \"secao\": \"INC-5\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "quais incidentes exigem relatório de causa raiz e prazo"
+   ],
+   "trechos_recuperados": [
+    "POL-INC/INC-5",
+    "POL-INC/INC-3",
+    "POL-INC/INC-4"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3598,
+   "tokens_out": 224,
+   "custo_llm_usd": 0.0004718,
+   "tokens_embedding": 15,
+   "custo_busca_usd": 3e-07,
+   "custo_total_usd": 0.0004721,
+   "latencia_s": 2.3828
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q24",
+   "pergunta": "A partir de qual valor os pagamentos exigem dupla aprovação?",
+   "resposta": {
+    "resposta": "Segundo a política POL-SFU, pagamentos acima de R$ 100.000,00 exigem dupla aprovação, sendo uma do gerente da área e outra da diretoria financeira.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-SFU",
+      "secao": "SFU-3"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Segundo a política POL-SFU, pagamentos acima de R$ 100.000,00 exigem dupla aprovação, sendo uma do gerente da área e outra da diretoria financeira.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-SFU\", \"secao\": \"SFU-3\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "valor a partir do qual pagamentos exigem dupla aprovação"
+   ],
+   "trechos_recuperados": [
+    "POL-SFU/SFU-3",
+    "POL-CPG/CPG-3",
+    "POL-CPG/CPG-1"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3628,
+   "tokens_out": 201,
+   "custo_llm_usd": 0.0004633,
+   "tokens_embedding": 14,
+   "custo_busca_usd": 2.8e-07,
+   "custo_total_usd": 0.00046358,
+   "latencia_s": 2.1985
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q25",
+   "pergunta": "Com que frequência a matriz de conflitos de funções é atualizada?",
+   "resposta": {
+    "resposta": "De acordo com a política POL-SFU, a matriz de conflitos de funções é mantida pela área de Controles Internos e atualizada a cada 6 meses.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-SFU",
+      "secao": "SFU-4"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"De acordo com a política POL-SFU, a matriz de conflitos de funções é mantida pela área de Controles Internos e atualizada a cada 6 meses.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-SFU\", \"secao\": \"SFU-4\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "frequência de atualização da matriz de conflitos de funções"
+   ],
+   "trechos_recuperados": [
+    "POL-SFU/SFU-4",
+    "POL-CPG/CPG-2",
+    "POL-FOR/FOR-5"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3518,
+   "tokens_out": 186,
+   "custo_llm_usd": 0.0004448,
+   "tokens_embedding": 14,
+   "custo_busca_usd": 2.8e-07,
+   "custo_total_usd": 0.00044508,
+   "latencia_s": 2.1323
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q26",
+   "pergunta": "Qual é o prazo máximo de uma exceção à segregação de funções?",
+   "resposta": {
+    "resposta": "Segundo a política POL-SFU, seção SFU-5, as exceções à segregação de funções têm prazo máximo de 90 dias. Essas exceções também exigem aprovação do gerente de Controles Internos e controle compensatório documentado.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-SFU",
+      "secao": "SFU-5"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Segundo a política POL-SFU, seção SFU-5, as exceções à segregação de funções têm prazo máximo de 90 dias. Essas exceções também exigem aprovação do gerente de Controles Internos e controle compensatório documentado.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-SFU\", \"secao\": \"SFU-5\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "prazo máximo de exceção à segregação de funções"
+   ],
+   "trechos_recuperados": [
+    "POL-SFU/SFU-5",
+    "POL-ACE/ACE-4",
+    "POL-SFU/SFU-4"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3537,
+   "tokens_out": 213,
+   "custo_llm_usd": 0.0004602,
+   "tokens_embedding": 12,
+   "custo_busca_usd": 2.4e-07,
+   "custo_total_usd": 0.00046044,
+   "latencia_s": 2.2066
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q27",
+   "pergunta": "Por quanto tempo os logs de contas privilegiadas são retidos?",
+   "resposta": {
+    "resposta": "Segundo a política POL-LOG, logs de contas privilegiadas são retidos por 24 meses.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-LOG",
+      "secao": "LOG-3"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Segundo a política POL-LOG, logs de contas privilegiadas são retidos por 24 meses.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-LOG\", \"secao\": \"LOG-3\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "retenção de logs de contas privilegiadas"
+   ],
+   "trechos_recuperados": [
+    "POL-LOG/LOG-3",
+    "POL-LOG/LOG-2",
+    "POL-ACE/ACE-5"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3545,
+   "tokens_out": 163,
+   "custo_llm_usd": 0.000436,
+   "tokens_embedding": 10,
+   "custo_busca_usd": 2e-07,
+   "custo_total_usd": 0.0004362,
+   "latencia_s": 2.2396
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q28",
+   "pergunta": "Que condição gera chamado automático para o time de segurança em relação a autenticações?",
+   "resposta": {
+    "resposta": "Segundo a política, alertas de 5 ou mais falhas de autenticação consecutivas em 10 minutos geram chamado automático para o time de segurança, que o analisa em até 1 dia útil.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-LOG",
+      "secao": "LOG-5"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Segundo a política, alertas de 5 ou mais falhas de autenticação consecutivas em 10 minutos geram chamado automático para o time de segurança, que o analisa em até 1 dia útil.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-LOG\", \"secao\": \"LOG-5\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "chamado automático time de segurança autenticações condição"
+   ],
+   "trechos_recuperados": [
+    "POL-LOG/LOG-5",
+    "POL-ACE/ACE-5",
+    "POL-LOG/LOG-2"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3553,
+   "tokens_out": 197,
+   "custo_llm_usd": 0.0004538,
+   "tokens_embedding": 15,
+   "custo_busca_usd": 3e-07,
+   "custo_total_usd": 0.0004541,
+   "latencia_s": 2.7386
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q29",
+   "pergunta": "Como é tratado um dado que não tem rótulo de classificação?",
+   "resposta": {
+    "resposta": "Segundo a política POL-DAD, na ausência de rótulo o dado é tratado como interno. Os documentos e bases confidenciais ou restritos devem ser rotulados pelo proprietário do dado no momento da criação.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-DAD",
+      "secao": "DAD-3"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Segundo a política POL-DAD, na ausência de rótulo o dado é tratado como interno. Os documentos e bases confidenciais ou restritos devem ser rotulados pelo proprietário do dado no momento da criação.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-DAD\", \"secao\": \"DAD-3\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "tratamento de dado sem rótulo de classificação"
+   ],
+   "trechos_recuperados": [
+    "POL-DAD/DAD-3",
+    "POL-DAD/DAD-1",
+    "POL-DAD/DAD-2"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3527,
+   "tokens_out": 258,
+   "custo_llm_usd": 0.0004817,
+   "tokens_embedding": 12,
+   "custo_busca_usd": 2.4e-07,
+   "custo_total_usd": 0.00048194,
+   "latencia_s": 2.6146
+  },
+  {
+   "provedor": "anthropic",
+   "modelo": "claude-haiku-5-5",
+   "prompt_versao": "agente_resposta_v1",
+   "prompt_sha": "fa2fae0534e7",
+   "pergunta_id": "Q30",
+   "pergunta": "Com que frequência a classificação de dados restritos é revisada?",
+   "resposta": {
+    "resposta": "Segundo a POL-DAD, a classificação é revisada anualmente pelo proprietário do dado, e os dados restritos são revisados a cada 6 meses.",
+    "encontrado": true,
+    "citacoes": [
+     {
+      "documento": "POL-DAD",
+      "secao": "DAD-5"
+     }
+    ],
+    "confianca": "alta"
+   },
+   "saida_bruta": "{\"resposta\": \"Segundo a POL-DAD, a classificação é revisada anualmente pelo proprietário do dado, e os dados restritos são revisados a cada 6 meses.\", \"encontrado\": true, \"citacoes\": [{\"documento\": \"POL-DAD\", \"secao\": \"DAD-5\"}], \"confianca\": \"alta\"}",
+   "schema_ok": true,
+   "citacoes_ok": true,
+   "valido": true,
+   "erro": null,
+   "buscas": [
+    "frequência de revisão da classificação de dados restritos"
+   ],
+   "trechos_recuperados": [
+    "POL-DAD/DAD-5",
+    "POL-ACE/ACE-3",
+    "POL-GMU/GMU-2"
+   ],
+   "n_chamadas_llm": 2,
+   "tokens_in": 3582,
+   "tokens_out": 185,
+   "custo_llm_usd": 0.0004507,
+   "tokens_embedding": 13,
+   "custo_busca_usd": 2.6e-07,
+   "custo_total_usd": 0.00045096,
+   "latencia_s": 2.0888
+  }
+ ]
+}
