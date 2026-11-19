@@ -20,3 +20,6 @@ Marque só o que você verificou. Itens com [ ] ainda dependem de você.
 - [ ] Teste final no Space em janela anônima: resposta com fonte, cache, limite diário, download e troca de tema
 - [ ] A página do GitHub mostra o README novo, sem a tabela de metadados no topo, e a imagem aparece
 - [ ] A aba "Sobre o projeto" aparece na demo (Space) e os links dela abrem
+- [x] Teto de gasto no código: US$ 4,00 por provedor (BUDGET_*_USD), parada automática antes de ultrapassar.
+- [x] Teste final do Space em janela anônima: aprovado (informado pelo autor, 2026-11-19).
+- [ ] Limite de gasto no console de cada provedor: não verificado.
