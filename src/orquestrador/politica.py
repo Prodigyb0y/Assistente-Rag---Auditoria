@@ -215,12 +215,16 @@ def decidir_par(a: ResultadoAgente, b: ResultadoAgente | None, confianca_minima:
         if conc is Concordancia.DIVERGEM:
             return Decisao(DIVERGENCIA, "a" if melhor(a, b, confianca_minima) is a else "b", None, conc)
         return Decisao(ACEITA_POR_CONSENSO, "a" if melhor(a, b, confianca_minima) is a else "b", None, conc)
+    # Quando os dois trouxeram resposta válida com citação, a concordância é sempre calculada e registrada,
+    # mesmo que só um deles tenha passado na regra (a confirmação cruzada precisa aparecer no log).
+    ambos = _encontrada_valida(a) and _encontrada_valida(b)
+    conc_par = comparar(a, b) if ambos else None
     if va is None:                                      # só o primeiro passou: o segundo não confirmou
-        return Decisao(ACEITA_NO_PRIMEIRO, "a", None)
+        return Decisao(ACEITA_NO_PRIMEIRO, "a", None, conc_par)
     if vb is None:                                      # só o segundo passou
-        if _encontrada_valida(a) and comparar(a, b) is Concordancia.DIVERGEM:
-            return Decisao(DIVERGENCIA, "b", motivo_a, Concordancia.DIVERGEM)   # a tinha resposta válida e diferente
-        return Decisao(ACEITA_APOS_ESCALONAMENTO, "b", motivo_a)
+        if conc_par is Concordancia.DIVERGEM:
+            return Decisao(DIVERGENCIA, "b", motivo_a, conc_par)   # a tinha resposta válida e diferente
+        return Decisao(ACEITA_APOS_ESCALONAMENTO, "b", motivo_a, conc_par)
 
     # nenhum dos dois passou na regra sozinho
     if eh_abstencao(a) and eh_abstencao(b):

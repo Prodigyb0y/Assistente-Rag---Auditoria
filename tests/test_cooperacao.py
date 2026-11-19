@@ -266,3 +266,24 @@ def test_perguntas_de_orquestracao_apontam_para_secoes_que_existem():
         assert q["tipo"] in {"combina_secoes", "ambigua", "adjacente_fora_da_base"}
         for f in q["fontes"]:
             assert f["secao"] in secoes[f["documento"]], (q["id"], f)
+
+
+def test_confirmacao_cruzada_registra_a_concordancia_mesmo_quando_so_o_segundo_passa_na_regra():
+    """Caso observado na rodada real de 2026-11-19 (O02): o primeiro ficou abaixo da confiança mínima e o
+    segundo foi aceito. O log mostrava concordância '-' mesmo tendo havido a comparação."""
+    a = com_texto("anthropic", "24 horas", confianca="media", citacoes=ACE3)
+    b = com_texto("openai", "24 horas", confianca="alta", citacoes=ACE3)
+    d = decidir_par(a, b, "alta")
+    assert d.status == ACEITA_APOS_ESCALONAMENTO and d.concordancia is Concordancia.CONCORDAM
+
+
+def test_concordancia_tambem_e_registrada_quando_so_o_primeiro_passa_na_regra():
+    a = com_texto("anthropic", "24 horas", confianca="alta", citacoes=ACE3)
+    b = com_texto("openai", "24 horas", confianca="media", citacoes=ACE3)
+    d = decidir_par(a, b, "alta")
+    assert d.status == ACEITA_NO_PRIMEIRO and d.concordancia is Concordancia.CONCORDAM
+
+
+def test_concordancia_fica_vazia_quando_o_segundo_se_abstem():
+    d = decidir_par(ok("anthropic"), abstem("openai"))
+    assert d.concordancia is None
