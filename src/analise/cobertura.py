@@ -57,7 +57,7 @@ def gerar_markdown(base: dict[str, list[str]], gabarito: set[tuple[str, str]], t
            f"- Usadas como fonte pelas 30 perguntas do gabarito (`dados/perguntas.json`): "
            f"{total - sum(len(v) for v in sem_gab.values())} de {total}.",
            f"- Usadas pelo gabarito e pelas 10 perguntas de orquestração (`dados/perguntas_orquestracao.json`, "
-           f"gabarito ainda não revisado): {total - sum(len(v) for v in sem_todas.values())} de {total}.", "",
+           f"gabarito revisado pelo autor em 2026-11-19): {total - sum(len(v) for v in sem_todas.values())} de {total}.", "",
            "| Documento | Seções | Sem pergunta (só o gabarito de 30) | Sem pergunta (gabarito + orquestração) |",
            "|---|---|---|---|"]
     for doc, secs in base.items():

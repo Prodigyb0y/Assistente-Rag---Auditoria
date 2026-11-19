@@ -12,17 +12,19 @@ Marque só o que você verificou. Itens com [ ] ainda dependem de você.
 - [ ] Frase de impacto para um time de auditoria no README
 - [ ] Escopo declarado (OpenAI e Anthropic) e Gemini registrado como lacuna de projeto futuro, no README (seção "Escopo e limitações conhecidas") e em `docs/processo.md`
 - [x] Preço do `gpt-6.1-terra` conferido na página oficial (aba Standard, contexto Short, captura de 2026-11-19): US$ 1,00 entrada / US$ 5,00 saída por 1M de tokens. Acima de 272 mil tokens: não verificado
-- [ ] Limites de gasto mensais configurados nos consoles OpenAI e Anthropic
-- [ ] `python -m pytest -q` passando na sua máquina após o último commit (ambiente de revisão: 313 passando, 1 pulado, em `a3e8ecf`; o autor informou 315 na máquina dele, sem commit registrado: anote o commit ao conferir)
-- [ ] Nenhuma chave em código ou no histórico do Git (`git log -p | findstr /i "sk-"` sem resultado)
-- [ ] Captura da demo salva em `docs/img/demo.png` (aparece no README). A atual mostra o layout anterior a `bc5575b`: recapturar. O arquivo é Git LFS (necessário para o Hugging Face); em um clone sem `git lfs install` e `git lfs pull` ele aparece como ponteiro de 131 bytes. No GitHub o arquivo real (215.643 bytes) é servido
-- [ ] Redesign enviado ao GitHub (`origin`) **e** ao Space (`space`)
+- [ ] Limites de gasto mensais nos consoles OpenAI e Anthropic: dispensado pelo autor (2026-11-19), não verificado. A proteção fica no código (US$ 4,00 por provedor) e no teto diário da demo (US$ 0,25)
+- [x] `python -m pytest -q` passando na máquina do autor: 315 passed (informado pelo autor, 2026-11-19; commit não anotado). Ambiente de revisão: 313 passando, 1 pulado
+- [x] Nenhuma chave em código ou no histórico do Git: busca por padrões de chave real (`sk-` seguido de 20 ou mais caracteres) em todo o histórico, sem resultado (verificado em 2026-11-19). As ocorrências de `sk-` do `findstr` do autor são placeholders de teste
+- [x] Captura da demo salva em `docs/img/demo.png` e exibida no README do GitHub (verificado em 2026-11-19). O arquivo é Git LFS; em um clone sem `git lfs install` e `git lfs pull` ele aparece como ponteiro de texto
+- [x] Redesign enviado ao GitHub (`origin`) **e** ao Space (`space`): os dois remotos em `7950938` (`git ls-remote`, informado pelo autor, 2026-11-19)
 - [x] Teste final no Space em janela anônima (resposta com fonte, cache, limite diário, download e troca de tema): nada falhou, no Space em `a3e8ecf` (informado pelo autor, 2026-11-19)
-- [ ] A página do GitHub mostra o README novo, sem a tabela de metadados no topo, e a imagem aparece
-- [ ] A aba "Sobre o projeto" aparece na demo (Space) e os links dela abrem
+- [x] A página do GitHub mostra o README novo, sem a tabela de metadados no topo, e a imagem aparece (verificado em 2026-11-19)
+- [x] A aba "Sobre o projeto" aparece na demo (Space) e os links dela abrem (informado pelo autor, 2026-11-19)
 - [x] Abstenção com citação não é aceita como resposta (correção em contrato e política, com testes; 313 passando no ambiente de revisão)
 - [x] Teto de gasto no código: US$ 4,00 por provedor (BUDGET_*_USD), parada automática antes de ultrapassar.
 - [x] Teste final do Space refeito após o redeploy (Space em `a3e8ecf`, confirmado por `git ls-remote space HEAD` e pela API do Space): nada falhou (informado pelo autor, 2026-11-19). O aprovado anterior, feito na versão antiga, foi descartado.
-- [ ] Limite de gasto no console de cada provedor: não verificado.- [ ] Revisar `dados/perguntas_orquestracao.json` (O01–O10, `revisado: false`). Até lá, nenhum número dos modos `adaptativo` e `consenso` entra como métrica
+- [ ] Limite de gasto no console de cada provedor: não verificado (dispensado pelo autor).
+- [x] Gabarito `dados/perguntas_orquestracao.json` (O01–O10) revisado pelo autor (`revisado: true`, 2026-11-19, informado). Os números dos modos `adaptativo` e `consenso` continuam fora das métricas até a rodada completa
 - [x] Variável `ORQUESTRACAO_MODO` no Space: não existe (informado pelo autor, 2026-11-19), logo a demo usa o padrão `adaptativo`
-- [ ] Rodada completa dos modos `adaptativo` e `consenso` (30 perguntas, pelo menos duas repetições): não feita, por custo (roadmap)
+- [ ] Rodada completa dos modos `adaptativo` e `consenso` (30 perguntas, pelo menos duas repetições): autorizada pelo autor (2026-11-19), a executar no PC; não feita ainda
+- [x] Bloco 4 (saída válida: schema e citações entre os trechos recuperados): aprovado com ressalva, por decisão do autor delegada ao assistente (2026-11-19). Ressalva: a checagem é estrutural, confirma que a seção citada foi recuperada, não que sustenta a resposta; uma execução por modo

@@ -4,7 +4,7 @@
 
 - Seções na base: 45 em 9 documentos.
 - Usadas como fonte pelas 30 perguntas do gabarito (`dados/perguntas.json`): 26 de 45.
-- Usadas pelo gabarito e pelas 10 perguntas de orquestração (`dados/perguntas_orquestracao.json`, gabarito ainda não revisado): 28 de 45.
+- Usadas pelo gabarito e pelas 10 perguntas de orquestração (`dados/perguntas_orquestracao.json`, gabarito revisado pelo autor em 2026-11-19): 28 de 45.
 
 | Documento | Seções | Sem pergunta (só o gabarito de 30) | Sem pergunta (gabarito + orquestração) |
 |---|---|---|---|

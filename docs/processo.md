@@ -76,5 +76,5 @@ Gestão de risco de IA:
 ## 9. Critério de pronto do Bloco 0
 
 - [x] Documento escrito
-- [ ] Sem nenhum dado interno (confirmado por você)
+- [x] Sem nenhum dado interno (verificado em 2026-11-19 por busca de nomes de empresas reais no repositório, sem ocorrências; os nomes buscados não são reproduzidos aqui de propósito)
 - [ ] Aprovado por você

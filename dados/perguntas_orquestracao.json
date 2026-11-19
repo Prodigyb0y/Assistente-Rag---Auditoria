@@ -15,7 +15,7 @@
       }
     ],
     "caminho_visado": "confirmacao_cruzada",
-    "revisado": false
+    "revisado": true
   },
   {
     "id": "O02",
@@ -33,7 +33,7 @@
       }
     ],
     "caminho_visado": "confirmacao_cruzada",
-    "revisado": false
+    "revisado": true
   },
   {
     "id": "O03",
@@ -47,7 +47,7 @@
       }
     ],
     "caminho_visado": "confirmacao_cruzada",
-    "revisado": false
+    "revisado": true
   },
   {
     "id": "O04",
@@ -65,7 +65,7 @@
       }
     ],
     "caminho_visado": "confirmacao_cruzada",
-    "revisado": false
+    "revisado": true
   },
   {
     "id": "O05",
@@ -83,7 +83,7 @@
       }
     ],
     "caminho_visado": "confirmacao_cruzada",
-    "revisado": false
+    "revisado": true
   },
   {
     "id": "O06",
@@ -101,7 +101,7 @@
       }
     ],
     "caminho_visado": "confirmacao_cruzada ou divergencia",
-    "revisado": false
+    "revisado": true
   },
   {
     "id": "O07",
@@ -115,7 +115,7 @@
       }
     ],
     "caminho_visado": "segunda_opiniao",
-    "revisado": false
+    "revisado": true
   },
   {
     "id": "O08",
@@ -133,7 +133,7 @@
       }
     ],
     "caminho_visado": "segunda_opiniao",
-    "revisado": false
+    "revisado": true
   },
   {
     "id": "O09",
@@ -147,7 +147,7 @@
       }
     ],
     "caminho_visado": "segunda_opiniao",
-    "revisado": false
+    "revisado": true
   },
   {
     "id": "O10",
@@ -161,6 +161,6 @@
       }
     ],
     "caminho_visado": "segunda_opiniao",
-    "revisado": false
+    "revisado": true
   }
 ]

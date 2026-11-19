@@ -101,7 +101,7 @@ aparece entre os 3 primeiros trechos).
   US$ 0,0052 (aprox. 11x o normal) e levou 24,3 s; escalou para os dois provedores e foi exibida como "melhor esforço".
   Com o modo `adaptativo`, as perguntas fora da base executadas em 2026-11-19 terminaram como "não encontrado confirmado"
   (O07, O08, O10) ou "melhor esforço" (O06), sem entrar no cache. São observações de execução, não métricas: o gabarito
-  O01–O10 ainda não foi revisado pelo autor (`revisado: false`) e não há rodada completa dos modos `adaptativo` e `consenso`. Detalhes em [`docs/orquestracao.md`](../docs/orquestracao.md).
+  O gabarito O01–O10 foi revisado pelo autor (`revisado: true`, 2026-11-19), mas não há rodada completa dos modos `adaptativo` e `consenso`. Detalhes em [`docs/orquestracao.md`](../docs/orquestracao.md).
 
 ## Análise dos dados
 

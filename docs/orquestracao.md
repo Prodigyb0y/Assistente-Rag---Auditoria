@@ -58,7 +58,7 @@ cada um (`src/interface/chat.py`).
   execução local de 2026-11-19 (Python 3.13, sem as bibliotecas dos provedores e sem Gradio).
 - **Não verificado:** o comportamento dos modelos reais nesses caminhos. As perguntas em
   `dados/perguntas_orquestracao.json` foram escritas para provocá-los, mas `caminho_visado` é **hipótese**, não
-  resultado. O gabarito dessas perguntas tem `revisado: false` até o autor revisar.
+  resultado. O gabarito dessas perguntas foi revisado pelo autor (`revisado: true`, 2026-11-19).
 - **Não executado:** nenhuma chamada paga foi feita para esta mudança. A CLI (`--modo`, `--ordem`) não tem teste
   automatizado porque monta os agentes reais.
 - A avaliação publicada em `docs/resultados/avaliacao.md` foi gerada com a regra original (`escalonar`) e continua
@@ -155,7 +155,7 @@ isso descreve estas perguntas, não uma média esperada.
 
 ### O que esta observação não prova
 
-- **Correção das respostas:** não foi checada. O gabarito de `perguntas_orquestracao.json` segue com `revisado: false`.
+- **Correção das respostas:** não foi checada contra o gabarito revisado. O gabarito de `perguntas_orquestracao.json` agora tem `revisado: true`.
 - **Por que O06 ficou em melhor esforço e por que O09 divergiu:** ver a próxima seção.
 - **Frequência:** uma execução de 10 perguntas não mede com que frequência cada caminho ocorre. A mesma pergunta O02
   gastou 8867/742 tokens em uma execução anterior no mesmo dia e 8835/667 nesta, o que mostra variação entre execuções.

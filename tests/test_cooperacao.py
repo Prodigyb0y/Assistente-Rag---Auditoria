@@ -263,7 +263,7 @@ def test_perguntas_de_orquestracao_apontam_para_secoes_que_existem():
     qs = json.loads((raiz / "dados" / "perguntas_orquestracao.json").read_text(encoding="utf-8"))
     assert len({q["id"] for q in qs}) == len(qs) == 10
     for q in qs:
-        assert q["revisado"] is False                      # o gabarito só vale depois da revisão do autor
+        assert q["revisado"] is True                       # gabarito revisado pelo autor (2026-11-19, informado)
         assert q["tipo"] in {"combina_secoes", "ambigua", "adjacente_fora_da_base"}
         for f in q["fontes"]:
             assert f["secao"] in secoes[f["documento"]], (q["id"], f)
