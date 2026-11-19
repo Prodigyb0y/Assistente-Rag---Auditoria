@@ -1,7 +1,7 @@
 # Versões fixadas.
 # pydantic, python-dotenv, pytest, numpy: versões instaladas e testadas no ambiente do projeto.
 # openai, anthropic: versões instaladas na máquina do autor, com as chamadas de teste do Bloco 2 funcionando.
-pydantic==2.13.5
+pydantic==2.12.5
 python-dotenv==1.2.3
 numpy==2.4.6; python_version >= "3.11"
 numpy==2.2.6; python_version < "3.11"
