@@ -11,6 +11,7 @@ from .chat import (DIR_DOCS, Turno, carregar_perguntas, concluir_turno, iniciar_
 from .config_demo import ConfigDemo
 from .formatar import AVISO
 from .limites import extrair_ip, id_visitante
+from .marca import css_marca
 from .sobre import texto_sobre
 from .servico import ServicoDemo
 
@@ -176,7 +177,7 @@ def opcoes_launch() -> dict:
     """Argumentos de `demo.launch()` com o visual (tema e CSS)."""
     return {"theme": gr.themes.Soft(primary_hue="indigo", neutral_hue="slate", radius_size="lg",
                                     font=[gr.themes.GoogleFont("Inter"), "ui-sans-serif", "system-ui", "sans-serif"]),
-            "css": CSS}
+            "css": CSS + css_marca()}
 
 
 def construir_demo(servico: ServicoDemo, cfg: ConfigDemo) -> gr.Blocks:

@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="../docs/img/marca/icone.svg" alt="Ícone da Gutenberg Systems (empresa fictícia)" width="72">
+
 # Assistente de busca em políticas de auditoria
 
 **Responde perguntas de um auditor interno com a fonte citada, orquestrando OpenAI e Anthropic.**
@@ -14,7 +16,7 @@
 [Resultados](../docs/resultados/avaliacao.md) ·
 [Deploy](../docs/deploy_hf_spaces.md)
 
-<img src="../docs/img/demo.png" alt="Demo em formato de chat: pergunta, resposta com a fonte e o trecho citado, download do documento" width="860">
+<img src="../docs/img/demo.png" alt="Tela inicial da demo: lista de sugestões de perguntas, área do chat e caixa de pergunta" width="860">
 
 </div>
 
@@ -253,6 +255,7 @@ provedor é uma lacuna a ser fechada em projeto futuro. Base: 9 documentos fict�
   função `@spaces.GPU` de marcação, nunca chamada, só para satisfazer a checagem da plataforma.
 - A aparência da interface foi verificada manualmente, em um navegador, nos temas claro e escuro; o teste automatizado com
   o Gradio real confere que a tela monta sem erro.
+- **Marca fictícia:** a identidade visual da Gutenberg Systems (ícone, logos e pôster em [`docs/img/marca/`](../docs/img/marca/)) foi gerada com IA (Claude) para este projeto e não representa nenhuma empresa real. O README usa só o ícone, que funciona em fundo claro e escuro; os logos horizontais foram feitos para fundo claro. Os SVGs trazem o bloco de metadados de proveniência (C2PA) do gerador, mantido como veio.
 
 ## Roadmap
 
