@@ -1,4 +1,14 @@
 """Ponto de entrada da demo (local: `python app.py`; Hugging Face Spaces: app_file)."""
+try:
+    import spaces  # type: ignore[import-not-found]  # só existe no Space (ZeroGPU)
+
+    @spaces.GPU
+    def _placeholder_gpu():
+        """Nunca é chamada. O hardware ZeroGPU exige uma função @spaces.GPU."""
+        return None
+except ImportError:  # local ou fora do Space
+    pass
+
 from src.config import carregar_settings
 from src.interface.config_demo import carregar_config_demo
 from src.interface.montagem import montar_servico
