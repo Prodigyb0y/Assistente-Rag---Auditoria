@@ -3,7 +3,8 @@
 # openai, anthropic: versões instaladas na máquina do autor, com as chamadas de teste do Bloco 2 funcionando.
 pydantic==2.13.5
 python-dotenv==1.2.3
-numpy==2.4.6
+numpy==2.4.6; python_version >= "3.11"
+numpy==2.2.6; python_version < "3.11"
 openai==3.55.1
 anthropic==2.10.0
 pytest==9.1.1
