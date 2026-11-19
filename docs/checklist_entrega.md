@@ -24,5 +24,5 @@ Marque só o que você verificou. Itens com [ ] ainda dependem de você.
 - [x] Teto de gasto no código: US$ 4,00 por provedor (BUDGET_*_USD), parada automática antes de ultrapassar.
 - [ ] Teste final do Space em janela anônima: o aprovado anterior (2026-11-19) foi feito com a versão antiga da demo e não vale. Refazer após o redeploy (Space em `a3e8ecf`, confirmado por `git ls-remote space HEAD` e pela API do Space em 2026-11-19).
 - [ ] Limite de gasto no console de cada provedor: não verificado.- [ ] Revisar `dados/perguntas_orquestracao.json` (O01–O10, `revisado: false`). Até lá, nenhum número dos modos `adaptativo` e `consenso` entra como métrica
-- [ ] Conferir nas configurações do Space se a variável `ORQUESTRACAO_MODO` está definida (sem ela, a demo usa `adaptativo`)
+- [x] Variável `ORQUESTRACAO_MODO` no Space: não existe (informado pelo autor, 2026-11-19), logo a demo usa o padrão `adaptativo`
 - [ ] Rodada completa dos modos `adaptativo` e `consenso` (30 perguntas, pelo menos duas repetições): não feita, por custo (roadmap)

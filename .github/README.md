@@ -242,10 +242,10 @@ provedor é uma lacuna a ser fechada em projeto futuro. Base: 9 documentos fict�
 
 **Operação da demo.**
 - A identificação de visitante por IP é de melhor esforço; as barreiras reais são o limite global e o teto de custo.
-- **Modo de orquestração da demo:** a demo usa o modo padrão do código, `adaptativo` (`ORQUESTRACAO_MODO`, lido por
-  `Politica.de_settings`), a menos que essa variável esteja definida nas configurações do Space; este repositório não
-  verifica as variáveis do Space. A tabela de resultados acima é do modo `escalonar`, portanto **não descreve o
-  comportamento da demo**.
+- **Modo de orquestração da demo:** `adaptativo`, o padrão do código (`ORQUESTRACAO_MODO`, lido por
+  `Politica.de_settings`). O autor informou em 2026-11-19 que a variável não existe nas configurações do Space, então vale o
+  padrão (informação do autor, não verificada por este repositório). A tabela de resultados acima é do modo `escalonar`,
+  portanto **não descreve o comportamento da demo**.
 - O estado da demo (limites, cache) vive em disco efêmero e zera quando o Space reinicia; por isso a proteção de custo não depende só do disco: há
   teto por provedor no código e teto diário da demo (US$ 0,25). Limites de gasto nos consoles dos provedores são uma
   camada à parte, que este repositório não verifica.
