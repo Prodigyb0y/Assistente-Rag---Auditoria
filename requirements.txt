@@ -1,10 +1,9 @@
 # Versões fixadas.
-# pydantic, python-dotenv, pytest: versões instaladas e testadas no ambiente desta sessão.
-# openai, anthropic: últimas versões listadas em 2026-11-19 (espelho do PyPI no CERN);
-#   NÃO foram instaladas nem executadas nesta sessão (sem rede). Se o pip recusar uma
-#   versão, rode `pip install openai anthropic` e depois `pip freeze` para fixar a real.
+# pydantic, python-dotenv, pytest, numpy: versões instaladas e testadas no ambiente do projeto.
+# openai, anthropic: versões instaladas na máquina do autor, com as chamadas de teste do Bloco 2 funcionando.
 pydantic==2.13.5
 python-dotenv==1.2.3
+numpy==2.4.6
 openai==3.55.1
 anthropic==2.10.0
 pytest==9.1.1

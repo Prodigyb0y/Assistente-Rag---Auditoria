@@ -1,0 +1,510 @@
+{
+ "data": "2026-11-19",
+ "modelo_embedding": "text-embedding-3-small",
+ "n_perguntas": 30,
+ "n_trechos_indice": 45,
+ "hash_indice": "1a730d2fc794e29f6330fd82438b260759327fb102db7f5973a946682d54ae2a",
+ "k_maximo_recuperado": 5,
+ "recall": {
+  "1": {
+   "acertos": 28,
+   "total": 30,
+   "recall": 0.9333333333333333
+  },
+  "3": {
+   "acertos": 30,
+   "total": 30,
+   "recall": 1.0
+  },
+  "5": {
+   "acertos": 30,
+   "total": 30,
+   "recall": 1.0
+  }
+ },
+ "tokens_embedding_consultas": 549,
+ "custo_consultas_usd": 1.098e-05,
+ "data_tabela_precos": "2026-11-19",
+ "por_pergunta": [
+  {
+   "id": "Q01",
+   "pergunta": "Com que frequência os acessos privilegiados devem ser revisados e por quem?",
+   "esperado": "POL-ACE/ACE-3",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-ACE/ACE-3",
+    "POL-ACE/ACE-5",
+    "POL-ACE/ACE-4"
+   ],
+   "scores_top": [
+    0.7432,
+    0.5837,
+    0.5199
+   ]
+  },
+  {
+   "id": "Q02",
+   "pergunta": "Em quanto tempo os acessos devem ser revogados em caso de desligamento?",
+   "esperado": "POL-ACE/ACE-4",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-ACE/ACE-4",
+    "POL-ACE/ACE-3",
+    "POL-ACE/ACE-2"
+   ],
+   "scores_top": [
+    0.7152,
+    0.5092,
+    0.4882
+   ]
+  },
+  {
+   "id": "Q03",
+   "pergunta": "Qual a periodicidade de rotação das senhas das contas de serviço?",
+   "esperado": "POL-ACE/ACE-5",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-ACE/ACE-5",
+    "POL-ACE/ACE-3",
+    "POL-LOG/LOG-3"
+   ],
+   "scores_top": [
+    0.6176,
+    0.4612,
+    0.4459
+   ]
+  },
+  {
+   "id": "Q04",
+   "pergunta": "Por quanto tempo deve ser arquivado o relatório assinado da revisão de acessos?",
+   "esperado": "POL-ACE/ACE-3",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-ACE/ACE-3",
+    "POL-ACE/ACE-4",
+    "POL-LOG/LOG-3"
+   ],
+   "scores_top": [
+    0.6457,
+    0.5534,
+    0.5333
+   ]
+  },
+  {
+   "id": "Q05",
+   "pergunta": "Em quanto tempo os acessos da área anterior devem ser revogados quando o colaborador é transferido de área?",
+   "esperado": "POL-ACE/ACE-4",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-ACE/ACE-4",
+    "POL-ACE/ACE-3",
+    "POL-GMU/GMU-4"
+   ],
+   "scores_top": [
+    0.7207,
+    0.4276,
+    0.4256
+   ]
+  },
+  {
+   "id": "Q06",
+   "pergunta": "Até que horas a conciliação diária de pagamentos deve ser concluída?",
+   "esperado": "POL-CPG/CPG-2",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-CPG/CPG-2",
+    "POL-CPG/CPG-3",
+    "POL-CPG/CPG-4"
+   ],
+   "scores_top": [
+    0.6992,
+    0.5464,
+    0.5074
+   ]
+  },
+  {
+   "id": "Q07",
+   "pergunta": "Quem pode baixar divergências de conciliação de até R$ 50,00 por transação?",
+   "esperado": "POL-CPG/CPG-3",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-CPG/CPG-3",
+    "POL-CPG/CPG-2",
+    "POL-CPG/CPG-5"
+   ],
+   "scores_top": [
+    0.6513,
+    0.4983,
+    0.4508
+   ]
+  },
+  {
+   "id": "Q08",
+   "pergunta": "Em que prazo divergências de conciliação não resolvidas são escaladas ao gerente de controladoria?",
+   "esperado": "POL-CPG/CPG-3",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-CPG/CPG-3",
+    "POL-SFU/SFU-5",
+    "POL-CPG/CPG-4"
+   ],
+   "scores_top": [
+    0.7398,
+    0.5919,
+    0.5803
+   ]
+  },
+  {
+   "id": "Q09",
+   "pergunta": "Por quanto tempo os relatórios de conciliação são guardados?",
+   "esperado": "POL-CPG/CPG-4",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-CPG/CPG-4",
+    "POL-LOG/LOG-3",
+    "POL-CPG/CPG-3"
+   ],
+   "scores_top": [
+    0.7367,
+    0.5494,
+    0.5168
+   ]
+  },
+  {
+   "id": "Q10",
+   "pergunta": "Em quais dias o Comitê de Mudanças (CAB) se reúne?",
+   "esperado": "POL-GMU/GMU-2",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-GMU/GMU-2",
+    "POL-GMU/GMU-4",
+    "POL-GMU/GMU-5"
+   ],
+   "scores_top": [
+    0.5994,
+    0.5189,
+    0.5027
+   ]
+  },
+  {
+   "id": "Q11",
+   "pergunta": "O solicitante de uma mudança pode ser também o aprovador dela?",
+   "esperado": "POL-GMU/GMU-3",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-GMU/GMU-3",
+    "POL-GMU/GMU-4",
+    "POL-GMU/GMU-2"
+   ],
+   "scores_top": [
+    0.5378,
+    0.4445,
+    0.4326
+   ]
+  },
+  {
+   "id": "Q12",
+   "pergunta": "Em quanto tempo deve ser feito o registro formal de uma mudança emergencial após a implantação?",
+   "esperado": "POL-GMU/GMU-4",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-GMU/GMU-4",
+    "POL-GMU/GMU-3",
+    "POL-ACE/ACE-4"
+   ],
+   "scores_top": [
+    0.6717,
+    0.5241,
+    0.4861
+   ]
+  },
+  {
+   "id": "Q13",
+   "pergunta": "Existe restrição para implantar mudanças normais às sextas-feiras?",
+   "esperado": "POL-GMU/GMU-5",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-GMU/GMU-5",
+    "POL-GMU/GMU-2",
+    "POL-GMU/GMU-4"
+   ],
+   "scores_top": [
+    0.6349,
+    0.4953,
+    0.4757
+   ]
+  },
+  {
+   "id": "Q14",
+   "pergunta": "A cada quanto tempo é feito o backup de logs de transação dos bancos de dados críticos?",
+   "esperado": "POL-BKP/BKP-2",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-BKP/BKP-2",
+    "POL-BKP/BKP-3",
+    "POL-LOG/LOG-3"
+   ],
+   "scores_top": [
+    0.7239,
+    0.5773,
+    0.551
+   ]
+  },
+  {
+   "id": "Q15",
+   "pergunta": "Por quanto tempo os backups semanais são retidos?",
+   "esperado": "POL-BKP/BKP-3",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-BKP/BKP-3",
+    "POL-BKP/BKP-2",
+    "POL-LOG/LOG-3"
+   ],
+   "scores_top": [
+    0.7186,
+    0.6128,
+    0.5779
+   ]
+  },
+  {
+   "id": "Q16",
+   "pergunta": "Quais são as metas de RPO e RTO para sistemas críticos?",
+   "esperado": "POL-BKP/BKP-5",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-BKP/BKP-5",
+    "POL-BKP/BKP-4",
+    "POL-FOR/FOR-5"
+   ],
+   "scores_top": [
+    0.7042,
+    0.4556,
+    0.4507
+   ]
+  },
+  {
+   "id": "Q17",
+   "pergunta": "O que caracteriza um fornecedor crítico?",
+   "esperado": "POL-FOR/FOR-2",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-FOR/FOR-2",
+    "POL-FOR/FOR-3",
+    "POL-FOR/FOR-5"
+   ],
+   "scores_top": [
+    0.6045,
+    0.5659,
+    0.5147
+   ]
+  },
+  {
+   "id": "Q18",
+   "pergunta": "Em quanto tempo um fornecedor crítico deve notificar incidentes, conforme o contrato?",
+   "esperado": "POL-FOR/FOR-4",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-FOR/FOR-4",
+    "POL-INC/INC-5",
+    "POL-FOR/FOR-5"
+   ],
+   "scores_top": [
+    0.6533,
+    0.5802,
+    0.5639
+   ]
+  },
+  {
+   "id": "Q19",
+   "pergunta": "Com que frequência fornecedores relevantes são reavaliados?",
+   "esperado": "POL-FOR/FOR-3",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-FOR/FOR-3",
+    "POL-FOR/FOR-5",
+    "POL-ACE/ACE-3"
+   ],
+   "scores_top": [
+    0.7038,
+    0.5909,
+    0.5627
+   ]
+  },
+  {
+   "id": "Q20",
+   "pergunta": "Em quanto tempo um incidente S1 exige o primeiro atendimento?",
+   "esperado": "POL-INC/INC-3",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-INC/INC-3",
+    "POL-INC/INC-5",
+    "POL-INC/INC-2"
+   ],
+   "scores_top": [
+    0.62,
+    0.5625,
+    0.4667
+   ]
+  },
+  {
+   "id": "Q21",
+   "pergunta": "Em quanto tempo a diretoria deve ser comunicada de um incidente S1?",
+   "esperado": "POL-INC/INC-3",
+   "posicao_do_gabarito": 2,
+   "top": [
+    "POL-INC/INC-5",
+    "POL-INC/INC-3",
+    "POL-INC/INC-4"
+   ],
+   "scores_top": [
+    0.6767,
+    0.611,
+    0.553
+   ]
+  },
+  {
+   "id": "Q22",
+   "pergunta": "Em quanto tempo incidentes com dados pessoais devem ser comunicados ao DPO?",
+   "esperado": "POL-INC/INC-4",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-INC/INC-4",
+    "POL-DAD/DAD-4",
+    "POL-LOG/LOG-2"
+   ],
+   "scores_top": [
+    0.8549,
+    0.5623,
+    0.5098
+   ]
+  },
+  {
+   "id": "Q23",
+   "pergunta": "Quais incidentes exigem relatório de causa raiz e em que prazo?",
+   "esperado": "POL-INC/INC-5",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-INC/INC-5",
+    "POL-INC/INC-4",
+    "POL-INC/INC-3"
+   ],
+   "scores_top": [
+    0.6659,
+    0.5248,
+    0.4732
+   ]
+  },
+  {
+   "id": "Q24",
+   "pergunta": "A partir de qual valor os pagamentos exigem dupla aprovação?",
+   "esperado": "POL-SFU/SFU-3",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-SFU/SFU-3",
+    "POL-CPG/CPG-3",
+    "POL-CPG/CPG-1"
+   ],
+   "scores_top": [
+    0.624,
+    0.4857,
+    0.4526
+   ]
+  },
+  {
+   "id": "Q25",
+   "pergunta": "Com que frequência a matriz de conflitos de funções é atualizada?",
+   "esperado": "POL-SFU/SFU-4",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-SFU/SFU-4",
+    "POL-ACE/ACE-3",
+    "POL-GMU/GMU-2"
+   ],
+   "scores_top": [
+    0.7374,
+    0.3782,
+    0.3718
+   ]
+  },
+  {
+   "id": "Q26",
+   "pergunta": "Qual é o prazo máximo de uma exceção à segregação de funções?",
+   "esperado": "POL-SFU/SFU-5",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-SFU/SFU-5",
+    "POL-ACE/ACE-4",
+    "POL-SFU/SFU-4"
+   ],
+   "scores_top": [
+    0.562,
+    0.4046,
+    0.3838
+   ]
+  },
+  {
+   "id": "Q27",
+   "pergunta": "Por quanto tempo os logs de contas privilegiadas são retidos?",
+   "esperado": "POL-LOG/LOG-3",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-LOG/LOG-3",
+    "POL-LOG/LOG-2",
+    "POL-BKP/BKP-3"
+   ],
+   "scores_top": [
+    0.7815,
+    0.546,
+    0.5431
+   ]
+  },
+  {
+   "id": "Q28",
+   "pergunta": "Que condição gera chamado automático para o time de segurança em relação a autenticações?",
+   "esperado": "POL-LOG/LOG-5",
+   "posicao_do_gabarito": 2,
+   "top": [
+    "POL-ACE/ACE-5",
+    "POL-LOG/LOG-5",
+    "POL-LOG/LOG-2"
+   ],
+   "scores_top": [
+    0.6228,
+    0.6202,
+    0.494
+   ]
+  },
+  {
+   "id": "Q29",
+   "pergunta": "Como é tratado um dado que não tem rótulo de classificação?",
+   "esperado": "POL-DAD/DAD-3",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-DAD/DAD-3",
+    "POL-DAD/DAD-5",
+    "POL-DAD/DAD-2"
+   ],
+   "scores_top": [
+    0.5463,
+    0.4849,
+    0.4703
+   ]
+  },
+  {
+   "id": "Q30",
+   "pergunta": "Com que frequência a classificação de dados restritos é revisada?",
+   "esperado": "POL-DAD/DAD-5",
+   "posicao_do_gabarito": 1,
+   "top": [
+    "POL-DAD/DAD-5",
+    "POL-ACE/ACE-3",
+    "POL-GMU/GMU-2"
+   ],
+   "scores_top": [
+    0.6412,
+    0.55,
+    0.4998
+   ]
+  }
+ ]
+}

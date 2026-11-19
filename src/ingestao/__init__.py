@@ -1,1 +1,1 @@
-"""Ingestão: divisão em trechos e embeddings. (Bloco 3 — ainda não implementado.)"""
+"""Ingestão: divisão em trechos por seção, embeddings (OpenAI) e índice em disco idempotente."""

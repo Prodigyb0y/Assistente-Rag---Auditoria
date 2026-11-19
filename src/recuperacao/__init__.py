@@ -1,1 +1,1 @@
-"""Recuperação top-k e avaliação de recall@3. (Bloco 3 — ainda não implementado.)"""
+"""Recuperação top-k por similaridade de cosseno e avaliação de recall@k."""
