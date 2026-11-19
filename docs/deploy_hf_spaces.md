@@ -41,28 +41,19 @@ git ls-files .env logs indice
 ```
 O último comando deve imprimir **nada**.
 
-## Parte B. Limite de gasto fora do código (obrigatório)
+## Parte B. Criar o Space
 
-O teto do código (`BUDGET_*_USD`) e os contadores da demo ficam em arquivos que **somem quando o Space reinicia**
-(disco efêmero, salvo armazenamento persistente pago; confirme na documentação do Spaces). Por isso, configure um limite
-de gasto na própria conta de cada provedor:
-- **OpenAI**: no painel da conta, procure "Billing" e "Limits" (limite mensal de gasto).
-- **Anthropic**: no Console, procure "Settings" e "Limits" (limite mensal de gasto).
-Os nomes dos menus mudam com o tempo; o que importa é definir um **limite mensal baixo** (sugestão: US$ 2 em cada).
-
-## Parte C. Criar o Space
-
-**C1. Conta e token.** Crie conta em huggingface.co. Em Settings → Access Tokens, crie um token com
+**B1. Conta e token.** Crie conta em huggingface.co. Em Settings → Access Tokens, crie um token com
 **permissão de escrita (write)** e copie-o para um lugar seguro. Ele será a "senha" do `git push`. Não cole o token em chats.
 
-**C2. Novo Space.** No site: New → Space. Preencha:
+**B2. Novo Space.** No site: New → Space. Preencha:
 - Space name: por exemplo, `busca-politicas-auditoria`
 - SDK: **Gradio**
 - Hardware: **CPU basic** (gratuito)
 - Visibility: **Public**
 O endereço será `https://huggingface.co/spaces/SEU_USUARIO/busca-politicas-auditoria`.
 
-**C3. Secrets e variáveis.** No Space: Settings → Variables and secrets.
+**B3. Secrets e variáveis.** No Space: Settings → Variables and secrets.
 | Tipo | Nome | Valor |
 |---|---|---|
 | Secret | `OPENAI_API_KEY` | sua chave da OpenAI |
@@ -73,20 +64,20 @@ O endereço será `https://huggingface.co/spaces/SEU_USUARIO/busca-politicas-aud
 | Variable | `DEMO_TETO_CUSTO_DIA_USD` | `0.25` |
 Chaves entram **só como Secret**. Variables são visíveis publicamente.
 
-## Parte D. Enviar o código e conferir
+## Parte C. Enviar o código e conferir
 
-**D1. Enviar.** No terminal (troque SEU_USUARIO e o nome do Space):
+**C1. Enviar.** No terminal (troque SEU_USUARIO e o nome do Space):
 ```
 git remote add space https://huggingface.co/spaces/SEU_USUARIO/busca-politicas-auditoria
 git push --force space main
 ```
-Quando pedir usuário e senha: usuário = seu usuário do Hugging Face; senha = o **token** do passo C1.
+Quando pedir usuário e senha: usuário = seu usuário do Hugging Face; senha = o **token** do passo B1.
 O `--force` é necessário só na primeira vez, porque o Space nasce com arquivos iniciais que serão substituídos.
 
-**D2. Acompanhar o build.** Na página do Space, veja o status ("Building" → "Running") e a aba **Logs**.
+**C2. Acompanhar o build.** Na página do Space, veja o status ("Building" → "Running") e a aba **Logs**.
 Leva alguns minutos. Na primeira partida o índice é criado sozinho (custo de embeddings abaixo de US$ 0,001).
 
-**D3. Verificar (critério de pronto).** Abra o link do Space numa **janela anônima** (sem login no Hugging Face):
+**C3. Verificar (critério de pronto).** Abra o link do Space numa **janela anônima** (sem login no Hugging Face):
 1. a demo abre sem instalar nada;
 2. uma pergunta do gabarito responde com fonte citada;
 3. a mesma pergunta de novo mostra "resposta em cache (sem custo)";

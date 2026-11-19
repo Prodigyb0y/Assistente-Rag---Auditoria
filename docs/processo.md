@@ -77,4 +77,3 @@ Gestão de risco de IA:
 
 - [x] Documento escrito
 - [x] Sem nenhum dado interno (verificado em 2026-11-19 por busca de nomes de empresas reais no repositório, sem ocorrências; os nomes buscados não são reproduzidos aqui de propósito)
-- [ ] Aprovado por você

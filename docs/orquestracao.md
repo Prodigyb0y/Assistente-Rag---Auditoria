@@ -240,7 +240,7 @@ Correção:
   cita não é aceita sozinha nem vira consenso).
 
 Verificação offline: suíte completa com 313 testes passando e 1 pulado (o teste do Gradio, que depende da biblioteca
-instalada) no ambiente de revisão.
+instalada) no ambiente de desenvolvimento do repositório (a máquina do autor reportou 322 passando, em `dc65568`).
 
 **Efeito esperado, não medido:** perguntas fora da base em que o modelo cite trecho passam a escalar, em vez de serem
 aceitas. Nenhuma chamada paga foi feita para verificar isso; a próxima rodada com chave mostra o efeito real.
