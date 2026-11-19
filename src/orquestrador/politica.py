@@ -95,6 +95,8 @@ def motivo_escalonamento(r: ResultadoAgente, confianca_minima: str = "media") ->
         return Motivo.SAIDA_INVALIDA if r.saida_bruta else Motivo.ERRO
     if r.resposta is None:  # defensivo: schema_ok sem resposta não deveria ocorrer
         return Motivo.ERRO
+    if not r.resposta.encontrado and r.resposta.citacoes:  # abstenção que cita trecho: não é abstenção válida
+        return Motivo.SEM_CITACAO_VALIDA
     if eh_abstencao(r):
         return Motivo.NAO_ENCONTRADO
     if not r.citacoes_ok or not r.resposta.citacoes:

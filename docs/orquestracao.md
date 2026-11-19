@@ -225,3 +225,22 @@ o texto da resposta não é gravado.
 
 Estas duas linhas são a única evidência de que a abstenção da Anthropic trouxe os mesmos números que a resposta da OpenAI
 em O06 e O09. As linhas do log da primeira rodada (sem a evidência de comparação) não foram preservadas aqui.
+
+## Correção aplicada depois da segunda rodada (2026-11-19)
+
+Revisão do código encontrou um defeito: uma abstenção (`encontrado=false`) que trazia citação de um trecho recuperado
+passava na regra e era aceita como resposta (`aceita_no_primeiro`), e podia virar `aceita_por_consenso` com a
+resposta de quem encontrou. Isso não tinha teste e não estava documentado.
+
+Correção:
+- `src/agentes/contrato.py`: `encontrado=false` com citação passa a ser saída inválida (`citacoes_ok=false`).
+- `src/orquestrador/politica.py`: a regra também trata abstenção com citação como `sem_citacao_valida` (defesa extra,
+  caso a saída chegue marcada como válida).
+- Testes novos: `tests/test_contrato.py` (abstenção com citação é inválida) e `tests/test_cooperacao.py` (abstenção que
+  cita não é aceita sozinha nem vira consenso).
+
+Verificação offline: suíte completa com 298 testes passando e 1 pulado (o teste do Gradio, que depende da biblioteca
+instalada) no ambiente de revisão.
+
+**Efeito esperado, não medido:** perguntas fora da base em que o modelo cite trecho passam a escalar, em vez de serem
+aceitas. Nenhuma chamada paga foi feita para verificar isso; a próxima rodada com chave mostra o efeito real.

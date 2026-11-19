@@ -86,6 +86,12 @@ def test_nao_encontrado_sem_citacao_e_valido():
     assert i.schema_ok and i.citacoes_ok
 
 
+def test_nao_encontrado_com_citacao_e_invalido():
+    i = interpretar_saida(_json(encontrado=False, citacoes=[{"documento": "POL-ACE", "secao": "ACE-3"}],
+                                confianca="baixa", resposta="Não consta."), RECUP)
+    assert i.schema_ok and not i.citacoes_ok and "abstenção" in i.erro
+
+
 def test_prompt_versionado():
     p = carregar_prompt("agente_resposta", "v1", Path("prompts"))
     assert p.versao == "agente_resposta_v1" and len(p.sha) == 12

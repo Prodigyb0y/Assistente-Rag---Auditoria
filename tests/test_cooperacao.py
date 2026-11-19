@@ -9,7 +9,8 @@ from src.custo import OrcamentoExcedido
 from src.orquestrador.orquestrador import (ACEITA_APOS_ESCALONAMENTO, ACEITA_NO_PRIMEIRO, ACEITA_POR_CONSENSO,
                                            DIVERGENCIA, FALHA, MELHOR_ESFORCO, NAO_ENCONTRADO_CONFIRMADO,
                                            LogRoteamento, Orquestrador)
-from src.orquestrador.politica import Concordancia, Politica, comparar, decidir_par, numeros
+from src.orquestrador.politica import (Concordancia, Motivo, Politica, comparar, decidir_par, motivo_escalonamento,
+                                       numeros)
 from tests.test_orquestrador import AgenteFalso, Relogio, ler, montar, ok
 from tests.test_roteamento import resultado
 
@@ -337,3 +338,20 @@ def test_identificador_de_secao_no_texto_nao_conta_como_numero():
     a = com_texto("anthropic", "Dupla aprovação (SFU-3) acima de R$ 100.000,00.", citacoes=(("POL-SFU", "SFU-3"),))
     b = com_texto("openai", "Dupla aprovação acima de R$ 100.000,00.", citacoes=(("POL-SFU", "SFU-3"),))
     assert comparar(a, b) is Concordancia.CONCORDAM
+
+
+# --- abstenção que cita trecho não pode ser aceita como resposta --------------------------------
+
+def test_abstencao_que_cita_trecho_nao_e_aceita_como_resposta_mesmo_marcada_como_valida():
+    a = ok("anthropic", encontrado=False, citacoes=ACE3, confianca="alta")
+    a.citacoes_ok = True   # simula a saída antiga, que o contrato já não deixa passar
+    assert motivo_escalonamento(a, "alta") is Motivo.SEM_CITACAO_VALIDA
+    assert decidir_par(a, None, "alta").status != ACEITA_NO_PRIMEIRO
+
+
+def test_abstencao_que_cita_nao_vira_consenso_com_quem_encontra():
+    a = ok("anthropic", encontrado=False, citacoes=ACE3, confianca="alta")
+    a.citacoes_ok = True
+    b = ok("openai", citacoes=ACE3, confianca="alta")
+    d = decidir_par(a, b, "alta")
+    assert d.status == ACEITA_APOS_ESCALONAMENTO and d.escolhido == "b"

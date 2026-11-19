@@ -92,6 +92,8 @@ def interpretar_saida(texto: str, recuperados: set[tuple[str, str]]) -> Interpre
 
     if resposta.encontrado and not resposta.citacoes:
         return Interpretacao(resposta, True, False, "encontrado=true sem nenhuma citação")
+    if not resposta.encontrado and resposta.citacoes:
+        return Interpretacao(resposta, True, False, "encontrado=false com citação: abstenção não cita trecho")
     fora = [f"{c.documento}/{c.secao}" for c in resposta.citacoes if (c.documento, c.secao) not in recuperados]
     if fora:
         return Interpretacao(resposta, True, False, f"citação fora dos trechos recuperados: {', '.join(fora)}")

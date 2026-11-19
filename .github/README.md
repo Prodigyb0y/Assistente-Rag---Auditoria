@@ -71,7 +71,7 @@ A tabela completa é gerada por script em [`docs/resultados/avaliacao.md`](../do
 |---|---|---|---|---|
 | Só OpenAI (`gpt-6.1-terra`) | 30/30 | 30/30 | US$ 0,002024 | 6,43 s |
 | Só Anthropic (`claude-haiku-5-5`) | 30/30 | 30/30 | US$ 0,000467 | 3,41 s |
-| Orquestrado | 30/30 | 30/30 | US$ 0,000469 | 2,86 s |
+| Orquestrado (modo `escalonar`, regra original) | 30/30 | 30/30 | US$ 0,000469 | 2,86 s |
 
 **Recuperação:** recall@3 = **30/30**, medido ao nível da seção (acerto quando a seção do gabarito, documento mais id,
 aparece entre os 3 primeiros trechos).
@@ -93,13 +93,14 @@ aparece entre os 3 primeiros trechos).
 
 **Como ler estes números (importante):**
 - O acerto de **30/30 em todos os modos não discrimina** os modelos: a base é fácil para eles (efeito teto).
-- No modo orquestrado **nenhuma pergunta escalou**: as 30 respostas finais vieram da Anthropic. A vantagem de latência
+- No modo `escalonar` (a regra original, medida nesta tabela) **nenhuma pergunta escalou**: as 30 respostas finais vieram da Anthropic. A vantagem de latência
   do orquestrado sobre o "só Anthropic" (2,86 s contra 3,41 s) é variação entre execuções, não efeito da regra. A latência
   da primeira chamada é irregular (observei 25,8 s em uma execução e 6 a 8 s em outras).
-- Gasto acumulado de desenvolvimento até esta medição: cerca de US$ 0,13 na OpenAI e US$ 0,045 na Anthropic.
-- Observação isolada na demo (não é métrica): uma pergunta fora do escopo custou cerca de US$ 0,0052 (aprox. 11x o normal)
-  e levou 24,3 s, com confiança baixa e sem citação; escalou para os dois provedores e foi exibida como "melhor
-  esforço", sem entrar no cache.
+- Gasto acumulado de desenvolvimento até a rodada de orquestração de 2026-11-19: cerca de US$ 0,19 na OpenAI e US$ 0,065 na Anthropic (somado dos logs locais do autor).
+- Observação isolada na demo, com a regra original (não é métrica): uma pergunta fora do escopo custou cerca de
+  US$ 0,0052 (aprox. 11x o normal) e levou 24,3 s; escalou para os dois provedores e foi exibida como "melhor esforço".
+  Com o modo `adaptativo`, as perguntas fora da base medidas em 2026-11-19 terminaram como "não encontrado confirmado"
+  (O07, O08, O10) ou "melhor esforço" (O06), sem entrar no cache. Detalhes em [`docs/orquestracao.md`](../docs/orquestracao.md).
 
 ## Análise dos dados
 
