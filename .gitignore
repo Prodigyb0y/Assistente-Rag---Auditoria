@@ -1,7 +1,5 @@
 # Segredos
 .env
-.env.*git status
-git --version.env
 .env.*
 !.env.example
 __pycache__/

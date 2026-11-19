@@ -5,13 +5,13 @@
   "modelos": {
     "gpt-6.1-terra": {
       "provedor": "openai",
-      "input_mtok": 1.00,
-      "output_mtok": 5.00,
+      "input_mtok": 1.0,
+      "output_mtok": 5.0,
       "limite_prompt_tokens": 272000,
-      "input_mtok_acima": 2.00,
-      "output_mtok_acima": 7.50,
-      "verificado_oficial": false,
-      "fonte": "Fontes secundárias (datacamp, litellm, requesty, kingy.ai). A página oficial de preços da OpenAI não pôde ser acessada nesta sessão. A página oficial do gpt-5-mini recomenda o gpt-6.1-terra como substituto, mas não lista o preço. CONFIRMAR em developers.openai.com antes de publicar resultados."
+      "input_mtok_acima": 2.0,
+      "output_mtok_acima": 7.5,
+      "verificado_oficial": true,
+      "fonte": "Página oficial de preços da OpenAI, tabela Standard, contexto curto. Conferido pelo autor em 2026-11-19 (captura de tela enviada pelo autor; a captura não é versionada). Valores acima de 272 mil tokens de prompt não verificados."
     },
     "text-embedding-3-small": {
       "provedor": "openai",
@@ -22,18 +22,18 @@
     },
     "claude-haiku-5-5": {
       "provedor": "anthropic",
-      "input_mtok": 0.10,
-      "output_mtok": 0.50,
+      "input_mtok": 0.1,
+      "output_mtok": 0.5,
       "limite_prompt_tokens": 100000,
-      "input_mtok_acima": 0.50,
-      "output_mtok_acima": 2.50,
+      "input_mtok_acima": 0.5,
+      "output_mtok_acima": 2.5,
       "verificado_oficial": true,
       "fonte": "https://platform.claude.com/en/docs/about-claude/pricing"
     },
     "claude-sonnet-5-5": {
       "provedor": "anthropic",
-      "input_mtok": 2.00,
-      "output_mtok": 10.00,
+      "input_mtok": 2.0,
+      "output_mtok": 10.0,
       "verificado_oficial": true,
       "fonte": "https://platform.claude.com/en/docs/about-claude/pricing"
     }

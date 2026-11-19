@@ -36,7 +36,7 @@
 - **Uma única execução por modo**: sem repetição, não há intervalo de confiança. Latência varia com a rede e a primeira chamada de uma execução costuma ser mais lenta (conexão fria). Prefira a mediana.
 - A regra de acerto confere a **presença** dos fatos esperados, não a **ausência** de fatos errados, nem entende negação. A seção "Auditoria do acerto" lista cada resposta para revisão humana.
 - Sobrescritas manuais de acerto (`dados/acerto_manual.json`): **0**.
-- **O preço de `gpt-6.1-terra` (US$ 1.0/5.0 por 1M de tokens) NÃO foi confirmado na página oficial do provedor.** Os custos da OpenAI e do modo orquestrado dependem dele; confirme e atualize `config/precos.json` antes de publicar.
+- **O preço de `gpt-6.1-terra` (US$ 1.0/5.0 por 1M de tokens) NÃO foi confirmado na página oficial do provedor no momento desta execução.** Os custos da OpenAI e do modo orquestrado usam esse preço. Depois da execução, o autor conferiu a página oficial em 2026-11-19; a fonte está em `config/precos.json`.
 - Base pequena, fictícia e com vocabulário compartilhado entre as perguntas e os documentos: os números não se generalizam para documentos reais.
 - Gemini não faz parte deste projeto (restrição de escopo): é uma lacuna a fechar depois.
 

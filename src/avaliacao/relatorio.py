@@ -78,8 +78,9 @@ def gerar_markdown(resumos: Mapping[str, Resumo], linhas: Mapping[str, list[Linh
     nao_oficiais = [p for p in meta["precos"] if not p["verificado_oficial"]]
     for p in nao_oficiais:
         out.append(f"- **O preço de `{p['modelo']}` (US$ {p['input_mtok']}/{p['output_mtok']} por 1M de tokens) NÃO foi "
-                   "confirmado na página oficial do provedor.** Os custos da OpenAI e do modo orquestrado dependem dele; "
-                   "confirme e atualize `config/precos.json` antes de publicar.")
+                   "confirmado na página oficial do provedor no momento desta execução.** Os custos da OpenAI e do modo "
+                   "orquestrado usam esse preço. Depois da execução, o autor conferiu a página oficial em 2026-11-19; "
+                   "a fonte está em `config/precos.json`.")
     out.append("- Base pequena, fictícia e com vocabulário compartilhado entre as perguntas e os documentos: os números "
                "não se generalizam para documentos reais.")
     out.append("- Gemini não faz parte deste projeto (restrição de escopo): é uma lacuna a fechar depois.\n")
