@@ -7,3 +7,4 @@ numpy==2.4.6
 openai==3.55.1
 anthropic==2.10.0
 pytest==9.1.1
+gradio==6.30.0
