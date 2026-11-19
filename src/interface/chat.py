@@ -90,6 +90,13 @@ def _bloco_fontes(citacoes: list[dict[str, str]], dir_docs: Path) -> str:
     return "\n\n".join(blocos)
 
 
+AVISOS_ORQUESTRACAO = {
+    "aceita_por_consenso": "_Confirmada por dois provedores: mesmas fontes e mesmos valores._",
+    "divergencia": ("_Atenção: os dois provedores divergiram em fontes ou valores. Confira o trecho no "
+                    "documento antes de usar esta resposta._"),
+}
+
+
 def _rodape(r: RespostaDemo) -> str:
     conf = CONFIANCA.get(r.confianca or "", "-")
     if r.status == "cache":
@@ -102,10 +109,15 @@ def montar_mensagem(r: RespostaDemo, dir_docs: Path = DIR_DOCS) -> str:
     if not r.ok:
         return f"⚠️ **{r.mensagem}**"
     partes = [r.resposta or ""]
-    if r.encontrado is False:
+    if r.status_orq == "nao_encontrado_confirmado":
+        partes.append("_Os dois provedores confirmaram: a base não traz essa informação._")
+    elif r.encontrado is False:
         partes.append("_A base não traz essa informação com segurança._")
     partes.append(_bloco_fontes(r.citacoes, dir_docs))
-    if not r.aceita_pela_regra:
+    aviso = AVISOS_ORQUESTRACAO.get(r.status_orq)
+    if aviso:
+        partes.append(aviso)
+    elif not r.aceita_pela_regra:
         partes.append("_Atenção: nenhum dos provedores passou na regra de qualidade; esta é a melhor resposta obtida._")
     partes.append(_rodape(r))
     return "\n\n".join(partes)

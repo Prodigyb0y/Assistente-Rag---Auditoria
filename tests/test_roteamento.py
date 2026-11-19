@@ -40,9 +40,9 @@ def test_confianca_baixa_aceita_quando_minima_e_baixa():
     assert motivo_escalonamento(resultado(confianca="baixa"), "baixa") is None
 
 
-def test_encontrado_false_sem_citacao_escala():
+def test_encontrado_false_sem_citacao_e_abstencao_e_escala_no_modo_original():
     r = resultado(encontrado=False, citacoes=(), confianca="alta")
-    assert motivo_escalonamento(r) is Motivo.SEM_CITACAO_VALIDA
+    assert motivo_escalonamento(r) is Motivo.NAO_ENCONTRADO
 
 
 def test_citacao_fora_dos_trechos_recuperados_escala():
@@ -70,9 +70,9 @@ def test_a_ordem_das_verificacoes_erro_vence_confianca():
     assert motivo_escalonamento(r) is Motivo.ERRO
 
 
-def test_sem_citacao_vence_confianca_baixa():
+def test_abstencao_vence_confianca_baixa():
     r = resultado(encontrado=False, citacoes=(), confianca="baixa")
-    assert motivo_escalonamento(r) is Motivo.SEM_CITACAO_VALIDA
+    assert motivo_escalonamento(r) is Motivo.NAO_ENCONTRADO
 
 
 # --- classificação de falhas -------------------------------------------------------------

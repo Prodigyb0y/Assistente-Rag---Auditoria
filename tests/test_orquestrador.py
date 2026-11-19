@@ -89,11 +89,19 @@ def test_confianca_baixa_escala_para_o_segundo(tmp_path):
 
 
 def test_sem_citacao_valida_escala(tmp_path):
+    inventada = ok("anthropic", citacoes_ok=False, erro="citação fora dos trechos recuperados: POL-X/X-1")
+    b, c = AgenteFalso("anthropic", [inventada]), AgenteFalso("openai", [ok("openai")])
+    orq, _, _ = montar(tmp_path, b, c)
+    res = orq.responder("p")
+    assert res.motivo_escalonamento == "sem_citacao_valida" and res.provedor_final == "openai"
+
+
+def test_abstencao_escala_no_modo_original_com_motivo_nao_encontrado(tmp_path):
     sem = ok("anthropic", encontrado=False, citacoes=())
     b, c = AgenteFalso("anthropic", [sem]), AgenteFalso("openai", [ok("openai")])
     orq, _, _ = montar(tmp_path, b, c)
     res = orq.responder("p")
-    assert res.motivo_escalonamento == "sem_citacao_valida" and res.provedor_final == "openai"
+    assert res.motivo_escalonamento == "nao_encontrado" and res.provedor_final == "openai"
 
 
 def test_politica_com_confianca_minima_alta_escala_media(tmp_path):

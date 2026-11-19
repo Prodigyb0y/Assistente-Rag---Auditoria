@@ -1,6 +1,13 @@
 """Orquestrador: tenta o provedor mais barato, escala para o outro conforme a regra de código.
 
-Fluxo por pergunta:
+Três modos (Politica.modo), todos com a decisão em código:
+  escalonar  : o fluxo abaixo (regra original).
+  adaptativo : aceita direto quando o primeiro passa na regra; senão pede ao segundo uma segunda opinião
+               (primeiro se absteve ou falhou) ou uma confirmação cruzada (confiança abaixo da mínima), e
+               decide por `politica.decidir_par`.
+  consenso   : os dois provedores sempre respondem; `decidir_par` compara fontes e números.
+
+Fluxo do modo escalonar, por pergunta:
   para cada provedor da rota (mais barato primeiro):
       tenta até `max_tentativas` vezes, com espera exponencial, SOMENTE em falha transitória;
       OrcamentoExcedido nunca é repetido: o provedor é pulado e o outro assume;
@@ -26,13 +33,10 @@ from typing import Any, Callable, Mapping, Sequence
 
 from ..agentes.contrato import Agente, ResultadoAgente
 from ..custo import OrcamentoExcedido
-from .politica import (Falha, Motivo, Politica, classificar_falha, espera_backoff, melhor,
-                       motivo_escalonamento, valida_ordem)
-
-ACEITA_NO_PRIMEIRO = "aceita_no_primeiro"
-ACEITA_APOS_ESCALONAMENTO = "aceita_apos_escalonamento"
-MELHOR_ESFORCO = "melhor_esforco"
-FALHA = "falha"
+from .politica import (ACEITA_APOS_ESCALONAMENTO, ACEITA_NO_PRIMEIRO, ACEITA_POR_CONSENSO, DIVERGENCIA, FALHA,  # noqa: F401
+                       MELHOR_ESFORCO, NAO_ENCONTRADO_CONFIRMADO, STATUS_ACEITOS, Falha, Motivo, Politica,
+                       classificar_falha, decidir_par, espera_backoff, melhor, motivo_escalonamento,
+                       valida_ordem)
 
 
 class LogRoteamento:
@@ -70,6 +74,9 @@ class ResultadoOrquestrado:
     motivo_escalonamento: str | None = None                  # por que o primeiro não bastou
     tentativas: list[Tentativa] = field(default_factory=list)
     latencia_s: float = 0.0                                  # total, incluindo esperas de backoff
+    modo: str = "escalonar"
+    caminho: str = ""                                        # direto | segunda_opiniao | confirmacao_cruzada | segundo_indisponivel | esgotado
+    concordancia: str | None = None                          # concordam | divergem (quando os dois responderam)
 
     @property
     def provedor_final(self) -> str | None:
@@ -81,7 +88,7 @@ class ResultadoOrquestrado:
 
     @property
     def aceito(self) -> bool:
-        return self.status in (ACEITA_NO_PRIMEIRO, ACEITA_APOS_ESCALONAMENTO)
+        return self.status in STATUS_ACEITOS
 
     def _resultados(self) -> list[ResultadoAgente]:
         return [t.resultado for t in self.tentativas if t.resultado is not None]
@@ -171,9 +178,77 @@ class Orquestrador:
     # -- roteamento -------------------------------------------------------------------------
     def responder(self, pergunta: str, pergunta_id: str = "") -> ResultadoOrquestrado:
         inicio = self._relogio()
-        res = ResultadoOrquestrado(pergunta_id=pergunta_id, pergunta=pergunta)
+        res = ResultadoOrquestrado(pergunta_id=pergunta_id, pergunta=pergunta, modo=self.politica.modo)
+        if self.politica.modo != "escalonar" and len(self.ordem) >= 2:
+            self._responder_cooperativo(pergunta, pergunta_id, res, inicio)
+        else:
+            self._responder_escalonando(pergunta, pergunta_id, res, inicio)
+        res.latencia_s = self._relogio() - inicio
+        self.log.gravar(
+            "final", pergunta_id=pergunta_id, status=res.status, provedor_final=res.provedor_final,
+            rota=res.rota, motivo_escalonamento=res.motivo_escalonamento, modo=res.modo, caminho=res.caminho,
+            concordancia=res.concordancia, prompt_versao=res.final.prompt_versao if res.final else None,
+            tentativas=len(res.tentativas), tokens_in=res.tokens_in, tokens_out=res.tokens_out,
+            custo_usd=round(res.custo_total_usd, 8), latencia_s=round(res.latencia_s, 4))
+        return res
+
+    # -- modos adaptativo e consenso -------------------------------------------------------------
+    def _obter(self, prov: str, pergunta: str, pid: str, res: ResultadoOrquestrado, inicio: float,
+               *, checar_prazo: bool) -> ResultadoAgente | None:
+        if checar_prazo and (self._relogio() - inicio) >= self.politica.prazo_total_s:
+            self.log.gravar("prazo_excedido", pergunta_id=pid, provedor=prov, antes_de="provedor",
+                            prazo_total_s=self.politica.prazo_total_s)
+            return None
+        r = self._tentar_provedor(prov, pergunta, pid, res, inicio)
+        if r is None:   # teto de gasto
+            self.log.gravar("decisao", pergunta_id=pid, provedor=prov, acao="pular_provedor",
+                            motivo="orcamento_excedido", para=None)
+            return None
+        res.rota.append(prov)
+        return r
+
+    def _responder_cooperativo(self, pergunta: str, pid: str, res: ResultadoOrquestrado, inicio: float) -> None:
+        minima = self.politica.confianca_minima
+        p1, p2 = self.ordem[0], self.ordem[1]
+        a = self._obter(p1, pergunta, pid, res, inicio, checar_prazo=False)
+        if a is None:   # primeiro bloqueado pelo teto: o segundo assume sozinho, pela regra de aceitação
+            res.motivo_escalonamento = "orcamento_excedido"
+            b = self._obter(p2, pergunta, pid, res, inicio, checar_prazo=True)
+            if b is None:
+                res.status, res.caminho = FALHA, "esgotado"
+                return
+            res.final, res.caminho = b, "segunda_opiniao"
+            res.status = ACEITA_APOS_ESCALONAMENTO if motivo_escalonamento(b, minima) is None else MELHOR_ESFORCO
+            self.log.gravar("decisao", pergunta_id=pid, provedor=p2, acao="assumir", motivo="orcamento_excedido",
+                            para=None)
+            return
+
+        motivo = motivo_escalonamento(a, minima)
+        res.motivo_escalonamento = motivo.value if motivo else None
+        if motivo is None and self.politica.modo == "adaptativo":
+            res.final, res.status, res.caminho = a, ACEITA_NO_PRIMEIRO, "direto"
+            self.log.gravar("decisao", pergunta_id=pid, provedor=p1, acao="aceitar", motivo=None, para=None)
+            return
+
+        # segunda chamada: segunda opinião (abstenção/falha) ou confirmação cruzada (confiança baixa, modo consenso)
+        caminho = "confirmacao_cruzada" if (motivo is None or motivo is Motivo.CONFIANCA_BAIXA) else "segunda_opiniao"
+        self.log.gravar("decisao", pergunta_id=pid, provedor=p1, acao=caminho, motivo=res.motivo_escalonamento,
+                        para=p2)
+        b = self._obter(p2, pergunta, pid, res, inicio, checar_prazo=True)
+        d = decidir_par(a, b, minima)
+        res.final = a if d.escolhido == "a" else b
+        res.status, res.caminho = d.status, caminho if b is not None else "segundo_indisponivel"
+        res.concordancia = d.concordancia.value if d.concordancia else None
+        self.log.gravar("decisao", pergunta_id=pid, provedor=res.final.provedor if res.final else None,
+                        acao="decidir_par", motivo=d.motivo, para=None, status=d.status,
+                        concordancia=res.concordancia)
+
+    # -- modo escalonar (regra original) -----------------------------------------------------------
+    def _responder_escalonando(self, pergunta: str, pergunta_id: str, res: ResultadoOrquestrado,
+                               inicio: float) -> None:
         obtidos: list[ResultadoAgente] = []
         aceito: ResultadoAgente | None = None
+        res.caminho = "direto"
 
         for i, prov in enumerate(self.ordem):
             if i > 0 and (self._relogio() - inicio) >= self.politica.prazo_total_s:
@@ -213,12 +288,5 @@ class Orquestrador:
             res.status = MELHOR_ESFORCO
         else:
             res.status = FALHA
-
-        res.latencia_s = self._relogio() - inicio
-        self.log.gravar(
-            "final", pergunta_id=pergunta_id, status=res.status, provedor_final=res.provedor_final,
-            rota=res.rota, motivo_escalonamento=res.motivo_escalonamento,
-            prompt_versao=res.final.prompt_versao if res.final else None, tentativas=len(res.tentativas),
-            tokens_in=res.tokens_in, tokens_out=res.tokens_out, custo_usd=round(res.custo_total_usd, 8),
-            latencia_s=round(res.latencia_s, 4))
-        return res
+        if len(res.rota) > 1:
+            res.caminho = "segunda_opiniao"

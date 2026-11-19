@@ -110,9 +110,12 @@ aparece entre os 3 primeiros trechos).
  Interface (Gradio) ── limites por visitante/dia, global, teto de custo ── cache
     │
     ▼
- Orquestrador ── regra de roteamento em código (src/orquestrador/politica.py)
-    │   ordem: provedor mais barato pelo preço de tabela → o outro
-    │   escala se: erro | saída fora do schema | sem citação válida | confiança < "media"
+ Orquestrador ── regra de roteamento em código (src/orquestrador/politica.py), três modos
+    │   ordem: provedor mais barato pelo preço de tabela → o outro (ou a ordem escolhida na linha de comando)
+    │   o primeiro não basta se: erro | saída fora do schema | abstenção | sem citação válida | confiança < mínima
+    │   escalonar : pergunta ao outro provedor e fica com o primeiro aceito
+    │   adaptativo: aceita direto | segunda opinião (abstenção ou falha) | confirmação cruzada (confiança baixa)
+    │   consenso  : os dois respondem; compara fontes citadas e números; diverge → sinaliza para revisão
     │   retry só em falha transitória, espera exponencial (1, 2, 4... máx. 8 s), prazo total por pergunta
     ▼
  Agente (OpenAI ou Anthropic), mesmo contrato de saída (JSON validado por schema)
@@ -184,8 +187,10 @@ evolução futura. Base: 9 documentos fictícios (45 seções) e 30 perguntas de
 
 - **Ganho de tempo:** comparar a busca manual das mesmas perguntas na base fictícia, no cenário do portal acima, com a
   latência do sistema. Protocolo e ferramenta de cronometragem em [`src/avaliacao/tempo_manual.py`](../src/avaliacao/tempo_manual.py).
-- **Avaliação mais exigente:** perguntas difíceis e sem resposta na base, para exercitar a regra de roteamento, e repetição
-  das execuções para reportar variação.
+- **Avaliação mais exigente:** rodar as perguntas de orquestração
+  ([`dados/perguntas_orquestracao.json`](../dados/perguntas_orquestracao.json): combinam seções, ambíguas e vizinhas da
+  base) nos três modos e registrar o resultado; repetir as execuções para reportar variação. Os modos estão descritos em
+  [`docs/orquestracao.md`](../docs/orquestracao.md).
 - **Qualidade da resposta:** detectar afirmações incorretas além da presença de fatos.
 - **Conversa com memória:** reformular a pergunta de acompanhamento antes de buscar.
 - **Terceiro provedor:** Gemini.

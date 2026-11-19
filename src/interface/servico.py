@@ -33,6 +33,7 @@ class RespostaDemo:
     citacoes: list[dict[str, str]] = field(default_factory=list)
     provedor: str | None = None
     aceita_pela_regra: bool = False
+    status_orq: str = ""              # estado do orquestrador (ex.: aceita_por_consenso, divergencia)
     custo_usd: float = 0.0
     latencia_s: float = 0.0
     restantes_visitante: int = 0
@@ -88,7 +89,7 @@ class ServicoDemo:
         dados: dict[str, Any] = {
             "resposta": f.resposta.resposta, "encontrado": f.resposta.encontrado, "confianca": f.resposta.confianca,
             "citacoes": [c.model_dump() for c in f.resposta.citacoes], "provedor": res.provedor_final,
-            "aceita_pela_regra": res.aceito}
+            "aceita_pela_regra": res.aceito, "status_orq": res.status}
         if res.aceito:   # só guarda o que passou na regra
             self.cache.guardar(chave, dados)
         return RespostaDemo(status="ok", custo_usd=res.custo_total_usd, latencia_s=res.latencia_s,

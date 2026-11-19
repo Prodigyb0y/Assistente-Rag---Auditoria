@@ -116,6 +116,7 @@ def main(argv: list[str] | None = None) -> int:
     resumos = {m: agregar(m, ls, n_gabarito) for m, ls in linhas.items()}
     meta = {"data": time.strftime("%Y-%m-%d"), "prompt_versao": prompt.versao, "prompt_sha": prompt.sha,
             "data_precos": tabela.data_consulta, "n_gabarito": n_gabarito, "limite_de_perguntas": args.limite,
+            "modo_orquestracao": pol.modo,
             "precos": precos_dos_modos(tabela, modelos)}
     _escrever(resumos, linhas, meta)
     print("\nResultados em docs/resultados/avaliacao.md")

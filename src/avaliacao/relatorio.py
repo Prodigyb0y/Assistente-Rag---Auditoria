@@ -29,6 +29,8 @@ def gerar_markdown(resumos: Mapping[str, Resumo], linhas: Mapping[str, list[Linh
     out.append(f"- Data da execução: **{meta['data']}**")
     out.append(f"- Prompt: `{meta['prompt_versao']}` (sha `{meta['prompt_sha']}`)")
     out.append(f"- Modelos: " + ", ".join(f"{p['provedor']}=`{p['modelo']}`" for p in meta["precos"]))
+    if meta.get("modo_orquestracao"):
+        out.append(f"- Modo de orquestração (modo orquestrado): **{meta['modo_orquestracao']}**")
     out.append(f"- Preços: tabela `config/precos.json` consultada em **{meta['data_precos']}**")
     out.append(f"- Base: dados **fictícios** (Gutenberg Systems), {meta['n_gabarito']} perguntas com gabarito\n")
 

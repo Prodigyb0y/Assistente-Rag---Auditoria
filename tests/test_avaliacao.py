@@ -179,6 +179,9 @@ def _meta(precos):
 def test_relatorio_gerado_traz_numeros_calculados_metodo_e_aviso_de_preco():
     tabela = TabelaPrecos.de_json("config/precos.json")
     precos = precos_dos_modos(tabela, {"openai": "gpt-6.1-terra", "anthropic": "claude-haiku-5-5"})
+    for p in precos:   # o preço real já foi conferido; o teste força o caso não conferido de forma sintética
+        if p["modelo"] == "gpt-6.1-terra":
+            p["verificado_oficial"] = False
     ag_o = AgenteDoGabarito("openai", erradas={"Q01"}, custo=0.002)
     ag_a = AgenteDoGabarito("anthropic", custo=0.0005)
     linhas = {"openai": rodar("openai", {"openai": ag_o}, ["openai"]),

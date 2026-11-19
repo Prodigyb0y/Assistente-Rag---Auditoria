@@ -1,0 +1,166 @@
+[
+  {
+    "id": "O01",
+    "pergunta": "Quanto tempo ficam retidos os logs de ações de contas privilegiadas e a cada quantos dias esses acessos privilegiados são revisados?",
+    "tipo": "combina_secoes",
+    "esperado": "Logs de contas privilegiadas: 24 meses (LOG-3). Acessos privilegiados: revisão a cada 90 dias (ACE-3).",
+    "fontes": [
+      {
+        "documento": "POL-LOG",
+        "secao": "LOG-3"
+      },
+      {
+        "documento": "POL-ACE",
+        "secao": "ACE-3"
+      }
+    ],
+    "caminho_visado": "confirmacao_cruzada",
+    "revisado": false
+  },
+  {
+    "id": "O02",
+    "pergunta": "Um incidente S1 com vazamento confirmado de dados pessoais: em quanto tempo comunicar a diretoria e o Encarregado de Dados (DPO)?",
+    "tipo": "combina_secoes",
+    "esperado": "Diretoria em até 1 hora (INC-3). DPO em até 24 horas após a confirmação (INC-4).",
+    "fontes": [
+      {
+        "documento": "POL-INC",
+        "secao": "INC-3"
+      },
+      {
+        "documento": "POL-INC",
+        "secao": "INC-4"
+      }
+    ],
+    "caminho_visado": "confirmacao_cruzada",
+    "revisado": false
+  },
+  {
+    "id": "O03",
+    "pergunta": "Um pagamento de R$ 150.000,00 a um fornecedor cadastrado pelo próprio solicitante pode ser aprovado por ele? Que aprovações são exigidas?",
+    "tipo": "combina_secoes",
+    "esperado": "Não: quem cadastra o fornecedor não pode aprovar pagamentos a ele. Acima de R$ 100.000,00 exige dupla aprovação: gerente da área e diretoria financeira.",
+    "fontes": [
+      {
+        "documento": "POL-SFU",
+        "secao": "SFU-3"
+      }
+    ],
+    "caminho_visado": "confirmacao_cruzada",
+    "revisado": false
+  },
+  {
+    "id": "O04",
+    "pergunta": "Uma exceção à segregação de funções: quem a aprova, por quanto tempo ela pode durar e com que frequência a matriz de conflitos é atualizada?",
+    "tipo": "combina_secoes",
+    "esperado": "Aprovação do gerente de Controles Internos, com controle compensatório documentado e prazo máximo de 90 dias (SFU-5). A matriz de conflitos é atualizada a cada 6 meses (SFU-4).",
+    "fontes": [
+      {
+        "documento": "POL-SFU",
+        "secao": "SFU-5"
+      },
+      {
+        "documento": "POL-SFU",
+        "secao": "SFU-4"
+      }
+    ],
+    "caminho_visado": "confirmacao_cruzada",
+    "revisado": false
+  },
+  {
+    "id": "O05",
+    "pergunta": "Um incidente S3 envolve dados pessoais: qual o prazo para o primeiro atendimento e para comunicar o DPO?",
+    "tipo": "combina_secoes",
+    "esperado": "Primeiro atendimento de S3 em 4 horas (INC-3). DPO em até 24 horas após a confirmação (INC-4).",
+    "fontes": [
+      {
+        "documento": "POL-INC",
+        "secao": "INC-3"
+      },
+      {
+        "documento": "POL-INC",
+        "secao": "INC-4"
+      }
+    ],
+    "caminho_visado": "confirmacao_cruzada",
+    "revisado": false
+  },
+  {
+    "id": "O06",
+    "pergunta": "Qual é o prazo de revisão dos acessos de terceiros?",
+    "tipo": "ambigua",
+    "esperado": "A base não fixa prazo específico para terceiros. ACE-1 inclui terceiros no escopo e ACE-3 fixa 12 meses para acessos comuns e 90 dias para privilegiados.",
+    "fontes": [
+      {
+        "documento": "POL-ACE",
+        "secao": "ACE-1"
+      },
+      {
+        "documento": "POL-ACE",
+        "secao": "ACE-3"
+      }
+    ],
+    "caminho_visado": "confirmacao_cruzada ou divergencia",
+    "revisado": false
+  },
+  {
+    "id": "O07",
+    "pergunta": "Por quanto tempo são retidos os logs de aplicações que não são de segurança?",
+    "tipo": "adjacente_fora_da_base",
+    "esperado": "A base só define retenção de logs de segurança (13 meses) e de contas privilegiadas (24 meses); não define para outros logs.",
+    "fontes": [
+      {
+        "documento": "POL-LOG",
+        "secao": "LOG-3"
+      }
+    ],
+    "caminho_visado": "segunda_opiniao",
+    "revisado": false
+  },
+  {
+    "id": "O08",
+    "pergunta": "Qual o prazo de primeiro atendimento para um incidente S5?",
+    "tipo": "adjacente_fora_da_base",
+    "esperado": "A política só classifica incidentes de S1 a S4; não existe S5.",
+    "fontes": [
+      {
+        "documento": "POL-INC",
+        "secao": "INC-2"
+      },
+      {
+        "documento": "POL-INC",
+        "secao": "INC-3"
+      }
+    ],
+    "caminho_visado": "segunda_opiniao",
+    "revisado": false
+  },
+  {
+    "id": "O09",
+    "pergunta": "Quem aprova pagamentos acima de R$ 500.000,00?",
+    "tipo": "adjacente_fora_da_base",
+    "esperado": "A política não traz faixa específica para R$ 500.000,00; acima de R$ 100.000,00 exige dupla aprovação (gerente da área e diretoria financeira).",
+    "fontes": [
+      {
+        "documento": "POL-SFU",
+        "secao": "SFU-3"
+      }
+    ],
+    "caminho_visado": "segunda_opiniao",
+    "revisado": false
+  },
+  {
+    "id": "O10",
+    "pergunta": "Com que prazo as senhas das contas de usuários comuns devem ser trocadas?",
+    "tipo": "adjacente_fora_da_base",
+    "esperado": "A base define rotação de senha apenas para contas de serviço (180 dias); não define para contas de usuários comuns.",
+    "fontes": [
+      {
+        "documento": "POL-ACE",
+        "secao": "ACE-5"
+      }
+    ],
+    "caminho_visado": "segunda_opiniao",
+    "revisado": false
+  }
+]

@@ -71,6 +71,22 @@ def test_mensagem_nao_encontrado_e_sem_fonte_e_regra_nao_aceita():
     assert "não traz essa informação" in m and "Nenhuma fonte citada" in m and "melhor resposta obtida" in m
 
 
+def test_mensagem_de_nao_encontrado_confirmado_nao_diz_que_a_regra_falhou():
+    m = chat.montar_mensagem(_ok(encontrado=False, citacoes=[], aceita_pela_regra=True, confianca="baixa",
+                                 status_orq="nao_encontrado_confirmado"))
+    assert "Os dois provedores confirmaram" in m and "melhor resposta obtida" not in m
+
+
+def test_mensagem_de_divergencia_pede_conferencia_no_documento():
+    m = chat.montar_mensagem(_ok(aceita_pela_regra=False, status_orq="divergencia"))
+    assert "divergiram" in m and "melhor resposta obtida" not in m
+
+
+def test_mensagem_de_consenso_informa_a_confirmacao():
+    m = chat.montar_mensagem(_ok(status_orq="aceita_por_consenso"))
+    assert "Confirmada por dois provedores" in m
+
+
 def test_mensagem_de_bloqueio():
     m = chat.montar_mensagem(RespostaDemo(status="limite_visitante", mensagem="limite hoje"))
     assert m == "⚠️ **limite hoje**"

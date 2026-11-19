@@ -43,6 +43,8 @@ class Settings(BaseModel):
     espera_max_s: float = Field(8.0, ge=0)              # teto da espera entre tentativas
     prazo_total_s: float = Field(120.0, gt=0)           # prazo por pergunta (não interrompe chamada em curso)
     confianca_minima: Literal["baixa", "media", "alta"] = "media"  # abaixo disto, escala
+    # escalonar = regra original; adaptativo = caminho conforme o sinal; consenso = os dois sempre respondem
+    orquestracao_modo: Literal["escalonar", "adaptativo", "consenso"] = "adaptativo"
 
     log_dir: Path = RAIZ / "logs"
     precos_path: Path = RAIZ / "config" / "precos.json"
@@ -77,6 +79,7 @@ _ENV_PARA_CAMPO = {
     "ESPERA_MAX_S": "espera_max_s",
     "PRAZO_TOTAL_S": "prazo_total_s",
     "CONFIANCA_MINIMA": "confianca_minima",
+    "ORQUESTRACAO_MODO": "orquestracao_modo",
     "LOG_DIR": "log_dir",
 }
 
