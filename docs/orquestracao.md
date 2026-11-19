@@ -174,3 +174,39 @@ isso descreve estas perguntas, não uma média esperada.
   os números. Uma hipótese, **não verificada**: a comparação exigia números idênticos e uma das respostas pode ter
   repetido o R$ 500.000,00 da pergunta. Por isso a comparação passou a descontar os números da pergunta e o log passou a
   gravar a evidência. Só uma nova execução (`--ids O06,O09`) mostra o que de fato diferiu.
+
+### Segunda execução de O06 e O09 (2026-11-19, 16:31, código do commit `336b1f6`)
+
+Comando, executado pelo autor: `python -m src.orquestrador.executar --arquivo dados/perguntas_orquestracao.json --ids O06,O09 --modo adaptativo`
+(confiança mínima `alta`, ordem `anthropic > openai`). Saída, sem retoques:
+
+```
+prompt=agente_resposta_v1 | ordem=anthropic > openai (preço de lista, tabela de 2026-11-19) | modo=adaptativo | confiança mínima=alta | tentativas=3
+O06 melhor_esforco caminho=segunda_opiniao rota=anthropic>openai motivo=nao_encontrado concordancia=- tentativas=2 tokens=7737/729 custo=0.003205 t=17.2s
+O09 aceita_apos_escalonamento caminho=segunda_opiniao rota=anthropic>openai motivo=nao_encontrado concordancia=- tentativas=2 tokens=8914/527 custo=0.004486 t=11.9s
+gasto acumulado openai: 0.187395 / teto 4.00 USD
+gasto acumulado anthropic: 0.065387 / teto 4.00 USD
+```
+
+Evidência gravada em `logs/roteamento.jsonl` (evento `decidir_par`):
+
+| Pergunta | Fontes (Anthropic) | Fontes (OpenAI) | Números (A / B) | Confiança (A / B) | Estado |
+|---|---|---|---|---|---|
+| O06 | nenhuma (abstenção) | ACE-1, ACE-3 | 12, 90 / 12, 90 | baixa / media | `melhor_esforco` |
+| O09 | nenhuma (abstenção) | SFU-3 | 100000,00 e 3 / 100000,00 e 3 | baixa / alta | `aceita_apos_escalonamento` |
+
+O que esta segunda rodada mostra e o que não mostra:
+
+- **Variação entre execuções, observada:** a mesma pergunta O09 seguiu caminhos diferentes. Na primeira rodada a
+  Anthropic respondeu com confiança abaixo de `alta` e o par divergiu; agora a Anthropic se absteve e a OpenAI foi
+  aceita. A causa da divergência da primeira rodada **continua desconhecida**: ela não se repetiu, e o log daquela
+  rodada não tinha a evidência.
+- **O06 repetiu:** nas duas execuções a Anthropic se absteve e a OpenAI respondeu com confiança abaixo de `alta`, e o
+  resultado foi `melhor_esforco`. Duas execuções não bastam para falar em regularidade.
+- **Abstenção com conteúdo:** o texto da abstenção da Anthropic traz os mesmos números (12 e 90 em O06; 100000,00 em
+  O09) que a resposta da OpenAI, embora declare `encontrado=false`. Em O06 os dois lados dizem, em termos de números e de
+  seções da base, o mesmo; o estado `melhor_esforco` vem de a regra não comparar uma abstenção com uma resposta.
+- **Número "3" em O09:** aparece nos dois lados e não é um valor da política. Provavelmente vem do identificador `SFU-3`
+  escrito no texto (hipótese; o texto não é gravado). Por isso `numeros` passou a ignorar identificadores de seção, o que
+  evita uma divergência falsa quando só um dos lados escreve o identificador.
+- Custo desta rodada: US$ 0,007691 (soma das duas perguntas, conferida pela variação do gasto acumulado).

@@ -169,9 +169,13 @@ class Concordancia(str, Enum):
 _NUMERO = re.compile(r"\d{1,3}(?:\.\d{3})+(?:,\d+)?|\d+(?:,\d+)?")
 
 
+_ID_SECAO = re.compile(r"\b[A-Z]{3}-\d+\b")
+
+
 def numeros(texto: str) -> frozenset[str]:
-    """Números que aparecem no texto; o ponto de milhar é removido (100.000 e 100000 contam como iguais)."""
-    return frozenset(n.replace(".", "") for n in _NUMERO.findall(texto))
+    """Números que aparecem no texto; o ponto de milhar é removido (100.000 e 100000 contam como iguais).
+    Identificadores de seção (ex.: SFU-3) não contam: citar a seção no texto não é um valor da política."""
+    return frozenset(n.replace(".", "") for n in _NUMERO.findall(_ID_SECAO.sub(" ", texto)))
 
 
 def citados(r: ResultadoAgente) -> frozenset[tuple[str, str]]:

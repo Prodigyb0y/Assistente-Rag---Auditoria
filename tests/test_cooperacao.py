@@ -330,3 +330,10 @@ def test_log_da_decisao_do_par_registra_a_evidencia_da_comparacao(tmp_path):
     ev = [e for e in ler(log) if e.get("acao") == "decidir_par"][0]
     assert ev["status"] == DIVERGENCIA and ev["numeros_a"] == ["24"] and ev["numeros_b"] == ["48"]
     assert ev["fontes_a"] == ev["fontes_b"] == ["POL-ACE/ACE-3"]
+
+
+def test_identificador_de_secao_no_texto_nao_conta_como_numero():
+    assert numeros("Vale a dupla aprovação (SFU-3) acima de R$ 100.000,00.") == frozenset({"100000,00"})
+    a = com_texto("anthropic", "Dupla aprovação (SFU-3) acima de R$ 100.000,00.", citacoes=(("POL-SFU", "SFU-3"),))
+    b = com_texto("openai", "Dupla aprovação acima de R$ 100.000,00.", citacoes=(("POL-SFU", "SFU-3"),))
+    assert comparar(a, b) is Concordancia.CONCORDAM
