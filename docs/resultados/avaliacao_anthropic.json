@@ -1,0 +1,996 @@
+[
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q01",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00048396,
+  "tokens_in": 3626,
+  "tokens_out": 242,
+  "latencia_s": 6.206624200000078,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Segundo a política, os acessos privilegiados são revisados a cada 90 dias pelo Dono do Sistema, e a revisão deve ser evidenciada por relatório assinado arquivado por 5 anos.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-ACE",
+     "secao": "ACE-3"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q02",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00045196,
+  "tokens_in": 3606,
+  "tokens_out": 182,
+  "latencia_s": 3.5547684000002846,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Em caso de desligamento, todos os acessos devem ser revogados em até 24 horas após a data de saída registrada pelo RH.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-ACE",
+     "secao": "ACE-4"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q03",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00045710000000000005,
+  "tokens_in": 3568,
+  "tokens_out": 200,
+  "latencia_s": 3.8077432000000044,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Segundo a POL-ACE, seção ACE-5, as senhas das contas de serviço devem ser rotacionadas a cada 180 dias, e as contas devem ter um responsável nomeado.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-ACE",
+     "secao": "ACE-5"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q04",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.0004898600000000001,
+  "tokens_in": 3640,
+  "tokens_out": 251,
+  "latencia_s": 3.5416549999999916,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Segundo a POL-ACE, seção ACE-3, a revisão deve ser evidenciada por relatório assinado e arquivado por 5 anos. O trecho não especifica prazo diferente para o relatório de revisão de acessos.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-ACE",
+     "secao": "ACE-3"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q05",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.0004718200000000001,
+  "tokens_in": 3639,
+  "tokens_out": 215,
+  "latencia_s": 3.84933140000021,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Em caso de transferência de área, os acessos da área anterior são revogados em até 10 dias úteis.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-ACE",
+     "secao": "ACE-4"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q06",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00046198,
+  "tokens_in": 3597,
+  "tokens_out": 204,
+  "latencia_s": 3.4633120000003146,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "De acordo com a POL-CPG, a conciliação entre o razão de pagamentos e os extratos bancários é feita diariamente, em dias úteis, até as 11h do dia seguinte ao movimento.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-CPG",
+     "secao": "CPG-2"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q07",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.0004965799999999999,
+  "tokens_in": 3656,
+  "tokens_out": 261,
+  "latencia_s": 2.3512402000001202,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Divergências de até R$ 50,00 por transação podem ser baixadas pelo analista de conciliação, com justificativa registrada. Divergências acima de R$ 50,00 exigem aprovação do coordenador financeiro.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-CPG",
+     "secao": "CPG-3"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q08",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.0004630800000000001,
+  "tokens_in": 3611,
+  "tokens_out": 203,
+  "latencia_s": 4.255952499999694,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Divergências de conciliação não resolvidas em 5 dias úteis são escaladas ao gerente de controladoria, conforme a POL-CPG, seção CPG-3.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-CPG",
+     "secao": "CPG-3"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q09",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00045718000000000006,
+  "tokens_in": 3524,
+  "tokens_out": 209,
+  "latencia_s": 3.5870239999999285,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "De acordo com a política POL-CPG, seção CPG-4, os relatórios de conciliação são guardados por 7 anos. Cada conciliação gera um relatório com a data, o responsável e o saldo das contas conciliadas.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-CPG",
+     "secao": "CPG-4"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q10",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00047045999999999996,
+  "tokens_in": 3677,
+  "tokens_out": 205,
+  "latencia_s": 2.671560799999952,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "De acordo com a política, o Comitê de Mudanças (CAB) se reúne às terças e quintas-feiras.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-GMU",
+     "secao": "GMU-2"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q11",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00046573999999999997,
+  "tokens_in": 3653,
+  "tokens_out": 200,
+  "latencia_s": 3.603221399999711,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Não. Segundo a política POL-GMU, seção GMU-3, o solicitante de uma mudança não pode ser o aprovador nem o implantador da mesma mudança.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-GMU",
+     "secao": "GMU-3"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q12",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.0005034,
+  "tokens_in": 3696,
+  "tokens_out": 267,
+  "latencia_s": 4.010511700000279,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "De acordo com a POL-GMU, seção GMU-4, o registro formal de uma mudança emergencial deve ser feito em até 2 dias úteis após a implantação. A mesma seção indica que a revisão pós-implantação ocorre em até 5 dias úteis.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-GMU",
+     "secao": "GMU-4"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q13",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00048770000000000004,
+  "tokens_in": 3659,
+  "tokens_out": 243,
+  "latencia_s": 3.2969515999998293,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Sim. A POL-GMU, seção GMU-5, determina que nenhuma mudança normal é implantada às sextas-feiras após as 16h, exceto com autorização do CAB.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-GMU",
+     "secao": "GMU-5"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q14",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00044330000000000004,
+  "tokens_in": 3560,
+  "tokens_out": 174,
+  "latencia_s": 3.6519490000000587,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Segundo a política POL-BKP, bancos de dados críticos têm backup de logs de transação a cada 15 minutos.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-BKP",
+     "secao": "BKP-2"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q15",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00044254,
+  "tokens_in": 3529,
+  "tokens_out": 179,
+  "latencia_s": 3.5082502999998724,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Segundo a política POL-BKP, backups semanais são retidos por 12 meses. Os backups diários são retidos por 35 dias e os mensais por 5 anos.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-BKP",
+     "secao": "BKP-3"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q16",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00045886,
+  "tokens_in": 3551,
+  "tokens_out": 207,
+  "latencia_s": 2.996615500000189,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Para sistemas críticos, a política define meta de RPO de 15 minutos e meta de RTO de 4 horas.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-BKP",
+     "secao": "BKP-5"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q17",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00044958000000000004,
+  "tokens_in": 3564,
+  "tokens_out": 186,
+  "latencia_s": 2.44949859999997,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Segundo a política, fornecedor crítico é aquele cuja indisponibilidade interrompe um serviço essencial por mais de 4 horas ou que processa dados confidenciais.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-FOR",
+     "secao": "FOR-2"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q18",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00048330000000000004,
+  "tokens_in": 3670,
+  "tokens_out": 232,
+  "latencia_s": 3.8515905999997813,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Segundo a POL-FOR, seção FOR-4, os contratos com fornecedores críticos devem conter cláusula de notificação de incidentes em até 48 horas.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-FOR",
+     "secao": "FOR-4"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q19",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00046148000000000006,
+  "tokens_in": 3582,
+  "tokens_out": 206,
+  "latencia_s": 3.785591199999999,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Segundo a política POL-FOR, fornecedores relevantes são reavaliados a cada 24 meses. Essa periodicidade está na seção FOR-3, que trata da avaliação prévia e da reavaliação.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-FOR",
+     "secao": "FOR-3"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q20",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00045262000000000004,
+  "tokens_in": 3564,
+  "tokens_out": 192,
+  "latencia_s": 2.7761592000001656,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Segundo a política POL-INC, um incidente S1 exige primeiro atendimento em 15 minutos, e a comunicação à diretoria deve ocorrer em até 1 hora.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-INC",
+     "secao": "INC-3"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q21",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00047536,
+  "tokens_in": 3601,
+  "tokens_out": 230,
+  "latencia_s": 3.7890678999997363,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Segundo a política POL-INC, um incidente S1 exige comunicação à diretoria em até 1 hora. O mesmo trecho prevê primeiro atendimento em 15 minutos para S1.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-INC",
+     "secao": "INC-3"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q22",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00047418000000000004,
+  "tokens_in": 3609,
+  "tokens_out": 226,
+  "latencia_s": 3.015710200000285,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Segundo a política, incidentes com dados pessoais devem ser comunicados ao Encarregado de Dados (DPO) em até 24 horas após a confirmação.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-INC",
+     "secao": "INC-4"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q23",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00045030000000000005,
+  "tokens_in": 3556,
+  "tokens_out": 189,
+  "latencia_s": 2.8235154000003604,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Todo incidente S1 e S2 exige relatório de análise de causa raiz em até 10 dias úteis, com plano de ação e responsáveis (POL-INC, INC-5).",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-INC",
+     "secao": "INC-5"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q24",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00046358000000000006,
+  "tokens_in": 3628,
+  "tokens_out": 201,
+  "latencia_s": 2.8839521999998396,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Segundo a política POL-SFU, pagamentos acima de R$ 100.000,00 exigem dupla aprovação, sendo uma do gerente da área e outra da diretoria financeira.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-SFU",
+     "secao": "SFU-3"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q25",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00046728,
+  "tokens_in": 3555,
+  "tokens_out": 223,
+  "latencia_s": 2.9619096000001264,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "De acordo com a política POL-SFU, a matriz de conflitos de funções é mantida pela área de Controles Internos e atualizada a cada 6 meses.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-SFU",
+     "secao": "SFU-4"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q26",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00046614000000000003,
+  "tokens_in": 3564,
+  "tokens_out": 219,
+  "latencia_s": 2.9621538000001237,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "A política define prazo máximo de 90 dias para exceções à segregação de funções. Essas exceções exigem aprovação do gerente de Controles Internos e controle compensatório documentado.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-SFU",
+     "secao": "SFU-5"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q27",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.0004362,
+  "tokens_in": 3545,
+  "tokens_out": 163,
+  "latencia_s": 2.3843645000001743,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Segundo a política POL-LOG, logs de contas privilegiadas são retidos por 24 meses.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-LOG",
+     "secao": "LOG-3"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q28",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.0004883999999999999,
+  "tokens_in": 3615,
+  "tokens_out": 253,
+  "latencia_s": 3.882905899999969,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Alertas de 5 ou mais falhas de autenticação consecutivas em 10 minutos geram chamado automático para o time de segurança, que o analisa em até 1 dia útil.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-LOG",
+     "secao": "LOG-5"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q29",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00049144,
+  "tokens_in": 3512,
+  "tokens_out": 280,
+  "latencia_s": 2.7597875999999815,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Segundo a política POL-DAD, na ausência de rótulo o dado é tratado como interno. Os rótulos devem ser aplicados pelo proprietário do dado no momento da criação, e os níveis previstos são público, interno, confidencial e restrito.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-DAD",
+     "secao": "DAD-3"
+    },
+    {
+     "documento": "POL-DAD",
+     "secao": "DAD-2"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "anthropic",
+  "pergunta_id": "Q30",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "anthropic",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00045096,
+  "tokens_in": 3582,
+  "tokens_out": 185,
+  "latencia_s": 3.526900899999873,
+  "tentativas": 1,
+  "rota": [
+   "anthropic"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Segundo a POL-DAD, a classificação é revisada anualmente pelo proprietário do dado, e os dados restritos são revisados a cada 6 meses.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-DAD",
+     "secao": "DAD-5"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ }
+]

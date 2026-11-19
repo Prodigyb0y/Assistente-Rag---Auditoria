@@ -120,6 +120,9 @@ class ResultadoAgente:
     tokens_embedding: int = 0
     custo_busca_usd: float = 0.0
     latencia_s: float = 0.0
+    # Exceção original, quando a falha veio do SDK/rede. Não é serializada; o orquestrador a usa
+    # para decidir entre retry (transitória) e fallback imediato (definitiva).
+    excecao: BaseException | None = field(default=None, repr=False, compare=False)
 
     @property
     def valido(self) -> bool:

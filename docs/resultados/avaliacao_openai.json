@@ -1,0 +1,992 @@
+[
+ {
+  "modo": "openai",
+  "pergunta_id": "Q01",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00199546,
+  "tokens_in": 1475,
+  "tokens_out": 104,
+  "latencia_s": 8.46912280000015,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Os acessos privilegiados devem ser revisados a cada 90 dias pelo Dono do Sistema.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-ACE",
+     "secao": "ACE-3"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q02",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.0020803600000000003,
+  "tokens_in": 1485,
+  "tokens_out": 119,
+  "latencia_s": 7.681696199999806,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Em caso de desligamento, todos os acessos devem ser revogados em até 24 horas após a data de saída registrada pelo RH (POL-ACE, ACE-4).",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-ACE",
+     "secao": "ACE-4"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q03",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.0020073400000000003,
+  "tokens_in": 1472,
+  "tokens_out": 107,
+  "latencia_s": 6.569631999999729,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "As senhas das contas de serviço devem ser rotacionadas a cada 180 dias (POL-ACE, ACE-5).",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-ACE",
+     "secao": "ACE-5"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q04",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.0020356000000000003,
+  "tokens_in": 1500,
+  "tokens_out": 107,
+  "latencia_s": 5.654026199999862,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "O relatório assinado da revisão de acessos deve ser arquivado por 5 anos.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-ACE",
+     "secao": "ACE-3"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q05",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00205548,
+  "tokens_in": 1495,
+  "tokens_out": 112,
+  "latencia_s": 8.917736800000057,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Os acessos da área anterior devem ser revogados em até 10 dias úteis (POL-ACE, ACE-4).",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-ACE",
+     "secao": "ACE-4"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q06",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00202744,
+  "tokens_in": 1497,
+  "tokens_out": 106,
+  "latencia_s": 6.337571399999888,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "A conciliação deve ser concluída até as 11h do dia seguinte ao movimento, em dias úteis.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-CPG",
+     "secao": "CPG-2"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q07",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.0021525,
+  "tokens_in": 1517,
+  "tokens_out": 127,
+  "latencia_s": 5.651369499999873,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "O analista de conciliação pode baixar divergências de até R$ 50,00 por transação, com justificativa registrada (POL-CPG, CPG-3).",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-CPG",
+     "secao": "CPG-3"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q08",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00202946,
+  "tokens_in": 1499,
+  "tokens_out": 106,
+  "latencia_s": 5.330973799999811,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Divergências não resolvidas em 5 dias úteis são escaladas ao gerente de controladoria.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-CPG",
+     "secao": "CPG-3"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q09",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00211768,
+  "tokens_in": 1502,
+  "tokens_out": 123,
+  "latencia_s": 6.466067199999998,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Os relatórios de conciliação são guardados por 7 anos (POL-CPG, CPG-4).",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-CPG",
+     "secao": "CPG-4"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q10",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00203558,
+  "tokens_in": 1510,
+  "tokens_out": 105,
+  "latencia_s": 5.840926899999886,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "O Comitê de Mudanças (CAB) se reúne às terças e quintas.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-GMU",
+     "secao": "GMU-2"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q11",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00214466,
+  "tokens_in": 1509,
+  "tokens_out": 127,
+  "latencia_s": 7.082896700000219,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Não. Para uma mudança normal, o solicitante não pode ser o aprovador nem o implantador da mesma mudança.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-GMU",
+     "secao": "GMU-3"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q12",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.0020243199999999996,
+  "tokens_in": 1504,
+  "tokens_out": 104,
+  "latencia_s": 5.815607199999704,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "O registro formal deve ser feito em até 2 dias úteis após a implantação (POL-GMU, GMU-4).",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-GMU",
+     "secao": "GMU-4"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q13",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.0020515399999999997,
+  "tokens_in": 1496,
+  "tokens_out": 111,
+  "latencia_s": 8.446326799999952,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Sim. Nenhuma mudança normal é implantada às sextas-feiras após as 16h, exceto com autorização do CAB.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-GMU",
+     "secao": "GMU-5"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q14",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00196734,
+  "tokens_in": 1467,
+  "tokens_out": 100,
+  "latencia_s": 8.475228600000264,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "O backup dos logs de transação dos bancos de dados críticos é feito a cada 15 minutos.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-BKP",
+     "secao": "BKP-2"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q15",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00199446,
+  "tokens_in": 1459,
+  "tokens_out": 107,
+  "latencia_s": 6.669665500000065,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Os backups semanais são retidos por 12 meses (POL-BKP, BKP-3).",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-BKP",
+     "secao": "BKP-3"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q16",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.0019504,
+  "tokens_in": 1435,
+  "tokens_out": 103,
+  "latencia_s": 6.565679699999691,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Para sistemas críticos, a meta é RPO de 15 minutos e RTO de 4 horas.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-BKP",
+     "secao": "BKP-5"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q17",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00199856,
+  "tokens_in": 1448,
+  "tokens_out": 110,
+  "latencia_s": 6.163057400000071,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Fornecedor crítico é aquele cuja indisponibilidade interrompe um serviço essencial por mais de 4 horas ou que processa dados confidenciais.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-FOR",
+     "secao": "FOR-2"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q18",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.0019833999999999997,
+  "tokens_in": 1443,
+  "tokens_out": 108,
+  "latencia_s": 6.306711300000188,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "O contrato com fornecedor crítico deve prever notificação de incidentes em até 48 horas (POL-FOR, FOR-4).",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-FOR",
+     "secao": "FOR-4"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q19",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.0019636000000000002,
+  "tokens_in": 1458,
+  "tokens_out": 101,
+  "latencia_s": 6.124129300000277,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Fornecedores relevantes são reavaliados a cada 24 meses.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-FOR",
+     "secao": "FOR-3"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q20",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.0019182000000000001,
+  "tokens_in": 1448,
+  "tokens_out": 94,
+  "latencia_s": 5.288999599999897,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Um incidente S1 exige primeiro atendimento em 15 minutos (POL-INC, INC-3).",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-INC",
+     "secao": "INC-3"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q21",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00201358,
+  "tokens_in": 1473,
+  "tokens_out": 108,
+  "latencia_s": 5.408584499999961,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "A diretoria deve ser comunicada em até 1 hora sobre um incidente S1.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-INC",
+     "secao": "INC-3"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q22",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.0020887,
+  "tokens_in": 1478,
+  "tokens_out": 122,
+  "latencia_s": 5.635512299999846,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Incidentes com dados pessoais devem ser comunicados ao Encarregado de Dados (DPO) em até 24 horas após a confirmação.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-INC",
+     "secao": "INC-4"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q23",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00205944,
+  "tokens_in": 1459,
+  "tokens_out": 120,
+  "latencia_s": 5.826079500000105,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Todo incidente S1 e S2 exige relatório de análise de causa raiz em até 10 dias úteis, com plano de ação e responsáveis (POL-INC, INC-5).",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-INC",
+     "secao": "INC-5"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q24",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.0020974599999999998,
+  "tokens_in": 1492,
+  "tokens_out": 121,
+  "latencia_s": 6.69030870000006,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Pagamentos acima de R$ 100.000,00 exigem dupla aprovação: uma do gerente da área e outra da diretoria financeira (POL-SFU, SFU-3).",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-SFU",
+     "secao": "SFU-3"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q25",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.0019463199999999999,
+  "tokens_in": 1476,
+  "tokens_out": 94,
+  "latencia_s": 5.835409900000286,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "A matriz de conflitos de funções é atualizada a cada 6 meses.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-SFU",
+     "secao": "SFU-4"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q26",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.0019373399999999999,
+  "tokens_in": 1447,
+  "tokens_out": 98,
+  "latencia_s": 5.466310599999815,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "O prazo máximo de uma exceção à segregação de funções é de 90 dias.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-SFU",
+     "secao": "SFU-5"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q27",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00200854,
+  "tokens_in": 1458,
+  "tokens_out": 110,
+  "latencia_s": 6.146419400000013,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Os logs de contas privilegiadas são retidos por 24 meses (POL-LOG, LOG-3).",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-LOG",
+     "secao": "LOG-3"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q28",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.0020054599999999997,
+  "tokens_in": 1460,
+  "tokens_out": 109,
+  "latencia_s": 5.2632294,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Alertas de 5 ou mais falhas de autenticação consecutivas em 10 minutos geram chamado automático para o time de segurança.",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-LOG",
+     "secao": "LOG-5"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q29",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00199252,
+  "tokens_in": 1432,
+  "tokens_out": 112,
+  "latencia_s": 5.940397999999732,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "Na ausência de rótulo, o dado é tratado como interno (POL-DAD, DAD-3).",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-DAD",
+     "secao": "DAD-3"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ },
+ {
+  "modo": "openai",
+  "pergunta_id": "Q30",
+  "executada": true,
+  "status": "aceita_no_primeiro",
+  "provedor_final": "openai",
+  "valido": true,
+  "acerto": true,
+  "acerto_origem": "regra",
+  "cita_origem": true,
+  "custo_usd": 0.00204852,
+  "tokens_in": 1483,
+  "tokens_out": 113,
+  "latencia_s": 6.76752179999994,
+  "tentativas": 1,
+  "rota": [
+   "openai"
+  ],
+  "motivo_escalonamento": null,
+  "prompt_versao": "agente_resposta_v1",
+  "resposta": {
+   "resposta": "A classificação de dados restritos é revisada a cada 6 meses (POL-DAD, DAD-5).",
+   "encontrado": true,
+   "citacoes": [
+    {
+     "documento": "POL-DAD",
+     "secao": "DAD-5"
+    }
+   ],
+   "confianca": "alta"
+  },
+  "erro": null
+ }
+]

@@ -6,7 +6,7 @@ from __future__ import annotations
 
 import os
 from pathlib import Path
-from typing import Mapping
+from typing import Literal, Mapping
 
 from pydantic import BaseModel, ConfigDict, Field, SecretStr
 
@@ -37,6 +37,13 @@ class Settings(BaseModel):
     # Agentes: limite maior, porque modelos com raciocínio gastam tokens de saída pensando.
     agent_max_output_tokens: int = Field(4096, gt=0, le=32000)
 
+    # Orquestração (Bloco 5)
+    max_tentativas: int = Field(3, ge=1, le=6)          # tentativas por provedor (1 + retries)
+    espera_base_s: float = Field(1.0, ge=0)             # backoff: base * 2**(tentativa-1)
+    espera_max_s: float = Field(8.0, ge=0)              # teto da espera entre tentativas
+    prazo_total_s: float = Field(120.0, gt=0)           # prazo por pergunta (não interrompe chamada em curso)
+    confianca_minima: Literal["baixa", "media", "alta"] = "media"  # abaixo disto, escala
+
     log_dir: Path = RAIZ / "logs"
     precos_path: Path = RAIZ / "config" / "precos.json"
 
@@ -65,6 +72,11 @@ _ENV_PARA_CAMPO = {
     "TIMEOUT_S": "timeout_s",
     "MAX_OUTPUT_TOKENS": "max_output_tokens",
     "AGENT_MAX_OUTPUT_TOKENS": "agent_max_output_tokens",
+    "MAX_TENTATIVAS": "max_tentativas",
+    "ESPERA_BASE_S": "espera_base_s",
+    "ESPERA_MAX_S": "espera_max_s",
+    "PRAZO_TOTAL_S": "prazo_total_s",
+    "CONFIANCA_MINIMA": "confianca_minima",
     "LOG_DIR": "log_dir",
 }
 

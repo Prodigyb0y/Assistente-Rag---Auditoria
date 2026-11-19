@@ -109,6 +109,7 @@ class AgenteOpenAI:
             raise
         except Exception as exc:
             r.erro = f"{type(exc).__name__}: {exc}"
+            r.excecao = exc
 
         r.saida_bruta = texto_final
         if r.erro is None:
