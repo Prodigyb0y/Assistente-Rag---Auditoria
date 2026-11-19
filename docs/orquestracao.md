@@ -239,7 +239,7 @@ Correção:
 - Testes novos: `tests/test_contrato.py` (abstenção com citação é inválida) e `tests/test_cooperacao.py` (abstenção que
   cita não é aceita sozinha nem vira consenso).
 
-Verificação offline: suíte completa com 298 testes passando e 1 pulado (o teste do Gradio, que depende da biblioteca
+Verificação offline: suíte completa com 313 testes passando e 1 pulado (o teste do Gradio, que depende da biblioteca
 instalada) no ambiente de revisão.
 
 **Efeito esperado, não medido:** perguntas fora da base em que o modelo cite trecho passam a escalar, em vez de serem

@@ -13,14 +13,14 @@ Marque só o que você verificou. Itens com [ ] ainda dependem de você.
 - [ ] Escopo declarado (OpenAI e Anthropic) e Gemini registrado como lacuna de projeto futuro, no README (seção "Escopo e limitações conhecidas") e em `docs/processo.md`
 - [x] Preço do `gpt-6.1-terra` conferido na página oficial (aba Standard, contexto Short, captura de 2026-11-19): US$ 1,00 entrada / US$ 5,00 saída por 1M de tokens. Acima de 272 mil tokens: não verificado
 - [ ] Limites de gasto mensais configurados nos consoles OpenAI e Anthropic
-- [ ] `python -m pytest -q` passando na sua máquina após o último commit (no ambiente de revisão: 298 passando, 1 pulado)
+- [ ] `python -m pytest -q` passando na sua máquina após o último commit (no ambiente de revisão: 313 passando, 1 pulado)
 - [ ] Nenhuma chave em código ou no histórico do Git (`git log -p | findstr /i "sk-"` sem resultado)
 - [ ] Captura da demo salva em `docs/img/demo.png` (aparece no README)
 - [ ] Redesign enviado ao GitHub (`origin`) **e** ao Space (`space`)
 - [ ] Teste final no Space em janela anônima: resposta com fonte, cache, limite diário, download e troca de tema
 - [ ] A página do GitHub mostra o README novo, sem a tabela de metadados no topo, e a imagem aparece
 - [ ] A aba "Sobre o projeto" aparece na demo (Space) e os links dela abrem
-- [x] Abstenção com citação não é aceita como resposta (correção em contrato e política, com testes; 298 passando no ambiente de revisão)
+- [x] Abstenção com citação não é aceita como resposta (correção em contrato e política, com testes; 313 passando no ambiente de revisão)
 - [x] Teto de gasto no código: US$ 4,00 por provedor (BUDGET_*_USD), parada automática antes de ultrapassar.
 - [x] Teste final do Space em janela anônima: aprovado (informado pelo autor, 2026-11-19).
 - [ ] Limite de gasto no console de cada provedor: não verificado.
