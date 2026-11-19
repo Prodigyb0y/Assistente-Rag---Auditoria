@@ -99,12 +99,14 @@ html, body { background: var(--app-bg) !important; }
 #chips button:active { transform: translateY(0) scale(.985); box-shadow: 0 2px 6px var(--sombra); }
 
 /* ---------- barra de entrada ---------- */
-#entrada { align-items: center; gap: .5rem; padding: .35rem .45rem .35rem .9rem; border-radius: 16px;
+#entrada { gap: .5rem; padding: .35rem .45rem .35rem .9rem; border-radius: 16px;
   border: 1px solid var(--borda); background: var(--surface);
   box-shadow: 0 1px 2px var(--sombra-suave), 0 10px 30px var(--sombra-suave);
   transition: border-color .15s ease, box-shadow .15s ease; }
 #entrada:focus-within { border-color: var(--acento); box-shadow: 0 0 0 4px var(--halo), 0 10px 30px var(--sombra-suave); }
-#entrada textarea { font-size: 1rem; background: transparent !important; }
+#entrada { align-items: flex-end; }
+#entrada > * { min-width: 0 !important; }
+#entrada textarea { font-size: 1rem; background: transparent !important; max-height: 9rem !important; overflow-y: auto !important; overflow-wrap: anywhere; word-break: break-word; resize: none; }
 #entrada button { border-radius: 12px; border: none !important;
   background: linear-gradient(135deg, var(--acento), var(--acento-2)) !important; color: #fff !important;
   transition: transform .15s ease, box-shadow .15s ease; }
